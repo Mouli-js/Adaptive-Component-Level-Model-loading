@@ -1,0 +1,235 @@
+{
+  "date": "2026-10-31T09:17:35.471Z",
+  "results": [
+    {
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "load": {
+        "precision": "int8",
+        "threads": 1,
+        "url": "/models/onnx/int8/full.onnx",
+        "bytes": 67354909,
+        "fetchMs": 168.7600000000093,
+        "createMs": 583.1550000000279,
+        "loadMs": 751.9150000000373,
+        "memBefore": {
+          "t": 166.64000000013039,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 0,
+          "wasmMemories": 0,
+          "jsHeapUsedBytes": 4711932,
+          "uaBytes": 2857397,
+          "uaByType": {
+            "JavaScript": 2074806,
+            "Shared": 741367,
+            "DOM": 41224
+          }
+        },
+        "memAfter": {
+          "t": 939.4250000000466,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 189005824,
+          "wasmMemories": 1,
+          "jsHeapUsedBytes": 71546926,
+          "uaBytes": 193201051,
+          "uaByType": {
+            "DOM": 41224,
+            "Shared": 283936,
+            "JavaScript": 192875891
+          }
+        }
+      },
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithPytorch": 0.9782110091743119,
+      "reference": "onnxruntime-web-wasm-node-int8",
+      "agreementWithNativeInt8": 0.9988532110091743,
+      "agreementWithReference": 1,
+      "maxAbsLogitDiffVsReference": 0,
+      "tokenizerMismatches": 0,
+      "latencyMs": {
+        "mean": 44.195745412843436,
+        "p50": 43.074999999953434,
+        "p90": 65.4000000001397,
+        "p99": 84.27000000001863,
+        "min": 13.485000000102445,
+        "max": 120.125
+      },
+      "memLoaded": {
+        "t": 39773.26000000001,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189005824,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 6412384,
+        "uaBytes": 193932360,
+        "uaByType": {
+          "DOM": 41224,
+          "Shared": 352559,
+          "JavaScript": 193538577
+        }
+      },
+      "memReleased": {
+        "t": 39795.070000000065,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189005824,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 6412384,
+        "uaBytes": 193942940,
+        "uaByType": {
+          "DOM": 41224,
+          "JavaScript": 193549387,
+          "Shared": 352329
+        }
+      },
+      "wallS": 39.65
+    },
+    {
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "load": {
+        "precision": "int8",
+        "threads": 2,
+        "url": "/models/onnx/int8/full.onnx",
+        "bytes": 67354909,
+        "fetchMs": 309.1950000000652,
+        "createMs": 638.3699999998789,
+        "loadMs": 947.5649999999441,
+        "memBefore": {
+          "t": 171.1799999999348,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 0,
+          "wasmMemories": 0,
+          "jsHeapUsedBytes": 4705320,
+          "uaBytes": 2857413,
+          "uaByType": {
+            "JavaScript": 2538281,
+            "DOM": 41224,
+            "Shared": 277908
+          }
+        },
+        "memAfter": {
+          "t": 1135.6399999998976,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 189399040,
+          "wasmMemories": 1,
+          "jsHeapUsedBytes": 71559058,
+          "uaBytes": 193603623,
+          "uaByType": {
+            "DOM": 41224,
+            "Shared": 285296,
+            "JavaScript": 193277103
+          }
+        }
+      },
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithPytorch": 0.9782110091743119,
+      "reference": "onnxruntime-web-wasm-node-int8",
+      "agreementWithNativeInt8": 0.9988532110091743,
+      "agreementWithReference": 1,
+      "maxAbsLogitDiffVsReference": 0,
+      "tokenizerMismatches": 0,
+      "latencyMs": {
+        "mean": 28.65705848623755,
+        "p50": 27.625,
+        "p90": 42.53999999980442,
+        "p99": 53.31000000005588,
+        "min": 8.630000000121072,
+        "max": 78.69500000006519
+      },
+      "memLoaded": {
+        "t": 86390.52000000002,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189399040,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 5568152,
+        "uaBytes": 194339628,
+        "uaByType": {
+          "DOM": 41224,
+          "JavaScript": 193941095,
+          "Shared": 357309
+        }
+      },
+      "memReleased": {
+        "t": 146397.03000000003,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189399040,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 4932476,
+        "uaBytes": 194355778,
+        "uaByType": {
+          "DOM": 41224,
+          "JavaScript": 193961817,
+          "Shared": 352737
+        }
+      },
+      "wallS": 206.235
+    }
+  ],
+  "checks": [
+    {
+      "config": "int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "int8/1t",
+      "name": "tokenizer parity",
+      "ok": true,
+      "detail": "0 mismatches"
+    },
+    {
+      "config": "int8/1t",
+      "name": "accuracy = Python reference (±0.1 pt)",
+      "ok": true,
+      "detail": "90.02% vs 90.02%"
+    },
+    {
+      "config": "int8/1t",
+      "name": "|Δlogit| vs onnxruntime-web-wasm-node-int8 < 1e-3",
+      "ok": true,
+      "detail": "0.00e+0"
+    },
+    {
+      "config": "int8/1t",
+      "name": "100% prediction agreement with reference",
+      "ok": true,
+      "detail": "100.00%"
+    },
+    {
+      "config": "int8/2t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "int8/2t",
+      "name": "tokenizer parity",
+      "ok": true,
+      "detail": "0 mismatches"
+    },
+    {
+      "config": "int8/2t",
+      "name": "accuracy = Python reference (±0.1 pt)",
+      "ok": true,
+      "detail": "90.02% vs 90.02%"
+    },
+    {
+      "config": "int8/2t",
+      "name": "|Δlogit| vs onnxruntime-web-wasm-node-int8 < 1e-3",
+      "ok": true,
+      "detail": "0.00e+0"
+    },
+    {
+      "config": "int8/2t",
+      "name": "100% prediction agreement with reference",
+      "ok": true,
+      "detail": "100.00%"
+    }
+  ]
+}

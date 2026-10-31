@@ -1,0 +1,245 @@
+{
+  "date": "2026-10-31T12:43:55.543Z",
+  "results": [
+    {
+      "page": "phase2-baseline",
+      "date": "2026-10-31T12:42:36.791Z",
+      "precision": "int8",
+      "threads": 1,
+      "uaMemory": true,
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "load": {
+        "precision": "int8",
+        "threads": 1,
+        "url": "/models/onnx/int8/full.onnx",
+        "bytes": 67354909,
+        "fetchMs": 4312.470000000001,
+        "createMs": 2052.0449999999983,
+        "loadMs": 6364.514999999999,
+        "memBefore": {
+          "t": 599.4100000000035,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 0,
+          "wasmMemories": 0,
+          "jsHeapUsedBytes": 4728739,
+          "uaBytes": 2865585,
+          "uaByType": {
+            "JavaScript": 2595897,
+            "DOM": 42272,
+            "Shared": 227416
+          }
+        },
+        "memAfter": {
+          "t": 7062.074999999997,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 189005824,
+          "wasmMemories": 1,
+          "jsHeapUsedBytes": 71545937,
+          "uaBytes": 193205409,
+          "uaByType": {
+            "JavaScript": 192879137,
+            "DOM": 42272,
+            "Shared": 284000
+          }
+        }
+      },
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithPytorch": 0.9782110091743119,
+      "reference": "onnxruntime-web-wasm-node-int8",
+      "agreementWithNativeInt8": 0.9988532110091743,
+      "agreementWithReference": 1,
+      "maxAbsLogitDiffVsReference": 0,
+      "tokenizerMismatches": 0,
+      "latencyMs": {
+        "mean": 46.090785550458875,
+        "p50": 44.76499999999942,
+        "p90": 67.40000000000873,
+        "p99": 85.67999999999302,
+        "min": 14.794999999998254,
+        "max": 101.56000000001222
+      },
+      "memLoaded": {
+        "t": 47610.619999999995,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189005824,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 5657391,
+        "uaBytes": 193940552,
+        "uaByType": {
+          "DOM": 42272,
+          "Shared": 352209,
+          "JavaScript": 193546071
+        }
+      },
+      "memReleased": {
+        "t": 47631.78,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189005824,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 5657391,
+        "uaBytes": 193947994,
+        "uaByType": {
+          "Shared": 348100,
+          "JavaScript": 193557622,
+          "DOM": 42272
+        }
+      },
+      "wallS": 47.056
+    },
+    {
+      "page": "phase2-baseline",
+      "date": "2026-10-31T12:43:55.332Z",
+      "precision": "fp32",
+      "threads": 1,
+      "uaMemory": true,
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "load": {
+        "precision": "fp32",
+        "threads": 1,
+        "url": "/models/onnx/fp32/full.onnx",
+        "bytes": 267936691,
+        "fetchMs": 12981.664999999994,
+        "createMs": 2648.4649999999965,
+        "loadMs": 15630.12999999999,
+        "memBefore": {
+          "t": 167.50999999999476,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 0,
+          "wasmMemories": 0,
+          "jsHeapUsedBytes": 4955043,
+          "uaBytes": 2861699,
+          "uaByType": {
+            "Shared": 277972,
+            "JavaScript": 2541455,
+            "DOM": 42272
+          }
+        },
+        "memAfter": {
+          "t": 15822.089999999997,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 688259072,
+          "wasmMemories": 1,
+          "jsHeapUsedBytes": 272128503,
+          "uaBytes": 692457601,
+          "uaByType": {
+            "JavaScript": 692068020,
+            "Shared": 347309,
+            "DOM": 42272
+          }
+        }
+      },
+      "n": 872,
+      "accuracy": 0.9105504587155964,
+      "agreementWithPytorch": 1,
+      "reference": "pytorch-fp32",
+      "agreementWithNativeInt8": null,
+      "agreementWithReference": 1,
+      "maxAbsLogitDiffVsReference": 0.000025818897247287254,
+      "tokenizerMismatches": 0,
+      "latencyMs": {
+        "mean": 70.90935779816499,
+        "p50": 69.5450000000128,
+        "p90": 103.43499999999767,
+        "p99": 132.2050000000163,
+        "min": 22.79000000000815,
+        "max": 139.8850000000093
+      },
+      "memLoaded": {
+        "t": 77989.935,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 688259072,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 5368493,
+        "uaBytes": 693117674,
+        "uaByType": {
+          "JavaScript": 692786096,
+          "DOM": 42272,
+          "Shared": 289306
+        }
+      },
+      "memReleased": {
+        "t": 78012.82,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 688259072,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 5368493,
+        "uaBytes": 693119692,
+        "uaByType": {
+          "DOM": 42272,
+          "JavaScript": 692725027,
+          "Shared": 352393
+        }
+      },
+      "wallS": 77.866
+    }
+  ],
+  "checks": [
+    {
+      "config": "int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "int8/1t",
+      "name": "tokenizer parity",
+      "ok": true,
+      "detail": "0 mismatches"
+    },
+    {
+      "config": "int8/1t",
+      "name": "accuracy = same-kernel reference (±0.1 pt)",
+      "ok": true,
+      "detail": "90.02% vs 90.02%"
+    },
+    {
+      "config": "int8/1t",
+      "name": "|Δlogit| vs onnxruntime-web-wasm-node-int8 < 1e-3",
+      "ok": true,
+      "detail": "0.00e+0"
+    },
+    {
+      "config": "int8/1t",
+      "name": "100% prediction agreement with reference",
+      "ok": true,
+      "detail": "100.00%"
+    },
+    {
+      "config": "fp32/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "fp32/1t",
+      "name": "tokenizer parity",
+      "ok": true,
+      "detail": "0 mismatches"
+    },
+    {
+      "config": "fp32/1t",
+      "name": "accuracy = same-kernel reference (±0.1 pt)",
+      "ok": true,
+      "detail": "91.06% vs 91.06%"
+    },
+    {
+      "config": "fp32/1t",
+      "name": "|Δlogit| vs pytorch-fp32 < 1e-3",
+      "ok": true,
+      "detail": "2.58e-5"
+    },
+    {
+      "config": "fp32/1t",
+      "name": "100% prediction agreement with reference",
+      "ok": true,
+      "detail": "100.00%"
+    }
+  ]
+}

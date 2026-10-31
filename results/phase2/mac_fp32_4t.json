@@ -1,0 +1,64 @@
+{
+  "page": "phase2-baseline",
+  "date": "2026-10-31T12:50:46.348Z",
+  "precision": "fp32",
+  "threads": 4,
+  "uaMemory": false,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8,
+  "deviceMemory": 16,
+  "crossOriginIsolated": true,
+  "load": {
+    "precision": "fp32",
+    "threads": 4,
+    "url": "/models/onnx/fp32/full.onnx",
+    "bytes": 267936691,
+    "fetchMs": 548.3600000143051,
+    "createMs": 185.72999995946884,
+    "loadMs": 734.089999973774,
+    "memBefore": {
+      "t": 137760.53999996185,
+      "crossOriginIsolated": true,
+      "wasmHeapBytes": 730791936,
+      "wasmMemories": 1,
+      "jsHeapUsedBytes": 11024233
+    },
+    "memAfter": {
+      "t": 138494.80500000715,
+      "crossOriginIsolated": true,
+      "wasmHeapBytes": 730791936,
+      "wasmMemories": 1,
+      "jsHeapUsedBytes": 279004533
+    }
+  },
+  "n": 872,
+  "accuracy": 0.9105504587155964,
+  "agreementWithPytorch": 1,
+  "reference": "pytorch-fp32",
+  "agreementWithNativeInt8": null,
+  "agreementWithReference": 1,
+  "maxAbsLogitDiffVsReference": 0.000025818897247287254,
+  "tokenizerMismatches": 0,
+  "latencyMs": {
+    "mean": 17.7679071096242,
+    "p50": 16.80000001192093,
+    "p90": 26.789999961853027,
+    "p99": 37.075000047683716,
+    "min": 4.0799999833106995,
+    "max": 113.08999997377396
+  },
+  "memLoaded": {
+    "t": 154131.6399999857,
+    "crossOriginIsolated": true,
+    "wasmHeapBytes": 730791936,
+    "wasmMemories": 1,
+    "jsHeapUsedBytes": 280204113
+  },
+  "memReleased": {
+    "t": 154132.81499999762,
+    "crossOriginIsolated": true,
+    "wasmHeapBytes": 730791936,
+    "wasmMemories": 1,
+    "jsHeapUsedBytes": 280204113
+  }
+}

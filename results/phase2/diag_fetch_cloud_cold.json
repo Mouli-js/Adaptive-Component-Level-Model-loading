@@ -1,0 +1,361 @@
+{
+  "page": "diag-fetch",
+  "date": "2026-10-31T12:57:00.791Z",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 2,
+  "deviceMemory": 8,
+  "crossOriginIsolated": true,
+  "threads": 2,
+  "summary": {
+    "T1_rawFetch_byFile": {
+      "int8": {
+        "n": 6,
+        "medianMs": 177.85000000000582,
+        "minMs": 143.95000000001164,
+        "maxMs": 986.9150000000081,
+        "medianMBps": 441.32426287512817
+      },
+      "fp32": {
+        "n": 6,
+        "medianMs": 1769.5450000000128,
+        "minMs": 519.5199999999895,
+        "maxMs": 3100.835000000021,
+        "medianMBps": 163.2322075975763
+      }
+    },
+    "T1_firstFetchOfPage": {
+      "round": 0,
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 986.9150000000081,
+      "MBps": 68.24793320599996,
+      "queueMs": 0.5700000000069849,
+      "ttfbMs": 5.720000000001164,
+      "downloadMs": 665.5450000000128,
+      "toArrayBufferMs": 314.69999999998254,
+      "protocol": "http/1.1"
+    },
+    "T3_byCondition": {
+      "int8": {
+        "immediately after 20 inferences": {
+          "n": 2,
+          "medianMs": 154.0100000000093,
+          "minMs": 138.92999999999302,
+          "maxMs": 154.0100000000093,
+          "medianMBps": 484.8118404952379
+        },
+        "after 3 s idle": {
+          "n": 2,
+          "medianMs": 149.33500000002095,
+          "minMs": 142.7849999999744,
+          "maxMs": 149.33500000002095,
+          "medianMBps": 471.72258290445143
+        }
+      },
+      "fp32": {
+        "immediately after 20 inferences": {
+          "n": 2,
+          "medianMs": 1608.5599999999977,
+          "minMs": 554.5950000000303,
+          "maxMs": 1608.5599999999977,
+          "medianMBps": 483.1213606325073
+        },
+        "after 3 s idle": {
+          "n": 2,
+          "medianMs": 2079.070000000007,
+          "minMs": 1176.445000000007,
+          "maxMs": 2079.070000000007,
+          "medianMBps": 227.751140937314
+        }
+      }
+    }
+  },
+  "T1_rawFetch": [
+    {
+      "round": 0,
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 986.9150000000081,
+      "MBps": 68.24793320599996,
+      "queueMs": 0.5700000000069849,
+      "ttfbMs": 5.720000000001164,
+      "downloadMs": 665.5450000000128,
+      "toArrayBufferMs": 314.69999999998254,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 0,
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 3100.835000000021,
+      "MBps": 86.40791625481465,
+      "queueMs": 0.7600000000093132,
+      "ttfbMs": 3.39000000001397,
+      "downloadMs": 1797.8249999999825,
+      "toArrayBufferMs": 1298.5750000000116,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 1,
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 1641.4449999999779,
+      "MBps": 163.2322075975763,
+      "queueMs": 0.6950000000069849,
+      "ttfbMs": 2.389999999984866,
+      "downloadMs": 376.8500000000058,
+      "toArrayBufferMs": 1261.2399999999907,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 1,
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 152.61999999999534,
+      "MBps": 441.32426287512817,
+      "queueMs": 1.7400000000197906,
+      "ttfbMs": 1.2999999999883585,
+      "downloadMs": 115.45000000001164,
+      "toArrayBufferMs": 33.875,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 2,
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 184.9550000000163,
+      "MBps": 364.16917087937105,
+      "queueMs": 0.875,
+      "ttfbMs": 2.0599999999976717,
+      "downloadMs": 117.16000000000349,
+      "toArrayBufferMs": 64.61000000001513,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 2,
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 1769.5450000000128,
+      "MBps": 151.4155847972208,
+      "queueMs": 0.7600000000093132,
+      "ttfbMs": 1.445000000006985,
+      "downloadMs": 572.484999999986,
+      "toArrayBufferMs": 1194.5200000000186,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 3,
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 519.5199999999895,
+      "MBps": 515.7389340160252,
+      "queueMs": 1.0850000000209548,
+      "ttfbMs": 1,
+      "downloadMs": 367.17499999998836,
+      "toArrayBufferMs": 149.88000000000466,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 3,
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 143.95000000001164,
+      "MBps": 467.90489058697153,
+      "queueMs": 1.6300000000046566,
+      "ttfbMs": 1.3800000000046566,
+      "downloadMs": 106.83999999999651,
+      "toArrayBufferMs": 33.85500000001048,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 4,
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 177.85000000000582,
+      "MBps": 378.7175091369008,
+      "queueMs": 0.7149999999965075,
+      "ttfbMs": 2.7049999999871943,
+      "downloadMs": 138.96000000002095,
+      "toArrayBufferMs": 35.25,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 4,
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 2096.204999999987,
+      "MBps": 127.81988927609736,
+      "queueMs": 0.7850000000034925,
+      "ttfbMs": 2.2600000000093132,
+      "downloadMs": 894.929999999993,
+      "toArrayBufferMs": 1197.8450000000012,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 5,
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 750.125,
+      "MBps": 357.18938976837194,
+      "queueMs": 1.8599999999860302,
+      "ttfbMs": 1.0200000000186265,
+      "downloadMs": 430.08499999999185,
+      "toArrayBufferMs": 316.8850000000093,
+      "protocol": "http/1.1"
+    },
+    {
+      "round": 5,
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 146.36999999999534,
+      "MBps": 460.1688119150246,
+      "queueMs": 0.8099999999976717,
+      "ttfbMs": 2.5,
+      "downloadMs": 110.82000000000698,
+      "toArrayBufferMs": 31.939999999973224,
+      "protocol": "http/1.1"
+    }
+  ],
+  "T2_replay": [
+    {
+      "step": "int8: load #1 (UI button)",
+      "fetchMs": 146.57500000001164,
+      "createMs": 645.0749999999825,
+      "MBps": 459.5252191710364,
+      "heapMiB": 180.625
+    },
+    {
+      "step": "int8: load #2 (benchmark)",
+      "fetchMs": 200.14999999999418,
+      "createMs": 85.27500000002328,
+      "MBps": 336.52215338497115,
+      "heapMiB": 180.625
+    },
+    {
+      "step": "fp32: load #1 (UI button)",
+      "fetchMs": 903.0749999999825,
+      "createMs": 1317.195000000007,
+      "MBps": 296.6937308639982,
+      "heapMiB": 696.5
+    },
+    {
+      "step": "fp32: load #2 (benchmark)",
+      "fetchMs": 1998.3650000000198,
+      "createMs": 189.44999999998254,
+      "MBps": 134.0779542275797,
+      "heapMiB": 696.5
+    },
+    {
+      "step": "int8: load #1 (UI button)",
+      "fetchMs": 135.01499999998487,
+      "createMs": 76.17500000001746,
+      "MBps": 498.86982187169986,
+      "heapMiB": 696.5
+    },
+    {
+      "step": "int8: load #2 (benchmark)",
+      "fetchMs": 193.39499999998952,
+      "createMs": 72.13500000000931,
+      "MBps": 348.27637219164745,
+      "heapMiB": 696.5
+    }
+  ],
+  "T3_afterCompute": [
+    {
+      "condition": "immediately after 20 inferences",
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 154.0100000000093,
+      "MBps": 437.34114018567584,
+      "queueMs": 2.2699999999895226,
+      "ttfbMs": 0.75,
+      "downloadMs": 116.43000000002212,
+      "toArrayBufferMs": 34.2949999999837,
+      "protocol": "http/1.1"
+    },
+    {
+      "condition": "after 3 s idle",
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 149.33500000002095,
+      "MBps": 451.03230321083845,
+      "queueMs": 0.6950000000069849,
+      "ttfbMs": 2.0300000000279397,
+      "downloadMs": 113.70000000001164,
+      "toArrayBufferMs": 32.664999999979045,
+      "protocol": "http/1.1"
+    },
+    {
+      "condition": "immediately after 20 inferences",
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 138.92999999999302,
+      "MBps": 484.8118404952379,
+      "queueMs": 0.7649999999557622,
+      "ttfbMs": 2.375,
+      "downloadMs": 99.23000000003958,
+      "toArrayBufferMs": 36.23499999998603,
+      "protocol": "http/1.1"
+    },
+    {
+      "condition": "after 3 s idle",
+      "label": "int8",
+      "bytes": 67354909,
+      "totalMs": 142.7849999999744,
+      "MBps": 471.72258290445143,
+      "queueMs": 0.8699999999953434,
+      "ttfbMs": 1.525000000023283,
+      "downloadMs": 106.21999999997206,
+      "toArrayBufferMs": 33.85999999998603,
+      "protocol": "http/1.1"
+    },
+    {
+      "condition": "immediately after 20 inferences",
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 1608.5599999999977,
+      "MBps": 166.56928619386306,
+      "queueMs": 0.75,
+      "ttfbMs": 2.320000000006985,
+      "downloadMs": 393.0100000000093,
+      "toArrayBufferMs": 1212.2249999999767,
+      "protocol": "http/1.1"
+    },
+    {
+      "condition": "after 3 s idle",
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 1176.445000000007,
+      "MBps": 227.751140937314,
+      "queueMs": 0.6700000000419095,
+      "ttfbMs": 0.8899999999557622,
+      "downloadMs": 385.3850000000093,
+      "toArrayBufferMs": 789.2250000000349,
+      "protocol": "http/1.1"
+    },
+    {
+      "condition": "immediately after 20 inferences",
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 554.5950000000303,
+      "MBps": 483.1213606325073,
+      "queueMs": 2.105000000039581,
+      "ttfbMs": 0.7699999999604188,
+      "downloadMs": 393.51500000001397,
+      "toArrayBufferMs": 150.47500000003492,
+      "protocol": "http/1.1"
+    },
+    {
+      "condition": "after 3 s idle",
+      "label": "fp32",
+      "bytes": 267936691,
+      "totalMs": 2079.070000000007,
+      "MBps": 128.87333807904454,
+      "queueMs": 0.9199999999837019,
+      "ttfbMs": 2.050000000046566,
+      "downloadMs": 820.039999999979,
+      "toArrayBufferMs": 1255.7949999999837,
+      "protocol": "http/1.1"
+    }
+  ]
+}

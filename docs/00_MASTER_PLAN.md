@@ -3,7 +3,10 @@
 **Project:** MCA Project 1 · Moulieswaran M
 **Window:** 31 Oct 2026 – 30 Nov 2026 (30 days)
 **Status:** APPROVED (31 Oct 2026, "get started")
-**Version:** 1.1 (31 Oct 2026). Change: the mixed-precision setting is now C2 fp32 / rest int8, based on the Phase 1 sensitivity results (see PHASE_1_REPORT I-1.1).
+**Version:** 1.2 (31 Oct 2026).
+
+- v1.1: the mixed-precision setting is now C2 fp32 / rest int8, based on the Phase 1 sensitivity results (PHASE_1_REPORT I-1.1).
+- v1.2: D-2.1 approved (browser int8 validated against the WASM reference). F-5 and F-6 are mandatory in the final evaluation, and experiment E-B was added (§5).
 
 ---
 
@@ -130,6 +133,12 @@ Correctness and documentation are **never** cut.
 | M4 | Warm inference latency | Median over 100 sentences after warm-up |
 | M5 | Accuracy | SST-2 validation set (872 sentences) |
 | M6 | Cache hit rate | Hits / lookups across 3 simulated revisits |
+
+**Required additional analyses (added v1.2, 31 Oct 2026):**
+
+- **F-5, native vs WASM int8:** a separate table in the final evaluation (approved deviation D-2.1). Browser int8 is validated against the WASM-kernel reference.
+- **F-6, batch-size dependence of dynamic int8:** an explicit finding and its own experiment, **E-B** (batch sizes 1–32, three batch-composition strategies, native and WASM, fp32 control). Hypothesis **H6**: int8 prediction flips grow with batch size and padding; fp32 is invariant.
+- All findings are tracked in `docs/FINDINGS.md`.
 
 **Device profiles (simulated):**
 

@@ -1,0 +1,12 @@
+{
+  "name": "adaptive-model-loading",
+  "private": true,
+  "type": "module",
+  "description": "MCA Project 1 — adaptive component-level model loading in the browser",
+  "scripts": {
+    "serve": "node demo/server.mjs",
+    "test:unit": "npm --prefix packages/adaptive-onnx-loader test",
+    "test:browser": "node bench/phase2_browser_test.mjs"
+  },
+  "dependencies": { "onnxruntime-web": "1.20.1" }
+}

@@ -1,0 +1,488 @@
+[
+ {
+  "text": "",
+  "ids": [
+   101,
+   102
+  ]
+ },
+ {
+  "text": "   ",
+  "ids": [
+   101,
+   102
+  ]
+ },
+ {
+  "text": "Hello, World!",
+  "ids": [
+   101,
+   7592,
+   1010,
+   2088,
+   999,
+   102
+  ]
+ },
+ {
+  "text": "I LOVE this movie!!!",
+  "ids": [
+   101,
+   1045,
+   2293,
+   2023,
+   3185,
+   999,
+   999,
+   999,
+   102
+  ]
+ },
+ {
+  "text": "don't won't can't",
+  "ids": [
+   101,
+   2123,
+   1005,
+   1056,
+   2180,
+   1005,
+   1056,
+   2064,
+   1005,
+   1056,
+   102
+  ]
+ },
+ {
+  "text": "amélie Æsir naïve café",
+  "ids": [
+   101,
+   25285,
+   1097,
+   29481,
+   15743,
+   7668,
+   102
+  ]
+ },
+ {
+  "text": "Straße ﬁne",
+  "ids": [
+   101,
+   2358,
+   27807,
+   1984,
+   2638,
+   102
+  ]
+ },
+ {
+  "text": "İstanbul",
+  "ids": [
+   101,
+   9960,
+   102
+  ]
+ },
+ {
+  "text": "中文字符测试",
+  "ids": [
+   101,
+   1746,
+   1861,
+   100,
+   100,
+   100,
+   100,
+   102
+  ]
+ },
+ {
+  "text": "mixed 中文 and english",
+  "ids": [
+   101,
+   3816,
+   1746,
+   1861,
+   1998,
+   2394,
+   102
+  ]
+ },
+ {
+  "text": "emoji 😀👍 test",
+  "ids": [
+   101,
+   7861,
+   29147,
+   2072,
+   100,
+   3231,
+   102
+  ]
+ },
+ {
+  "text": "tabs\tand\nnewlines\r\n",
+  "ids": [
+   101,
+   21628,
+   2015,
+   1998,
+   2047,
+   12735,
+   102
+  ]
+ },
+ {
+  "text": "zero​width",
+  "ids": [
+   101,
+   5717,
+   9148,
+   11927,
+   2232,
+   102
+  ]
+ },
+ {
+  "text": "nul\u0000char",
+  "ids": [
+   101,
+   16371,
+   29358,
+   2906,
+   102
+  ]
+ },
+ {
+  "text": "soft­hyphen",
+  "ids": [
+   101,
+   3730,
+   10536,
+   8458,
+   2368,
+   102
+  ]
+ },
+ {
+  "text": "replacement�char",
+  "ids": [
+   101,
+   6110,
+   7507,
+   2099,
+   102
+  ]
+ },
+ {
+  "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "ids": [
+   101,
+   100,
+   102
+  ]
+ },
+ {
+  "text": "supercalifragilisticexpialidocious",
+  "ids": [
+   101,
+   3565,
+   9289,
+   10128,
+   29181,
+   24411,
+   4588,
+   10288,
+   19312,
+   21273,
+   10085,
+   6313,
+   102
+  ]
+ },
+ {
+  "text": "price is $100.50 ^_^ `code` ~tilde~ {brace}",
+  "ids": [
+   101,
+   3976,
+   2003,
+   1002,
+   2531,
+   1012,
+   2753,
+   1034,
+   1035,
+   1034,
+   1036,
+   3642,
+   1036,
+   1066,
+   18681,
+   3207,
+   1066,
+   1063,
+   17180,
+   1065,
+   102
+  ]
+ },
+ {
+  "text": "e-mail: test@example.com #hashtag",
+  "ids": [
+   101,
+   1041,
+   1011,
+   5653,
+   1024,
+   3231,
+   1030,
+   2742,
+   1012,
+   4012,
+   1001,
+   23325,
+   15900,
+   102
+  ]
+ },
+ {
+  "text": "— en–dash “quotes” ‘single’ …",
+  "ids": [
+   101,
+   1517,
+   4372,
+   1516,
+   11454,
+   1523,
+   16614,
+   1524,
+   1520,
+   2309,
+   1521,
+   1529,
+   102
+  ]
+ },
+ {
+  "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+  "ids": [
+   101,
+   22038,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   20348,
+   2595,
+   100,
+   102
+  ]
+ },
+ {
+  "text": "the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the ",
+  "ids": [
+   101,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   1996,
+   102
+  ]
+ },
+ {
+  "text": "unaffable unbelievable",
+  "ids": [
+   101,
+   14477,
+   20961,
+   3468,
+   23653,
+   102
+  ]
+ },
+ {
+  "text": "١٢٣ arabic digits",
+  "ids": [
+   101,
+   100,
+   5640,
+   16648,
+   102
+  ]
+ },
+ {
+  "text": "ｆｕｌｌｗｉｄｔｈ",
+  "ids": [
+   101,
+   100,
+   102
+  ]
+ }
+]

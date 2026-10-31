@@ -1,0 +1,55 @@
+{
+  "machine": "aarch64",
+  "onnxruntime": "1.20.1",
+  "acc": {
+    "py_cpu_opt_all": 0.9013761467889908,
+    "py_cpu_opt_disabled": 0.9013761467889908,
+    "wasm_opt_all": 0.9002293577981652,
+    "wasm_opt_disabled": 0.9002293577981652
+  },
+  "pairs": {
+    "py_cpu_opt_all vs wasm_opt_all": {
+      "max_abs": 1.214706540107727,
+      "mean_abs": 0.018218283275026965,
+      "n_flips": 1,
+      "flips": [
+        702
+      ]
+    },
+    "py_cpu_opt_disabled vs wasm_opt_disabled": {
+      "max_abs": 1.214706540107727,
+      "mean_abs": 0.018219024360013287,
+      "n_flips": 1,
+      "flips": [
+        702
+      ]
+    },
+    "py_cpu_opt_all vs py_cpu_opt_disabled": {
+      "max_abs": 0.2296581268310547,
+      "mean_abs": 0.0014371250290423632,
+      "n_flips": 0,
+      "flips": []
+    },
+    "wasm_opt_all vs wasm_opt_disabled": {
+      "max_abs": 0.23733735084533691,
+      "mean_abs": 0.000989347756114028,
+      "n_flips": 0,
+      "flips": []
+    }
+  },
+  "flipped_sentences": [
+    {
+      "idx": 702,
+      "sentence": "the reality of the new live-action pinocchio he directed , cowrote and starred in borders on the grotesque . ",
+      "label": 0,
+      "margin_pos_minus_neg": {
+        "py_cpu_opt_all": -1.6911,
+        "py_cpu_opt_disabled": -1.6911,
+        "wasm_opt_all": 0.0076,
+        "wasm_opt_disabled": 0.0076,
+        "fp32_pytorch": 4.2307
+      }
+    }
+  ],
+  "wasm_int8_sentences_with_|margin|<1.25": 24
+}

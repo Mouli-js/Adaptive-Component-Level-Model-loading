@@ -1,0 +1,24 @@
+{
+  "_doc": "Registry of benchmark configurations. Results from different configurations are never averaged together. Each result file names exactly one configuration.",
+  "configurations": {
+    "CLOUD-HL-1T": {
+      "environment": "cloud workspace (shared VM)", "device": "x86-64, 2 vCPU, 7 GB RAM", "os": "Linux",
+      "browser": "Chromium 153 (Playwright, channel=chromium, new headless)", "launchFlags": ["--enable-blink-features=ForceEagerMeasureMemory"],
+      "threads": 1, "automation": "bench/phase2_browser_test.mjs", "memoryAPI": "uaMemory=true",
+      "results": ["results/phase2/browser_baseline_int8.json#threads=1", "results/phase2/browser_baseline_fp32.json#threads=1", "results/phase2/browser_baseline_recheck.json"]
+    },
+    "CLOUD-HL-2T": {
+      "environment": "cloud workspace (shared VM)", "device": "x86-64, 2 vCPU, 7 GB RAM", "os": "Linux",
+      "browser": "Chromium 153 (Playwright, channel=chromium, new headless)", "launchFlags": ["--enable-blink-features=ForceEagerMeasureMemory"],
+      "threads": 2, "automation": "bench/phase2_browser_test.mjs", "memoryAPI": "uaMemory=true",
+      "results": ["results/phase2/browser_baseline_int8.json#threads=2", "results/phase2/browser_baseline_fp32.json#threads=2"]
+    },
+    "MAC-CHROME-4T": {
+      "environment": "your Mac (real device, interactive)", "device": "Apple Silicon Mac (arm64), navigator.hardwareConcurrency=8, navigator.deviceMemory=16",
+      "os": "macOS 26.7.1", "browser": "Google Chrome 155 (headed, default flags)", "launchFlags": [],
+      "threads": 4, "automation": "manual, docs/MANUAL_VERIFICATION_PHASE2.md", "memoryAPI": "uaMemory=false",
+      "procedureNote": "In each page, 'Load model' was clicked before 'Run SST-2 validation', so the benchmark's own load is the SECOND load of the same file in that page (memBefore already includes the first load).",
+      "results": ["results/phase2/mac_int8_4t.json", "results/phase2/mac_fp32_4t.json"]
+    }
+  }
+}
