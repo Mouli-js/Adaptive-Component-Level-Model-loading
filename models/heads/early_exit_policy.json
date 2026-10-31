@@ -1,0 +1,95 @@
+{
+  "split": "dev (last 2,000 of the 20,000-sentence training sample; seed 0)",
+  "rule": "smallest \u03c4 with agreementWithFull \u2265 0.99",
+  "chosen": {
+    "tau": 0.95,
+    "agreementWithFull": 0.991,
+    "exit1Frac": 0.2375,
+    "exit2Frac": 0.402,
+    "fullFrac": 0.3605,
+    "avgLayers": 4.246
+  },
+  "grid": [
+    {
+      "tau": 0.8,
+      "agreementWithFull": 0.955,
+      "exit1Frac": 0.627,
+      "exit2Frac": 0.256,
+      "fullFrac": 0.117,
+      "avgLayers": 2.98
+    },
+    {
+      "tau": 0.85,
+      "agreementWithFull": 0.965,
+      "exit1Frac": 0.538,
+      "exit2Frac": 0.2985,
+      "fullFrac": 0.1635,
+      "avgLayers": 3.251
+    },
+    {
+      "tau": 0.9,
+      "agreementWithFull": 0.9775,
+      "exit1Frac": 0.4025,
+      "exit2Frac": 0.363,
+      "fullFrac": 0.2345,
+      "avgLayers": 3.664
+    },
+    {
+      "tau": 0.925,
+      "agreementWithFull": 0.987,
+      "exit1Frac": 0.324,
+      "exit2Frac": 0.3835,
+      "fullFrac": 0.2925,
+      "avgLayers": 3.937
+    },
+    {
+      "tau": 0.95,
+      "agreementWithFull": 0.991,
+      "exit1Frac": 0.2375,
+      "exit2Frac": 0.402,
+      "fullFrac": 0.3605,
+      "avgLayers": 4.246
+    },
+    {
+      "tau": 0.96,
+      "agreementWithFull": 0.994,
+      "exit1Frac": 0.199,
+      "exit2Frac": 0.4,
+      "fullFrac": 0.401,
+      "avgLayers": 4.404
+    },
+    {
+      "tau": 0.97,
+      "agreementWithFull": 0.9955,
+      "exit1Frac": 0.1585,
+      "exit2Frac": 0.3905,
+      "fullFrac": 0.451,
+      "avgLayers": 4.585
+    },
+    {
+      "tau": 0.98,
+      "agreementWithFull": 0.9975,
+      "exit1Frac": 0.108,
+      "exit2Frac": 0.368,
+      "fullFrac": 0.524,
+      "avgLayers": 4.832
+    },
+    {
+      "tau": 0.99,
+      "agreementWithFull": 0.998,
+      "exit1Frac": 0.057,
+      "exit2Frac": 0.32,
+      "fullFrac": 0.623,
+      "avgLayers": 5.132
+    },
+    {
+      "tau": 0.995,
+      "agreementWithFull": 0.999,
+      "exit1Frac": 0.0315,
+      "exit2Frac": 0.264,
+      "fullFrac": 0.7045,
+      "avgLayers": 5.346
+    }
+  ],
+  "note": "features from the fp32 PyTorch backbone; WASM/int8 behaviour is measured separately in the browser"
+}

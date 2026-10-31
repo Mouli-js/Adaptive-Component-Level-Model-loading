@@ -7,6 +7,7 @@
 
 - v1.1: the mixed-precision setting is now C2 fp32 / rest int8, based on the Phase 1 sensitivity results (PHASE_1_REPORT I-1.1).
 - v1.2: D-2.1 approved (browser int8 validated against the WASM reference). F-5 and F-6 are mandatory in the final evaluation, and experiment E-B was added (§5).
+- v1.3 (Phase 5): decision engine = cost model + hard constraints (your review, 31 Oct). PIPELINED is implemented as pre-start inside chunk-major execution (I-5.7). Phase 7 must also refit hybrid/pre-start time predictions (I-5.1) and repeat the engine validation on your Mac.
 
 ---
 

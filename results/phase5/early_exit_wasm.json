@@ -1,0 +1,56 @@
+{
+  "int8": {
+    "precision": "int8",
+    "plan": {
+      "c0_embed": "int8",
+      "c1_l0_1": "int8",
+      "c2_l2_3": "int8",
+      "c3_l4_5_cls": "int8"
+    },
+    "tau": 0.95,
+    "n": 872,
+    "accuracy": 0.8990825688073395,
+    "accuracyWithoutEarlyExit": 0.9002293577981652,
+    "agreementWithNoExit": 0.9942660550458715,
+    "exit1Frac": 0.1720183486238532,
+    "exit2Frac": 0.2396788990825688,
+    "fullFrac": 0.588302752293578,
+    "note": "τ tuned on the dev split; this is the SST-2 validation set (evaluation only)"
+  },
+  "fp32": {
+    "precision": "fp32",
+    "plan": {
+      "c0_embed": "fp32",
+      "c1_l0_1": "fp32",
+      "c2_l2_3": "fp32",
+      "c3_l4_5_cls": "fp32"
+    },
+    "tau": 0.95,
+    "n": 872,
+    "accuracy": 0.9071100917431193,
+    "accuracyWithoutEarlyExit": 0.9105504587155964,
+    "agreementWithNoExit": 0.9873853211009175,
+    "exit1Frac": 0.2006880733944954,
+    "exit2Frac": 0.2396788990825688,
+    "fullFrac": 0.5596330275229358,
+    "note": "τ tuned on the dev split; this is the SST-2 validation set (evaluation only)"
+  },
+  "mixedC2": {
+    "precision": "mixedC2",
+    "plan": {
+      "c0_embed": "int8",
+      "c1_l0_1": "int8",
+      "c2_l2_3": "fp32",
+      "c3_l4_5_cls": "int8"
+    },
+    "tau": 0.95,
+    "n": 872,
+    "accuracy": 0.9059633027522935,
+    "accuracyWithoutEarlyExit": 0.908256880733945,
+    "agreementWithNoExit": 0.9954128440366973,
+    "exit1Frac": 0.1720183486238532,
+    "exit2Frac": 0.2511467889908257,
+    "fullFrac": 0.5768348623853211,
+    "note": "τ tuned on the dev split; this is the SST-2 validation set (evaluation only)"
+  }
+}

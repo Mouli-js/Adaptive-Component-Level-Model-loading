@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 5 — Decision Engine</title><link rel="icon" href="data:,">
+<script type="importmap">
+{ "imports": {
+  "onnxruntime-web": "/node_modules/onnxruntime-web/dist/ort.wasm.min.mjs",
+  "adaptive-onnx-loader": "/packages/adaptive-onnx-loader/src/index.js"
+} }
+</script>
+<style>
+  :root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4; --accent:#2563eb; --ok:#15803d; --bad:#b91c1c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1c1917; --fg:#f5f5f4; --muted:#a8a29e; --card:#292524; --line:#44403c; --accent:#60a5fa; --ok:#4ade80; --bad:#f87171; } }
+  body { font: 15px/1.5 system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; padding: 24px 16px; }
+  main { max-width: 900px; margin: auto; } h1 { font-size: 22px; margin: 0 0 4px } p.sub { color: var(--muted); margin: 0 0 20px }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; } label, select, button { font: inherit; }
+  button { padding: 8px 14px; border: 0; border-radius: 6px; background: var(--accent); color: #fff; cursor: pointer; } button:disabled { opacity: .5 }
+  ol { margin: 0; padding-left: 20px } pre { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 10px; overflow: auto; max-height: 380px; font-size: 12px; }
+  .ok { color: var(--ok); font-weight: 600 } .bad { color: var(--bad); font-weight: 600 }
+</style>
+</head>
+<body><main>
+  <h1>Decision engine</h1>
+  <p class="sub">Phase 5 · Cross-origin isolated: <span id="coi"></span></p>
+  <section>
+    <div class="row">
+      <label>Profile <select id="profile"><option value="">this browser</option><option>low</option><option selected>mid</option><option>high</option></select></label>
+      <label>Sentences per request <select id="spr"><option>1</option><option>32</option></select></label>
+      <label><input type="checkbox" id="ee"> Allow early exit (changes predictions)</label>
+      <label><input type="checkbox" id="cal" checked> Calibrate timings on this device</label>
+    </div>
+    <div class="row" style="margin-top:10px"><button id="decide">Decide</button><button id="run">Decide and run (8 sentences)</button></div>
+  </section>
+  <section><h2 style="font-size:16px;margin:0 0 8px">Why this plan</h2><ol id="why"><li>—</li></ol></section>
+  <section><div class="row"><button id="copy">Copy results</button></div><pre id="out">Results appear here.</pre></section>
+</main>
+<script type="module" src="./phase5-engine.js"></script>
+</body></html>

@@ -11,7 +11,10 @@
  *        cache (optional, Phase 4): { dbName, budgetBytes, verifyOnRead } — the Worker gets the
  *        chunk's bytes from IndexedDB itself (or downloads, verifies and stores them), so bytes
  *        never pass through the page. Without `cache` the behaviour is exactly Phase 3's.
- *   → { id, type:'run',  feeds }  (feeds' buffers TRANSFERRED) ← { id, ok, outputs, runMs, heapBytes } (outputs transferred back)
+ *   → { id, type:'run',  feeds, withExit? }  (feeds' buffers TRANSFERRED) ← { id, ok, outputs, runMs, heapBytes } (outputs transferred back)
+ *        Phase 5: if `load` also received `exitEntry`, the exit head lives in THIS Worker (same WASM
+ *        instance, no extra Worker overhead) and `withExit: true` adds `outputs.exitLogits`, computed
+ *        from this chunk's output hidden state.
  *   → { id, type:'release' }                                   ← { id, ok, heapBytes }
  * Errors: ← { id, ok:false, error }
  * Import maps don't apply inside Workers, so ORT's URL is passed in `init` (dependency injection).
@@ -23,7 +26,7 @@ import { ChunkStore } from '../cache/chunkStore.js';
 import { ChunkLoader } from '../cache/chunkLoader.js';
 
 installWasmMemoryProbe();                         // before ORT creates this Worker's heap
-let ort = null, chunk = null, store = null;
+let ort = null, chunk = null, store = null, exitHead = null;
 
 const handlers = {
   async init({ ortUrl, wasmPaths, numThreads = 1 }) {
@@ -32,7 +35,7 @@ const handlers = {
     ort.env.wasm.numThreads = numThreads;
     return {};
   },
-  async load({ entry, sessionOptions = {}, cache = null }) {
+  async load({ entry, sessionOptions = {}, cache = null, exitEntry = null }) {
     if (chunk) throw new Error('this worker already hosts a chunk');
     let bytes = null, cacheInfo = null;
     if (cache) {
@@ -44,14 +47,19 @@ const handlers = {
     }
     chunk = await ChunkSession.create(ort, entry, { sessionOptions, bytes });
     if (cacheInfo) chunk.stats.fetchMs = cacheInfo.getBytesMs;     // "time to obtain bytes", whichever tier answered
+    if (exitEntry) {
+      const eb = cache ? (await new ChunkLoader({ store, verifyOnRead: cache.verifyOnRead ?? true }).getBytes(exitEntry)).bytes : null;
+      exitHead = await ChunkSession.create(ort, exitEntry, { sessionOptions, bytes: eb });
+    }
     return { stats: { ...chunk.stats, cache: cacheInfo }, inputNames: chunk.inputNames, outputNames: chunk.outputNames };
   },
-  async run({ feeds }) {
+  async run({ feeds, withExit = false }) {
     const t0 = performance.now();
     const outputs = await chunk.run(feeds);
+    if (withExit && exitHead) outputs.exitLogits = (await exitHead.run({ hidden_in: outputs.hidden })).logits;
     return { outputs, runMs: performance.now() - t0, _transfer: transferList(outputs) };
   },
-  async release() { if (chunk) await chunk.release(); chunk = null; return {}; },
+  async release() { if (chunk) await chunk.release(); if (exitHead) await exitHead.release(); chunk = exitHead = null; return {}; },
 };
 
 self.onmessage = async ({ data: msg }) => {

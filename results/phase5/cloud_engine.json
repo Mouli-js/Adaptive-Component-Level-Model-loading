@@ -1,0 +1,1469 @@
+{
+  "date": "2026-10-31T15:30:27.808Z",
+  "scenarios": {
+    "S1": {
+      "profile": "low",
+      "overrides": {
+        "sentencesPerRequest": 1
+      },
+      "decided": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "forced": false,
+      "usableMiB": 127.5,
+      "predicted": {
+        "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+        "cost": 1,
+        "terms": {
+          "m": 1,
+          "t": 1,
+          "l": 1,
+          "n": 1
+        },
+        "accuracy": 0.9002293577981652,
+        "memory": {
+          "peakMiB": 90.3,
+          "workerWasmMiB": 84.9,
+          "pageTensorsMiB": 0.4,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 5,
+          "maxLiveWorkers": 1
+        },
+        "time": {
+          "perSentenceMs": 2013.1,
+          "computeMs": 48,
+          "reloadPerSentenceMs": 1965.1,
+          "transferMs": 1.6,
+          "initialLoadMs": 362207,
+          "startupsPerSentence": 4,
+          "effectiveGroupSize": 1
+        },
+        "network": {
+          "firstRequestMiB": 64.2,
+          "persistentCache": true,
+          "diskNeedMiB": 64.2
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 127489,
+            "fromDisk": 0,
+            "store": 79,
+            "verify": 28,
+            "create": 459,
+            "total": 128056
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 76473,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 17,
+            "create": 440,
+            "total": 76977
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 76473,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 17,
+            "create": 440,
+            "total": 76977
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 79689,
+            "fromDisk": 0,
+            "store": 50,
+            "verify": 18,
+            "create": 441,
+            "total": 80198
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"low\": allowance 150 MiB − 15% reserve = usable 127.5 MiB; minimum accuracy 0.9.",
+        "Hard constraints rejected 234 plans for memory and 0 for accuracy; 3 of 237 remain.",
+        "Chosen: int8 weights, one chunk Worker at a time, groups of 1.",
+        "Predicted peak memory 90.3 MiB (Workers 84.9 incl. ×1.1 uncertainty, tensors 0.4, overhead 5.0), 71% of the usable budget.",
+        "Predicted 2013.1 ms per sentence and 362.21 s initial load; accuracy 90.02%.",
+        "Weights m=0.6 t=0.2 l=0.2: lowest weighted cost 1.000 (next best int8|sequential|pin=-|G=8|pw=0|ee=0 at 1.017)."
+      ],
+      "candidates": {
+        "total": 237,
+        "rejected": {
+          "memory": 234,
+          "accuracy": 0,
+          "unverified": 0
+        },
+        "feasible": 3
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7116 ms)",
+      "run": {
+        "plan": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+        "n": 4,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 1,
+        "exits": {
+          "full": 4
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 77.19,
+          "predictedWasmMiBNoMargin": 77.19,
+          "predictedWasmMiBWithMargin": 84.91,
+          "errorPct": 0
+        },
+        "time": {
+          "measuredTotalMs": 8862,
+          "predictedTotalMs": 8053,
+          "errorPct": -9.1
+        },
+        "spawns": 16,
+        "maxLiveWorkers": 1,
+        "predictedMaxLiveWorkers": 1
+      },
+      "date": "2026-10-31T15:28:30.095Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 18.236
+    },
+    "S2": {
+      "profile": "low",
+      "overrides": {
+        "sentencesPerRequest": 32
+      },
+      "decided": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "forced": false,
+      "usableMiB": 127.5,
+      "predicted": {
+        "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+        "cost": 1.0773,
+        "terms": {
+          "m": 1.129,
+          "t": 1,
+          "l": 1,
+          "n": 1
+        },
+        "accuracy": 0.9002293577981652,
+        "memory": {
+          "peakMiB": 101.9,
+          "workerWasmMiB": 84.9,
+          "pageTensorsMiB": 12,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 5,
+          "maxLiveWorkers": 1
+        },
+        "time": {
+          "perSentenceMs": 107.8,
+          "computeMs": 47.8,
+          "reloadPerSentenceMs": 60,
+          "transferMs": 1.1,
+          "initialLoadMs": 362157,
+          "startupsPerSentence": 0.1,
+          "effectiveGroupSize": 32
+        },
+        "network": {
+          "firstRequestMiB": 64.2,
+          "persistentCache": true,
+          "diskNeedMiB": 64.2
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 127489,
+            "fromDisk": 0,
+            "store": 79,
+            "verify": 26,
+            "create": 447,
+            "total": 128041
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 76473,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 16,
+            "create": 430,
+            "total": 76965
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 76473,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 16,
+            "create": 430,
+            "total": 76965
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 79689,
+            "fromDisk": 0,
+            "store": 50,
+            "verify": 16,
+            "create": 431,
+            "total": 80186
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"low\": allowance 150 MiB − 15% reserve = usable 127.5 MiB; minimum accuracy 0.9.",
+        "Hard constraints rejected 234 plans for memory and 0 for accuracy; 3 of 237 remain.",
+        "Chosen: int8 weights, one chunk Worker at a time, groups of 32.",
+        "Predicted peak memory 101.9 MiB (Workers 84.9 incl. ×1.1 uncertainty, tensors 12.0, overhead 5.0), 80% of the usable budget.",
+        "Predicted 107.8 ms per sentence and 362.16 s initial load; accuracy 90.02%.",
+        "Weights m=0.6 t=0.2 l=0.2: lowest weighted cost 1.077 (next best int8|sequential|pin=-|G=8|pw=0|ee=0 at 1.351)."
+      ],
+      "candidates": {
+        "total": 237,
+        "rejected": {
+          "memory": 234,
+          "accuracy": 0,
+          "unverified": 0
+        },
+        "feasible": 3
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7052 ms)",
+      "run": {
+        "plan": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+        "n": 64,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 0.953125,
+        "exits": {
+          "full": 64
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 77.19,
+          "predictedWasmMiBNoMargin": 77.19,
+          "predictedWasmMiBWithMargin": 84.91,
+          "errorPct": 0
+        },
+        "time": {
+          "measuredTotalMs": 7423,
+          "predictedTotalMs": 6899,
+          "errorPct": -7.1
+        },
+        "spawns": 8,
+        "maxLiveWorkers": 1,
+        "predictedMaxLiveWorkers": 1
+      },
+      "date": "2026-10-31T15:28:47.496Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 16.853
+    },
+    "S3": {
+      "profile": "mid",
+      "overrides": {
+        "sentencesPerRequest": 1
+      },
+      "decided": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "forced": false,
+      "usableMiB": 435.2,
+      "predicted": {
+        "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "cost": 1.3102,
+        "terms": {
+          "m": 1.912,
+          "t": 1,
+          "l": 1,
+          "n": 1
+        },
+        "accuracy": 0.908256880733945,
+        "memory": {
+          "peakMiB": 401.9,
+          "workerWasmMiB": 390.5,
+          "pageTensorsMiB": 0.4,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 11,
+          "maxLiveWorkers": 4
+        },
+        "time": {
+          "perSentenceMs": 55.4,
+          "computeMs": 55.4,
+          "reloadPerSentenceMs": 0,
+          "transferMs": 1.2,
+          "initialLoadMs": 89799,
+          "startupsPerSentence": 0,
+          "effectiveGroupSize": 1
+        },
+        "network": {
+          "firstRequestMiB": 104.7,
+          "persistentCache": true,
+          "diskNeedMiB": 104.7
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 19178,
+            "fromDisk": 0,
+            "store": 79,
+            "verify": 27,
+            "create": 485,
+            "total": 19769
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 11526,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 16,
+            "create": 195,
+            "total": 11784
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 45482,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 64,
+            "create": 241,
+            "total": 45975
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 12008,
+            "fromDisk": 0,
+            "store": 50,
+            "verify": 17,
+            "create": 196,
+            "total": 12270
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"mid\": allowance 512 MiB − 15% reserve = usable 435.2 MiB; minimum accuracy 0.905.",
+        "Hard constraints rejected 76 plans for memory and 79 for accuracy; 82 of 237 remain.",
+        "Chosen: mixedC2 weights, all chunk Workers resident.",
+        "Predicted peak memory 401.9 MiB (Workers 390.5 incl. ×1.1 uncertainty, tensors 0.4, overhead 11.0), 92% of the usable budget.",
+        "Predicted 55.4 ms per sentence and 89.80 s initial load; accuracy 90.83%.",
+        "Weights m=0.34 t=0.33 l=0.33: lowest weighted cost 1.310 (next best mixedC2|hybrid|pin=c0+c2+c3|G=1|pw=0|ee=0 at 2.709)."
+      ],
+      "candidates": {
+        "total": 237,
+        "rejected": {
+          "memory": 76,
+          "accuracy": 79,
+          "unverified": 0
+        },
+        "feasible": 82
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7485 ms)",
+      "run": {
+        "plan": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "n": 32,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 0.96875,
+        "exits": {
+          "full": 32
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 355.06,
+          "predictedWasmMiBNoMargin": 354.99,
+          "predictedWasmMiBWithMargin": 390.49,
+          "errorPct": 0
+        },
+        "time": {
+          "measuredTotalMs": 3240,
+          "predictedTotalMs": 3192,
+          "errorPct": -1.5
+        },
+        "spawns": 4,
+        "maxLiveWorkers": 4,
+        "predictedMaxLiveWorkers": 4
+      },
+      "date": "2026-10-31T15:29:00.838Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 12.68
+    },
+    "S4": {
+      "profile": "high",
+      "overrides": {
+        "sentencesPerRequest": 1
+      },
+      "decided": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "forced": false,
+      "usableMiB": 1305.6,
+      "predicted": {
+        "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "cost": 1.1892,
+        "terms": {
+          "m": 2.89,
+          "t": 1,
+          "l": 1.001,
+          "n": 1
+        },
+        "accuracy": 0.9105504587155964,
+        "memory": {
+          "peakMiB": 905.9,
+          "workerWasmMiB": 894.6,
+          "pageTensorsMiB": 0.4,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 11,
+          "maxLiveWorkers": 4
+        },
+        "time": {
+          "perSentenceMs": 66.9,
+          "computeMs": 66.9,
+          "reloadPerSentenceMs": 0,
+          "transferMs": 1,
+          "initialLoadMs": 45643,
+          "startupsPerSentence": 0,
+          "effectiveGroupSize": 1
+        },
+        "network": {
+          "firstRequestMiB": 255.5,
+          "persistentCache": true,
+          "diskNeedMiB": 255.5
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 15296,
+            "fromDisk": 0,
+            "store": 318,
+            "verify": 112,
+            "create": 578,
+            "total": 16304
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 9116,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 66,
+            "create": 277,
+            "total": 9649
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 9116,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 66,
+            "create": 277,
+            "total": 9649
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 9496,
+            "fromDisk": 0,
+            "store": 197,
+            "verify": 69,
+            "create": 280,
+            "total": 10042
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"high\": allowance 1536 MiB − 15% reserve = usable 1305.6 MiB; minimum accuracy 0.91.",
+        "Hard constraints rejected 0 plans for memory and 158 for accuracy; 79 of 237 remain.",
+        "Chosen: fp32 weights, all chunk Workers resident.",
+        "Predicted peak memory 905.9 MiB (Workers 894.6 incl. ×1.1 uncertainty, tensors 0.4, overhead 11.0), 69% of the usable budget.",
+        "Predicted 66.9 ms per sentence and 45.64 s initial load; accuracy 91.06%.",
+        "Weights m=0.1 t=0.6 l=0.3: lowest weighted cost 1.189 (next best fp32|hybrid|pin=c0+c1+c3|G=1|pw=0|ee=0 at 5.221)."
+      ],
+      "candidates": {
+        "total": 237,
+        "rejected": {
+          "memory": 0,
+          "accuracy": 158,
+          "unverified": 0
+        },
+        "feasible": 79
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7358 ms)",
+      "run": {
+        "plan": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "n": 32,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 0.96875,
+        "exits": {
+          "full": 32
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 813.31,
+          "predictedWasmMiBNoMargin": 813.23,
+          "predictedWasmMiBWithMargin": 894.55,
+          "errorPct": 0
+        },
+        "time": {
+          "measuredTotalMs": 4207,
+          "predictedTotalMs": 4369,
+          "errorPct": 3.9
+        },
+        "spawns": 4,
+        "maxLiveWorkers": 4,
+        "predictedMaxLiveWorkers": 4
+      },
+      "date": "2026-10-31T15:29:15.718Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 14.293
+    },
+    "S5": {
+      "profile": "low",
+      "overrides": {
+        "sentencesPerRequest": 32,
+        "earlyExit": true,
+        "minAccuracy": 0.895
+      },
+      "decided": "int8|sequential|pin=-|G=32|pw=0|ee=1",
+      "forced": false,
+      "usableMiB": 127.5,
+      "predicted": {
+        "id": "int8|sequential|pin=-|G=32|pw=0|ee=1",
+        "cost": 1.0773,
+        "terms": {
+          "m": 1.129,
+          "t": 1,
+          "l": 1,
+          "n": 1
+        },
+        "accuracy": 0.8990825688073395,
+        "memory": {
+          "peakMiB": 101.9,
+          "workerWasmMiB": 84.9,
+          "pageTensorsMiB": 12,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 5,
+          "maxLiveWorkers": 1
+        },
+        "time": {
+          "perSentenceMs": 102.5,
+          "computeMs": 38.3,
+          "reloadPerSentenceMs": 64.2,
+          "transferMs": 0.7,
+          "initialLoadMs": 362289,
+          "startupsPerSentence": 0.1,
+          "effectiveGroupSize": 32
+        },
+        "network": {
+          "firstRequestMiB": 64.2,
+          "persistentCache": true,
+          "diskNeedMiB": 64.2
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 127489,
+            "fromDisk": 0,
+            "store": 79,
+            "verify": 26,
+            "create": 476,
+            "total": 128070
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 76473,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 16,
+            "create": 464,
+            "total": 76999
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 76473,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 16,
+            "create": 464,
+            "total": 76999
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 79689,
+            "fromDisk": 0,
+            "store": 50,
+            "verify": 16,
+            "create": 464,
+            "total": 80219
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"low\": allowance 150 MiB − 15% reserve = usable 127.5 MiB; minimum accuracy 0.895.",
+        "Hard constraints rejected 468 plans for memory and 0 for accuracy; 6 of 474 remain.",
+        "Chosen: int8 weights, one chunk Worker at a time, groups of 32, early exit ON (opted in).",
+        "Predicted peak memory 101.9 MiB (Workers 84.9 incl. ×1.1 uncertainty, tensors 12.0, overhead 5.0), 80% of the usable budget.",
+        "Predicted 102.5 ms per sentence and 362.29 s initial load; accuracy 89.91%.",
+        "Weights m=0.6 t=0.2 l=0.2: lowest weighted cost 1.077 (next best int8|sequential|pin=-|G=32|pw=0|ee=0 at 1.094)."
+      ],
+      "candidates": {
+        "total": 474,
+        "rejected": {
+          "memory": 468,
+          "accuracy": 0,
+          "unverified": 0
+        },
+        "feasible": 6
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7362 ms)",
+      "run": {
+        "plan": "int8|sequential|pin=-|G=32|pw=0|ee=1",
+        "n": 64,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 0.953125,
+        "exits": {
+          "e1": 10,
+          "e2": 20,
+          "full": 34
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 77.19,
+          "predictedWasmMiBNoMargin": 77.19,
+          "predictedWasmMiBWithMargin": 84.91,
+          "errorPct": 0
+        },
+        "time": {
+          "measuredTotalMs": 7092,
+          "predictedTotalMs": 6559,
+          "errorPct": -7.5
+        },
+        "spawns": 8,
+        "maxLiveWorkers": 1,
+        "predictedMaxLiveWorkers": 1
+      },
+      "date": "2026-10-31T15:29:31.989Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 15.615
+    },
+    "S6": {
+      "profile": "mid",
+      "overrides": {
+        "sentencesPerRequest": 1,
+        "earlyExit": true
+      },
+      "decided": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+      "forced": false,
+      "usableMiB": 435.2,
+      "predicted": {
+        "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+        "cost": 1.3529,
+        "terms": {
+          "m": 2.037,
+          "t": 1,
+          "l": 1,
+          "n": 1
+        },
+        "accuracy": 0.9059633027522935,
+        "memory": {
+          "peakMiB": 428.3,
+          "workerWasmMiB": 416.9,
+          "pageTensorsMiB": 0.4,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 11,
+          "maxLiveWorkers": 4
+        },
+        "time": {
+          "perSentenceMs": 44.2,
+          "computeMs": 44.2,
+          "reloadPerSentenceMs": 0,
+          "transferMs": 0.9,
+          "initialLoadMs": 89770,
+          "startupsPerSentence": 0,
+          "effectiveGroupSize": 1
+        },
+        "network": {
+          "firstRequestMiB": 104.7,
+          "persistentCache": true,
+          "diskNeedMiB": 104.7
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 19178,
+            "fromDisk": 0,
+            "store": 79,
+            "verify": 25,
+            "create": 452,
+            "total": 19735
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 11526,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 15,
+            "create": 170,
+            "total": 11759
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 45482,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 59,
+            "create": 302,
+            "total": 46032
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 12008,
+            "fromDisk": 0,
+            "store": 50,
+            "verify": 16,
+            "create": 171,
+            "total": 12244
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"mid\": allowance 512 MiB − 15% reserve = usable 435.2 MiB; minimum accuracy 0.905.",
+        "Hard constraints rejected 162 plans for memory and 158 for accuracy; 154 of 474 remain.",
+        "Chosen: mixedC2 weights, all chunk Workers resident, early exit ON (opted in).",
+        "Predicted peak memory 428.3 MiB (Workers 416.9 incl. ×1.1 uncertainty, tensors 0.4, overhead 11.0), 98% of the usable budget.",
+        "Predicted 44.2 ms per sentence and 89.77 s initial load; accuracy 90.60%.",
+        "Weights m=0.34 t=0.33 l=0.33: lowest weighted cost 1.353 (next best mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0 at 1.384)."
+      ],
+      "candidates": {
+        "total": 474,
+        "rejected": {
+          "memory": 162,
+          "accuracy": 158,
+          "unverified": 0
+        },
+        "feasible": 154
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7496 ms)",
+      "run": {
+        "plan": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+        "n": 32,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 0.96875,
+        "exits": {
+          "e1": 8,
+          "e2": 9,
+          "full": 15
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 355.06,
+          "predictedWasmMiBNoMargin": 378.99,
+          "predictedWasmMiBWithMargin": 416.89,
+          "errorPct": 6.7
+        },
+        "time": {
+          "measuredTotalMs": 3187,
+          "predictedTotalMs": 2795,
+          "errorPct": -12.3
+        },
+        "spawns": 4,
+        "maxLiveWorkers": 4,
+        "predictedMaxLiveWorkers": 4
+      },
+      "date": "2026-10-31T15:29:44.140Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 11.584
+    },
+    "F1": {
+      "profile": "mid",
+      "overrides": {},
+      "decided": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "forced": true,
+      "usableMiB": 435.2,
+      "predicted": {
+        "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "cost": 1.3102,
+        "terms": {
+          "m": 1.912,
+          "t": 1,
+          "l": 1,
+          "n": 1
+        },
+        "accuracy": 0.908256880733945,
+        "memory": {
+          "peakMiB": 401.9,
+          "workerWasmMiB": 390.5,
+          "pageTensorsMiB": 0.4,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 11,
+          "maxLiveWorkers": 4
+        },
+        "time": {
+          "perSentenceMs": 55.4,
+          "computeMs": 55.4,
+          "reloadPerSentenceMs": 0,
+          "transferMs": 1.3,
+          "initialLoadMs": 89854,
+          "startupsPerSentence": 0,
+          "effectiveGroupSize": 1
+        },
+        "network": {
+          "firstRequestMiB": 104.7,
+          "persistentCache": true,
+          "diskNeedMiB": 104.7
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 19178,
+            "fromDisk": 0,
+            "store": 79,
+            "verify": 28,
+            "create": 476,
+            "total": 19761
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 11526,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 17,
+            "create": 199,
+            "total": 11789
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 45482,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 66,
+            "create": 291,
+            "total": 46028
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 12008,
+            "fromDisk": 0,
+            "store": 50,
+            "verify": 17,
+            "create": 201,
+            "total": 12276
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"mid\": allowance 512 MiB − 15% reserve = usable 435.2 MiB; minimum accuracy 0.905.",
+        "Hard constraints rejected 76 plans for memory and 79 for accuracy; 82 of 237 remain.",
+        "Chosen: mixedC2 weights, all chunk Workers resident.",
+        "Predicted peak memory 401.9 MiB (Workers 390.5 incl. ×1.1 uncertainty, tensors 0.4, overhead 11.0), 92% of the usable budget.",
+        "Predicted 55.4 ms per sentence and 89.85 s initial load; accuracy 90.83%.",
+        "Weights m=0.34 t=0.33 l=0.33: lowest weighted cost 1.310 (next best mixedC2|hybrid|pin=c0+c2+c3|G=1|pw=0|ee=0 at 2.730)."
+      ],
+      "candidates": {
+        "total": 237,
+        "rejected": {
+          "memory": 76,
+          "accuracy": 79,
+          "unverified": 0
+        },
+        "feasible": 82
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7519 ms)",
+      "run": {
+        "plan": "int8|hybrid|pin=c0|G=8|pw=1|ee=0",
+        "n": 16,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 1,
+        "exits": {
+          "full": 16
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 123.56,
+          "predictedWasmMiBNoMargin": 168.79,
+          "predictedWasmMiBWithMargin": 185.67,
+          "errorPct": 36.6
+        },
+        "time": {
+          "measuredTotalMs": 2214,
+          "predictedTotalMs": 1712,
+          "errorPct": -22.7
+        },
+        "spawns": 7,
+        "maxLiveWorkers": 2,
+        "predictedMaxLiveWorkers": 3
+      },
+      "date": "2026-10-31T15:29:56.015Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 11.242
+    },
+    "F2": {
+      "profile": "high",
+      "overrides": {},
+      "decided": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "forced": true,
+      "usableMiB": 1305.6,
+      "predicted": {
+        "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "cost": 1.1893,
+        "terms": {
+          "m": 2.89,
+          "t": 1,
+          "l": 1.001,
+          "n": 1
+        },
+        "accuracy": 0.9105504587155964,
+        "memory": {
+          "peakMiB": 905.9,
+          "workerWasmMiB": 894.6,
+          "pageTensorsMiB": 0.4,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 11,
+          "maxLiveWorkers": 4
+        },
+        "time": {
+          "perSentenceMs": 73,
+          "computeMs": 73,
+          "reloadPerSentenceMs": 0,
+          "transferMs": 1,
+          "initialLoadMs": 45622,
+          "startupsPerSentence": 0,
+          "effectiveGroupSize": 1
+        },
+        "network": {
+          "firstRequestMiB": 255.5,
+          "persistentCache": true,
+          "diskNeedMiB": 255.5
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 15296,
+            "fromDisk": 0,
+            "store": 318,
+            "verify": 123,
+            "create": 554,
+            "total": 16291
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 9116,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 73,
+            "create": 267,
+            "total": 9646
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 9116,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 73,
+            "create": 267,
+            "total": 9646
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 9496,
+            "fromDisk": 0,
+            "store": 197,
+            "verify": 76,
+            "create": 271,
+            "total": 10040
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"high\": allowance 1536 MiB − 15% reserve = usable 1305.6 MiB; minimum accuracy 0.91.",
+        "Hard constraints rejected 0 plans for memory and 158 for accuracy; 79 of 237 remain.",
+        "Chosen: fp32 weights, all chunk Workers resident.",
+        "Predicted peak memory 905.9 MiB (Workers 894.6 incl. ×1.1 uncertainty, tensors 0.4, overhead 11.0), 69% of the usable budget.",
+        "Predicted 73.0 ms per sentence and 45.62 s initial load; accuracy 91.06%.",
+        "Weights m=0.1 t=0.6 l=0.3: lowest weighted cost 1.189 (next best fp32|hybrid|pin=c0+c1+c3|G=1|pw=0|ee=0 at 4.752)."
+      ],
+      "candidates": {
+        "total": 237,
+        "rejected": {
+          "memory": 0,
+          "accuracy": 158,
+          "unverified": 0
+        },
+        "feasible": 79
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7211 ms)",
+      "run": {
+        "plan": "fp32|sequential|pin=-|G=8|pw=1|ee=0",
+        "n": 16,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 1,
+        "exits": {
+          "full": 16
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 280.13,
+          "predictedWasmMiBNoMargin": 466.33,
+          "predictedWasmMiBWithMargin": 512.96,
+          "errorPct": 66.5
+        },
+        "time": {
+          "measuredTotalMs": 6459,
+          "predictedTotalMs": 4229,
+          "errorPct": -34.5
+        },
+        "spawns": 8,
+        "maxLiveWorkers": 1,
+        "predictedMaxLiveWorkers": 2
+      },
+      "date": "2026-10-31T15:30:13.873Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 17.191
+    },
+    "F3": {
+      "profile": "mid",
+      "overrides": {},
+      "decided": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "forced": true,
+      "usableMiB": 435.2,
+      "predicted": {
+        "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "cost": 1.3102,
+        "terms": {
+          "m": 1.912,
+          "t": 1,
+          "l": 1,
+          "n": 1
+        },
+        "accuracy": 0.908256880733945,
+        "memory": {
+          "peakMiB": 401.9,
+          "workerWasmMiB": 390.5,
+          "pageTensorsMiB": 0.4,
+          "cachedBytesMiB": 0,
+          "browserOverheadMiB": 11,
+          "maxLiveWorkers": 4
+        },
+        "time": {
+          "perSentenceMs": 55,
+          "computeMs": 55,
+          "reloadPerSentenceMs": 0,
+          "transferMs": 1.1,
+          "initialLoadMs": 89750,
+          "startupsPerSentence": 0,
+          "effectiveGroupSize": 1
+        },
+        "network": {
+          "firstRequestMiB": 104.7,
+          "persistentCache": true,
+          "diskNeedMiB": 104.7
+        },
+        "loadBreakdownFirst": [
+          {
+            "chunk": "c0_embed",
+            "download": 19178,
+            "fromDisk": 0,
+            "store": 79,
+            "verify": 26,
+            "create": 453,
+            "total": 19737
+          },
+          {
+            "chunk": "c1_l0_1",
+            "download": 11526,
+            "fromDisk": 0,
+            "store": 48,
+            "verify": 15,
+            "create": 183,
+            "total": 11772
+          },
+          {
+            "chunk": "c2_l2_3",
+            "download": 45482,
+            "fromDisk": 0,
+            "store": 189,
+            "verify": 61,
+            "create": 251,
+            "total": 45983
+          },
+          {
+            "chunk": "c3_l4_5_cls",
+            "download": 12008,
+            "fromDisk": 0,
+            "store": 50,
+            "verify": 16,
+            "create": 184,
+            "total": 12258
+          }
+        ]
+      },
+      "explanation": [
+        "Profile \"mid\": allowance 512 MiB − 15% reserve = usable 435.2 MiB; minimum accuracy 0.905.",
+        "Hard constraints rejected 76 plans for memory and 79 for accuracy; 82 of 237 remain.",
+        "Chosen: mixedC2 weights, all chunk Workers resident.",
+        "Predicted peak memory 401.9 MiB (Workers 390.5 incl. ×1.1 uncertainty, tensors 0.4, overhead 11.0), 92% of the usable budget.",
+        "Predicted 55.0 ms per sentence and 89.75 s initial load; accuracy 90.83%.",
+        "Weights m=0.34 t=0.33 l=0.33: lowest weighted cost 1.310 (next best mixedC2|hybrid|pin=c0+c2+c3|G=1|pw=0|ee=0 at 2.634)."
+      ],
+      "candidates": {
+        "total": 237,
+        "rejected": {
+          "memory": 76,
+          "accuracy": 79,
+          "unverified": 0
+        },
+        "feasible": 82
+      },
+      "calibration": "calibrated on this device (3 loads × 2 precisions, 17 sentences after 3 warm-up runs; 7280 ms)",
+      "run": {
+        "plan": "mixedC2|hybrid|pin=c2|G=8|pw=0|ee=0",
+        "n": 16,
+        "maxAbsDiffVsRef": 0,
+        "exitMismatch": 0,
+        "accuracyOnSample": 1,
+        "exits": {
+          "full": 16
+        },
+        "memory": {
+          "measuredPeakWasmMiB": 263.44,
+          "predictedWasmMiBNoMargin": 263.39,
+          "predictedWasmMiBWithMargin": 289.73,
+          "errorPct": 0
+        },
+        "time": {
+          "measuredTotalMs": 3377,
+          "predictedTotalMs": 2292,
+          "errorPct": -32.2
+        },
+        "spawns": 7,
+        "maxLiveWorkers": 2,
+        "predictedMaxLiveWorkers": 2
+      },
+      "date": "2026-10-31T15:30:27.656Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "wallS": 13.224
+    }
+  },
+  "checks": [
+    {
+      "scenario": "S1",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "S1",
+      "name": "outputs = reference (Δ = 0)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S1",
+      "name": "measured peak WASM ≤ usable budget",
+      "ok": true,
+      "detail": "77.19 ≤ 127.5 MiB"
+    },
+    {
+      "scenario": "S1",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "77.19 ≤ 84.91 MiB"
+    },
+    {
+      "scenario": "S1",
+      "name": "memory prediction within ±15% (no prewarm: fully observable)",
+      "ok": true,
+      "detail": "0% (pred 77.19, meas 77.19)"
+    },
+    {
+      "scenario": "S1",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "1 ≤ 1"
+    },
+    {
+      "scenario": "S2",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "S2",
+      "name": "outputs = reference (Δ = 0)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S2",
+      "name": "measured peak WASM ≤ usable budget",
+      "ok": true,
+      "detail": "77.19 ≤ 127.5 MiB"
+    },
+    {
+      "scenario": "S2",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "77.19 ≤ 84.91 MiB"
+    },
+    {
+      "scenario": "S2",
+      "name": "memory prediction within ±15% (no prewarm: fully observable)",
+      "ok": true,
+      "detail": "0% (pred 77.19, meas 77.19)"
+    },
+    {
+      "scenario": "S2",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "1 ≤ 1"
+    },
+    {
+      "scenario": "S3",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "S3",
+      "name": "outputs = reference (Δ < 1e-4)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S3",
+      "name": "measured peak WASM ≤ usable budget",
+      "ok": true,
+      "detail": "355.06 ≤ 435.2 MiB"
+    },
+    {
+      "scenario": "S3",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "355.06 ≤ 390.49 MiB"
+    },
+    {
+      "scenario": "S3",
+      "name": "memory prediction within ±15% (no prewarm: fully observable)",
+      "ok": true,
+      "detail": "0% (pred 354.99, meas 355.06)"
+    },
+    {
+      "scenario": "S3",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "4 ≤ 4"
+    },
+    {
+      "scenario": "S4",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "S4",
+      "name": "outputs = reference (Δ < 1e-4)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S4",
+      "name": "measured peak WASM ≤ usable budget",
+      "ok": true,
+      "detail": "813.31 ≤ 1305.6 MiB"
+    },
+    {
+      "scenario": "S4",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "813.31 ≤ 894.55 MiB"
+    },
+    {
+      "scenario": "S4",
+      "name": "memory prediction within ±15% (no prewarm: fully observable)",
+      "ok": true,
+      "detail": "0% (pred 813.23, meas 813.31)"
+    },
+    {
+      "scenario": "S4",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "4 ≤ 4"
+    },
+    {
+      "scenario": "S5",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "S5",
+      "name": "outputs = reference (Δ = 0)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S5",
+      "name": "early-exit points identical to reference",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S5",
+      "name": "measured peak WASM ≤ usable budget",
+      "ok": true,
+      "detail": "77.19 ≤ 127.5 MiB"
+    },
+    {
+      "scenario": "S5",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "77.19 ≤ 84.91 MiB"
+    },
+    {
+      "scenario": "S5",
+      "name": "memory prediction within ±15% (no prewarm: fully observable)",
+      "ok": true,
+      "detail": "0% (pred 77.19, meas 77.19)"
+    },
+    {
+      "scenario": "S5",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "1 ≤ 1"
+    },
+    {
+      "scenario": "S6",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "S6",
+      "name": "outputs = reference (Δ = 0)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S6",
+      "name": "early-exit points identical to reference",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "S6",
+      "name": "measured peak WASM ≤ usable budget",
+      "ok": true,
+      "detail": "355.06 ≤ 435.2 MiB"
+    },
+    {
+      "scenario": "S6",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "355.06 ≤ 416.89 MiB"
+    },
+    {
+      "scenario": "S6",
+      "name": "memory prediction within ±15% (no prewarm: fully observable)",
+      "ok": true,
+      "detail": "6.7% (pred 378.99, meas 355.06)"
+    },
+    {
+      "scenario": "S6",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "4 ≤ 4"
+    },
+    {
+      "scenario": "F1",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "F1",
+      "name": "outputs = reference (Δ = 0)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "F1",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "123.56 ≤ 185.67 MiB"
+    },
+    {
+      "scenario": "F1",
+      "name": "prewarm: prediction is an upper bound (reported, not gated)",
+      "ok": true,
+      "detail": "36.6% (pred 168.79, meas 123.56)"
+    },
+    {
+      "scenario": "F1",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "2 ≤ 3"
+    },
+    {
+      "scenario": "F2",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "F2",
+      "name": "outputs = reference (Δ < 1e-4)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "F2",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "280.13 ≤ 512.96 MiB"
+    },
+    {
+      "scenario": "F2",
+      "name": "prewarm: prediction is an upper bound (reported, not gated)",
+      "ok": true,
+      "detail": "66.5% (pred 466.33, meas 280.13)"
+    },
+    {
+      "scenario": "F2",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "1 ≤ 2"
+    },
+    {
+      "scenario": "F3",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "scenario": "F3",
+      "name": "outputs = reference (Δ < 1e-4)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "scenario": "F3",
+      "name": "memory prediction never underestimates (measured ≤ predicted incl. margin)",
+      "ok": true,
+      "detail": "263.44 ≤ 289.73 MiB"
+    },
+    {
+      "scenario": "F3",
+      "name": "memory prediction within ±15% (no prewarm: fully observable)",
+      "ok": true,
+      "detail": "0% (pred 263.39, meas 263.44)"
+    },
+    {
+      "scenario": "F3",
+      "name": "live Workers ≤ predicted",
+      "ok": true,
+      "detail": "2 ≤ 2"
+    }
+  ]
+}

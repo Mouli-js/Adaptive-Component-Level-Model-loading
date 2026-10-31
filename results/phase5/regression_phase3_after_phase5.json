@@ -1,0 +1,632 @@
+{
+  "date": "2026-10-31T15:32:50.175Z",
+  "limit": 872,
+  "threads": 1,
+  "results": [
+    {
+      "experiment": "A-mainChain",
+      "precision": "int8",
+      "threads": 1,
+      "date": "2026-10-31T15:31:19.964Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 0.9782110091743119,
+      "maxAbsDiffVsPytorch": 4.358368056907654,
+      "loadMs": 845.4350000000559,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "bytes": 23847966,
+          "fetchMs": 71.4199999999255,
+          "createMs": 355.6099999998696
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 53.52999999979511,
+          "createMs": 29.200000000186265
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 134.63999999966472,
+          "createMs": 49.34500000020489
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "bytes": 14885516,
+          "fetchMs": 117.01500000013039,
+          "createMs": 30.305000000167638
+        }
+      ],
+      "wasmHeapMiB": {
+        "loaded": 111.2,
+        "afterRelease": 111.2
+      },
+      "latencyMs": {
+        "mean": 44.57354357797405,
+        "p50": 43.46999999973923,
+        "p90": 65.73999999975786
+      },
+      "meanChunkRunMs": [
+        0.1601032109988785,
+        14.748669724777947,
+        14.723738532108596,
+        14.8305619266023
+      ],
+      "wallS": 39.739,
+      "pageErrors": []
+    },
+    {
+      "experiment": "B-workersResident",
+      "precision": "int8",
+      "mode": "resident",
+      "threads": 1,
+      "date": "2026-10-31T15:32:02.741Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 0.9782110091743119,
+      "maxAbsDiffVsPytorch": 4.358368056907654,
+      "loadMs": 1430.8500000000931,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "bytes": 23847966,
+          "fetchMs": 89.36499999975786,
+          "createMs": 371.07500000018626,
+          "cache": null,
+          "spawnInitMs": 44.61500000022352,
+          "totalMs": 505.9250000002794,
+          "heapBytes": 80936960
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 57.794999999925494,
+          "createMs": 212.49500000011176,
+          "cache": null,
+          "spawnInitMs": 32.93999999994412,
+          "totalMs": 305.60000000009313,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 105.80500000016764,
+          "createMs": 160.22499999962747,
+          "cache": null,
+          "spawnInitMs": 77.375,
+          "totalMs": 344.45000000018626,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "bytes": 14885516,
+          "fetchMs": 103.58499999996275,
+          "createMs": 123.05500000016764,
+          "cache": null,
+          "spawnInitMs": 46.69499999983236,
+          "totalMs": 274.5800000000745,
+          "heapBytes": 48627712
+        }
+      ],
+      "totalMs": 40589.29000000004,
+      "meanMsPerSentence": 46.54735091743124,
+      "perChunk": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "meanRunMs": 0.21261467889950977,
+          "meanMessageOverheadMs": 0.26364105505016505
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "meanRunMs": 15.057081422010766,
+          "meanMessageOverheadMs": 0.3568405963404642
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "meanRunMs": 14.923830275233716,
+          "meanMessageOverheadMs": 0.3875745412804947
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "meanRunMs": 14.913463302760881,
+          "meanMessageOverheadMs": 0.38884747705268546
+        }
+      ],
+      "maxActivationMiB": 0,
+      "peakLiveHeapMiB": 214.1,
+      "liveHeapAfterReleaseMiB": 0,
+      "pageHeapMiB": 0,
+      "timeline": [
+        {
+          "t": 506,
+          "event": "loaded",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "workerHeapBytes": 80936960,
+          "liveHeapMiB": 77.2
+        },
+        {
+          "t": 812,
+          "event": "loaded",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 2,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 122.4
+        },
+        {
+          "t": 1156,
+          "event": "loaded",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 3,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 167.7
+        },
+        {
+          "t": 1431,
+          "event": "loaded",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 4,
+          "workerHeapBytes": 48627712,
+          "liveHeapMiB": 214.1
+        },
+        {
+          "t": 42059,
+          "event": "terminated",
+          "chunk": "c0_embed",
+          "liveWorkers": 3,
+          "liveHeapMiB": 136.9
+        },
+        {
+          "t": 42059,
+          "event": "terminated",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 2,
+          "liveHeapMiB": 91.6
+        },
+        {
+          "t": 42059,
+          "event": "terminated",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "liveHeapMiB": 46.4
+        },
+        {
+          "t": 42059,
+          "event": "terminated",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        }
+      ],
+      "wallS": 42.082,
+      "pageErrors": []
+    },
+    {
+      "experiment": "C-workersSequential",
+      "precision": "int8",
+      "mode": "sequential",
+      "threads": 1,
+      "date": "2026-10-31T15:32:45.430Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 0.9782110091743119,
+      "maxAbsDiffVsPytorch": 4.358368056907654,
+      "loadMs": 0.02000000001862645,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "bytes": 23847966,
+          "fetchMs": 134.83499999996275,
+          "createMs": 369.16500000003725,
+          "cache": null,
+          "spawnInitMs": 27.455000000074506,
+          "totalMs": 532.3250000001863,
+          "heapBytes": 80936960
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 63.375,
+          "createMs": 430.2599999997765,
+          "cache": null,
+          "spawnInitMs": 52.47500000009313,
+          "totalMs": 552.5150000001304,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 50.58499999996275,
+          "createMs": 382.13500000024214,
+          "cache": null,
+          "spawnInitMs": 33.169999999925494,
+          "totalMs": 466.8650000002235,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "bytes": 14885516,
+          "fetchMs": 53.47000000020489,
+          "createMs": 430.7050000000745,
+          "cache": null,
+          "spawnInitMs": 34.64500000001863,
+          "totalMs": 519.7949999999255,
+          "heapBytes": 48627712
+        }
+      ],
+      "totalMs": 41973.81999999983,
+      "meanMsPerSentence": 48.13511467889889,
+      "perChunk": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "meanRunMs": 0.11603784403676133,
+          "meanMessageOverheadMs": 0.09892775228411523
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "meanRunMs": 14.517660550458075,
+          "meanMessageOverheadMs": 0.40191513761117575
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "meanRunMs": 14.848342889910265,
+          "meanMessageOverheadMs": 0.41045871558663255
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "meanRunMs": 14.912201834856981,
+          "meanMessageOverheadMs": 0.4025458715692667
+        }
+      ],
+      "maxActivationMiB": 64.3,
+      "peakLiveHeapMiB": 77.2,
+      "liveHeapAfterReleaseMiB": 0,
+      "pageHeapMiB": 0,
+      "timeline": [
+        {
+          "t": 569,
+          "event": "loaded",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "workerHeapBytes": 80936960,
+          "liveHeapMiB": 77.2
+        },
+        {
+          "t": 758,
+          "event": "ran",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 77.2
+        },
+        {
+          "t": 758,
+          "event": "terminated",
+          "chunk": "c0_embed",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 1311,
+          "event": "loaded",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 1,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 14332,
+          "event": "ran",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 14332,
+          "event": "terminated",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 14799,
+          "event": "loaded",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 28118,
+          "event": "ran",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 28118,
+          "event": "terminated",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 28638,
+          "event": "loaded",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 1,
+          "workerHeapBytes": 48627712,
+          "liveHeapMiB": 46.4
+        },
+        {
+          "t": 42010,
+          "event": "ran",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 1,
+          "activationBytes": 0,
+          "liveHeapMiB": 46.4
+        },
+        {
+          "t": 42010,
+          "event": "terminated",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        }
+      ],
+      "wallS": 42.031,
+      "pageErrors": []
+    },
+    {
+      "experiment": "D-memoryProof",
+      "precision": "int8",
+      "threads": 1,
+      "date": "2026-10-31T15:32:48.568Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "steps": [
+        {
+          "label": "0 · page only, no Workers",
+          "uaMiB": 2.9,
+          "uaError": null,
+          "ms": 18,
+          "probeLiveMiB": 0
+        },
+        {
+          "label": "1 · 4 resident chunk Workers loaded",
+          "uaMiB": 223.7,
+          "uaError": null,
+          "ms": 30,
+          "probeLiveMiB": 214.1
+        },
+        {
+          "label": "2 · session.release() in every Worker (Workers still alive)",
+          "uaMiB": 223.7,
+          "uaError": null,
+          "ms": 23,
+          "probeLiveMiB": 214.1
+        },
+        {
+          "label": "3 · all Workers terminated",
+          "uaMiB": 3,
+          "uaError": null,
+          "ms": 17,
+          "probeLiveMiB": 0
+        }
+      ],
+      "wallS": 2.459,
+      "pageErrors": []
+    },
+    {
+      "experiment": "E-baseOverhead",
+      "threads": 1,
+      "date": "2026-10-31T15:32:49.987Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "workers": [
+        {
+          "graph": "e1_after_c1/fp32",
+          "fileMiB": 2.3,
+          "workerHeapMiB": 19.3,
+          "spawnInitMs": 28,
+          "createMs": 358
+        },
+        {
+          "graph": "e1_after_c1/int8",
+          "fileMiB": 0.6,
+          "workerHeapMiB": 16,
+          "spawnInitMs": 28,
+          "createMs": 340
+        }
+      ],
+      "wallS": 0.782,
+      "pageErrors": []
+    }
+  ],
+  "checks": [
+    {
+      "config": "A/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "int8 Δ vs chain reference = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9002293577981652
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "int8 Δ vs chain reference = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9002293577981652
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "live heap after release = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "int8 Δ vs chain reference = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9002293577981652
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "live heap after release = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "never more than 1 Worker alive",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "D/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "D/int8/1t",
+      "name": "UA memory API available",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "config": "D/int8/1t",
+      "name": "terminate() frees ≥ 90% of what loading added",
+      "ok": true,
+      "detail": "added 220.8 MiB, freed 220.7 MiB"
+    },
+    {
+      "config": "D/int8/1t",
+      "name": "release() alone frees < 10% (heap retained, F-4)",
+      "ok": true,
+      "detail": "freed 0.0 MiB"
+    },
+    {
+      "config": "E/-/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    }
+  ]
+}

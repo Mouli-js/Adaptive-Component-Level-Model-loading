@@ -20,7 +20,8 @@
         "results/phase3/cloud_ABCD_fp32.json",
         "results/phase3/cloud_D_int8_E.json",
         "results/phase4/cloud_int8.json",
-        "results/phase4/cloud_fp32.json"
+        "results/phase4/cloud_fp32.json",
+        "results/phase5/cloud_engine.json"
       ],
       "note": "Phase 3: 1 thread per InferenceSession and per chunk Worker."
     },

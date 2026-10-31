@@ -1,0 +1,15 @@
+{
+  "precision": "mixedC2",
+  "n": 872,
+  "accuracy": 0.908256880733945,
+  "plan": {
+    "c0_embed": "int8",
+    "c1_l0_1": "int8",
+    "c2_l2_3": "fp32",
+    "c3_l4_5_cls": "int8"
+  },
+  "comparedWith": "onnxruntime-web WASM full int8 model",
+  "maxAbsLogitDiff": 4.03235399723053,
+  "predictionAgreement": 0.9805045871559633,
+  "seconds": 52.009
+}

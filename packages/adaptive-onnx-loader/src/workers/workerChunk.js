@@ -25,21 +25,21 @@ export class WorkerChunk {
   }
 
   /** Spawn the Worker, start ORT in it, load the chunk. */
-  static async spawn(entry, { workerUrl, ortUrl, wasmPaths, numThreads = 1, sessionOptions = {}, cache = null }) {
+  static async spawn(entry, { workerUrl, ortUrl, wasmPaths, numThreads = 1, sessionOptions = {}, cache = null, exitEntry = null }) {
     const t0 = performance.now();
     const wc = new WorkerChunk(entry, new Worker(workerUrl, { type: 'module', name: entry.name }));
     await wc.call('init', { ortUrl, wasmPaths, numThreads });
     const t1 = performance.now();
-    const r = await wc.call('load', { entry, sessionOptions, cache });
+    const r = await wc.call('load', { entry, sessionOptions, cache, exitEntry });
     wc.stats = { ...r.stats, spawnInitMs: t1 - t0, totalMs: performance.now() - t0, heapBytes: r.heapBytes };
     wc.inputNames = r.inputNames; wc.outputNames = r.outputNames;
     return wc;
   }
 
   /** Run once. `feeds` buffers are transferred (caller must not reuse them). */
-  async run(feeds) {
+  async run(feeds, { withExit = false } = {}) {
     const t0 = performance.now();
-    const r = await this.call('run', { feeds }, transferList(feeds));
+    const r = await this.call('run', { feeds, withExit }, transferList(feeds));
     const roundTripMs = performance.now() - t0;
     return { outputs: r.outputs, runMs: r.runMs, overheadMs: roundTripMs - r.runMs };
   }
