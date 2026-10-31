@@ -9,7 +9,7 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 0 | Planning and setup | 31 Oct – 1 Nov | 31 Oct | ✅ Approved 31 Oct | `docs/phase-reports/PHASE_0_REPORT.md` |
 | 1 | Model preparation (Python) | 2 – 6 Nov | 31 Oct | ✅ Approved 31 Oct · commit `437548f` | `docs/phase-reports/PHASE_1_REPORT.md` |
 | 2 | Baseline browser inference | 7 – 9 Nov | 31 Oct | ✅ Approved 31 Oct after the Mac verification passed (all checks; int8 Δ = 0, fp32 2.6e-5) | `docs/phase-reports/PHASE_2_REPORT.md` (§14 = real device) |
-| 3 | Chunked execution and workers | 10 – 13 Nov | 31 Oct → | 🟦 In progress | — |
+| 3 | Chunked execution and workers | 10 – 13 Nov | 31 Oct | 🟨 48/48 browser gates, 8/8 unit tests, 5/5 regression; **awaiting approval** (Mac check recommended) | `docs/phase-reports/PHASE_3_REPORT.md` |
 | 4 | Storage and cache layer | 14 – 16 Nov | — | ⬜ | — |
 | 5 | Resource monitor and decision engine | 17 – 20 Nov | — | ⬜ | — |
 | 6 | npm package and demo | 21 – 23 Nov | — | ⬜ | — |
@@ -29,6 +29,9 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | WASM heap after `release()` | Unchanged (does not shrink), cloud + Mac → motivates Worker-per-chunk | same + `mac_*_4t.json` |
 | **Mac (MAC-CHROME-4T)** | int8 p50 16.0 ms, fp32 p50 16.8 ms; heap 181.5 / 696.9 MiB retained after release | `results/phase2/mac_*_4t.json` |
 | Native vs WASM int8 kernels | 1 prediction flip in 872 (sentence 702) | `results/phase2/int8_parity_diagnosis.json` |
+| **Phase 3: peak WASM memory, fp32** | baseline 656 · chain in one page 403 (−38%) · resident Workers 813 (+24%) · **sequential Workers 280 MiB (−57%)** | `results/phase3/cloud_ABCD_fp32.json` |
+| **Phase 3: peak WASM memory, int8** | baseline 180 · chain 111 (−38%) · resident 214 (+19%) · **sequential 77 MiB (−57%)** | `results/phase3/cloud_ABC_int8.json` |
+| **terminate() vs release()** | terminate frees 100%, release frees 0% (browser memory API) | `results/phase3/cloud_*` (D) |
 
 ## Open items / blockers
 
@@ -41,6 +44,8 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | I-2.6 | Commit the Phase 2 files | Claude | ✅ Committed 31 Oct |
 | I-2.5 | Stray empty file `.git/tD4w3kG` | Claude | ✅ Deleted 31 Oct (delete permission granted for this session) |
 | I-2.2 | UA memory API takes ~60 s with worker threads → WASM probe is the main metric | Claude | Applies from Phase 3 |
+| I-3.1 | Mac run of the Phase 3 page (MAC-CHROME-W1) | Mouli | Recommended |
+| I-3.2 | Sequential mode needs a `groupSize` limit on waiting hidden states (F-21) | Claude | Phase 5 |
 | I-1.1 | Mixed precision = C2 fp32, rest int8 | Claude | Phase 7 |
 | I-1.3 | Tune τ on the dev split | Claude | Phase 5 |
 | I-0.1 | Git repository | — | ✅ Initialised; first commit `437548f` |
@@ -56,3 +61,4 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 31 Oct 2026 | Phase 2 completed. Vite replaced by a Node isolation server. int8 reference changed to the WASM kernels (D-2.1, pending approval). WASM heap probe adopted as the main memory metric. |
 | 31 Oct 2026 | D-2.1 approved. F-5 and F-6 made mandatory findings (`docs/FINDINGS.md`, master plan v1.2, experiment E-B). Page fixes: UA memory opt-in, thread lock, copy button; re-check 10/10. `.git/tD4w3kG` deleted. Manual verification guide written. |
 | 31 Oct 2026 | Mac verification passed (MAC-CHROME-4T, registered in `bench/configs.json`). Phase 2 approved and committed. Fetch-timing investigation (F-11, F-12, F-14 open); retention and latency recorded (F-4, F-13, F-15, F-16). Phase 3 started. |
+| 31 Oct 2026 | Phase 3 completed: ChunkSession/ChainRunner, one Worker per chunk (resident + sequential), memory-release proof, F-17 to F-21. Baseline unchanged (only `index.js` exports added; regression passes). Awaiting approval. |

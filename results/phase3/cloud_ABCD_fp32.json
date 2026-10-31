@@ -1,0 +1,609 @@
+{
+  "date": "2026-10-31T13:15:35.111Z",
+  "limit": 872,
+  "threads": 1,
+  "results": [
+    {
+      "experiment": "A-mainChain",
+      "precision": "fp32",
+      "threads": 1,
+      "date": "2026-10-31T13:13:18.337Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9105504587155964,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 1,
+      "maxAbsDiffVsPytorch": 0.000025818897247287254,
+      "loadMs": 2358.6200000001118,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "fp32",
+          "bytes": 95348751,
+          "fetchMs": 265.9899999999907,
+          "createMs": 482.68499999982305
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "fp32",
+          "bytes": 56727109,
+          "fetchMs": 456.4350000000559,
+          "createMs": 62.59000000008382
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "fp32",
+          "bytes": 56727109,
+          "fetchMs": 370.8549999999814,
+          "createMs": 60.61499999999069
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "fp32",
+          "bytes": 59100002,
+          "fetchMs": 526.4499999999534,
+          "createMs": 132.53499999991618
+        }
+      ],
+      "wasmHeapMiB": {
+        "loaded": 403.4,
+        "afterRelease": 403.4
+      },
+      "latencyMs": {
+        "mean": 72.44481651376401,
+        "p50": 70.46499999985099,
+        "p90": 106.30499999993481
+      },
+      "meanChunkRunMs": [
+        0.21544151376279225,
+        24.07301032110096,
+        23.951966743121393,
+        24.042706422018338
+      ],
+      "wallS": 65.564,
+      "pageErrors": []
+    },
+    {
+      "experiment": "B-workersResident",
+      "precision": "fp32",
+      "mode": "resident",
+      "threads": 1,
+      "date": "2026-10-31T13:14:26.054Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9105504587155964,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 1,
+      "maxAbsDiffVsPytorch": 0.000025818897247287254,
+      "loadMs": 3812.4250000000466,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "fp32",
+          "bytes": 95348751,
+          "fetchMs": 448.3300000000745,
+          "createMs": 456.3649999999907,
+          "spawnInitMs": 28.795000000158325,
+          "totalMs": 934.7650000001304,
+          "heapBytes": 293732352
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "fp32",
+          "bytes": 56727109,
+          "fetchMs": 258.81500000017695,
+          "createMs": 181.1149999999907,
+          "spawnInitMs": 21.574999999953434,
+          "totalMs": 461.9299999999348,
+          "heapBytes": 195297280
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "fp32",
+          "bytes": 56727109,
+          "fetchMs": 533.0200000000186,
+          "createMs": 714.6799999999348,
+          "spawnInitMs": 110.12999999988824,
+          "totalMs": 1358.5149999998976,
+          "heapBytes": 195297280
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "fp32",
+          "bytes": 59100002,
+          "fetchMs": 472.94000000017695,
+          "createMs": 548.7199999999721,
+          "spawnInitMs": 30.56000000005588,
+          "totalMs": 1056.8649999999907,
+          "heapBytes": 168493056
+        }
+      ],
+      "totalMs": 63308.63000000012,
+      "meanMsPerSentence": 72.60163990825701,
+      "perChunk": [
+        {
+          "name": "c0_embed",
+          "precision": "fp32",
+          "meanRunMs": 0.24839449540921274,
+          "meanMessageOverheadMs": 0.23938073395188564
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "fp32",
+          "meanRunMs": 23.564455275230245,
+          "meanMessageOverheadMs": 0.3550286697196548
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "fp32",
+          "meanRunMs": 23.612574541289252,
+          "meanMessageOverheadMs": 0.36927752293018334
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "fp32",
+          "meanRunMs": 23.79385321100943,
+          "meanMessageOverheadMs": 0.3794438073407846
+        }
+      ],
+      "maxActivationMiB": 0,
+      "peakLiveHeapMiB": 813.3,
+      "liveHeapAfterReleaseMiB": 0,
+      "pageHeapMiB": 0,
+      "timeline": [
+        {
+          "t": 935,
+          "event": "loaded",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "workerHeapBytes": 293732352,
+          "liveHeapMiB": 280.1
+        },
+        {
+          "t": 1397,
+          "event": "loaded",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 2,
+          "workerHeapBytes": 195297280,
+          "liveHeapMiB": 466.4
+        },
+        {
+          "t": 2756,
+          "event": "loaded",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 3,
+          "workerHeapBytes": 195297280,
+          "liveHeapMiB": 652.6
+        },
+        {
+          "t": 3812,
+          "event": "loaded",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 4,
+          "workerHeapBytes": 168493056,
+          "liveHeapMiB": 813.3
+        },
+        {
+          "t": 67173,
+          "event": "terminated",
+          "chunk": "c0_embed",
+          "liveWorkers": 3,
+          "liveHeapMiB": 533.2
+        },
+        {
+          "t": 67173,
+          "event": "terminated",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 2,
+          "liveHeapMiB": 346.9
+        },
+        {
+          "t": 67173,
+          "event": "terminated",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "liveHeapMiB": 160.7
+        },
+        {
+          "t": 67173,
+          "event": "terminated",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        }
+      ],
+      "wallS": 67.215,
+      "pageErrors": []
+    },
+    {
+      "experiment": "C-workersSequential",
+      "precision": "fp32",
+      "mode": "sequential",
+      "threads": 1,
+      "date": "2026-10-31T13:15:29.272Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9105504587155964,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 1,
+      "maxAbsDiffVsPytorch": 0.000025818897247287254,
+      "loadMs": 0.02000000001862645,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "fp32",
+          "bytes": 95348751,
+          "fetchMs": 310.90500000002794,
+          "createMs": 489.7299999999814,
+          "spawnInitMs": 29.68999999994412,
+          "totalMs": 830.8699999998789,
+          "heapBytes": 293732352
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "fp32",
+          "bytes": 56727109,
+          "fetchMs": 174.160000000149,
+          "createMs": 461.75,
+          "spawnInitMs": 34.080000000074506,
+          "totalMs": 676.4850000001024,
+          "heapBytes": 195297280
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "fp32",
+          "bytes": 56727109,
+          "fetchMs": 182.60499999998137,
+          "createMs": 434.9299999999348,
+          "spawnInitMs": 29.56000000005588,
+          "totalMs": 647.6550000000279,
+          "heapBytes": 195297280
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "fp32",
+          "bytes": 59100002,
+          "fetchMs": 291.25499999988824,
+          "createMs": 456.5600000000559,
+          "spawnInitMs": 49.84000000008382,
+          "totalMs": 799.4150000000373,
+          "heapBytes": 168493056
+        }
+      ],
+      "totalMs": 62508.320000000065,
+      "meanMsPerSentence": 71.68385321100925,
+      "perChunk": [
+        {
+          "name": "c0_embed",
+          "precision": "fp32",
+          "meanRunMs": 0.10565940366172523,
+          "meanMessageOverheadMs": 0.09872133028373088
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "fp32",
+          "meanRunMs": 22.13643348624304,
+          "meanMessageOverheadMs": 0.35896215596024816
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "fp32",
+          "meanRunMs": 21.94139334862601,
+          "meanMessageOverheadMs": 0.3825401376108874
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "fp32",
+          "meanRunMs": 22.816691513760166,
+          "meanMessageOverheadMs": 0.40095756880868516
+        }
+      ],
+      "maxActivationMiB": 64.3,
+      "peakLiveHeapMiB": 280.1,
+      "liveHeapAfterReleaseMiB": 0,
+      "pageHeapMiB": 0,
+      "timeline": [
+        {
+          "t": 885,
+          "event": "loaded",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "workerHeapBytes": 293732352,
+          "liveHeapMiB": 280.1
+        },
+        {
+          "t": 1065,
+          "event": "ran",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 280.1
+        },
+        {
+          "t": 1065,
+          "event": "terminated",
+          "chunk": "c0_embed",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 1741,
+          "event": "loaded",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 1,
+          "workerHeapBytes": 195297280,
+          "liveHeapMiB": 186.3
+        },
+        {
+          "t": 21371,
+          "event": "ran",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 186.3
+        },
+        {
+          "t": 21371,
+          "event": "terminated",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 22019,
+          "event": "loaded",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "workerHeapBytes": 195297280,
+          "liveHeapMiB": 186.3
+        },
+        {
+          "t": 41496,
+          "event": "ran",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 186.3
+        },
+        {
+          "t": 41496,
+          "event": "terminated",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 42296,
+          "event": "loaded",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 1,
+          "workerHeapBytes": 168493056,
+          "liveHeapMiB": 160.7
+        },
+        {
+          "t": 62562,
+          "event": "ran",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 1,
+          "activationBytes": 0,
+          "liveHeapMiB": 160.7
+        },
+        {
+          "t": 62562,
+          "event": "terminated",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        }
+      ],
+      "wallS": 62.584,
+      "pageErrors": []
+    },
+    {
+      "experiment": "D-memoryProof",
+      "precision": "fp32",
+      "threads": 1,
+      "date": "2026-10-31T13:15:34.902Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "steps": [
+        {
+          "label": "0 · page only, no Workers",
+          "uaMiB": 2.8,
+          "uaError": null,
+          "ms": 19,
+          "probeLiveMiB": 0
+        },
+        {
+          "label": "1 · 4 resident chunk Workers loaded",
+          "uaMiB": 822.7,
+          "uaError": null,
+          "ms": 25,
+          "probeLiveMiB": 813.3
+        },
+        {
+          "label": "2 · session.release() in every Worker (Workers still alive)",
+          "uaMiB": 822.7,
+          "uaError": null,
+          "ms": 15,
+          "probeLiveMiB": 813.3
+        },
+        {
+          "label": "3 · all Workers terminated",
+          "uaMiB": 2.8,
+          "uaError": null,
+          "ms": 15,
+          "probeLiveMiB": 0
+        }
+      ],
+      "wallS": 5.079,
+      "pageErrors": []
+    }
+  ],
+  "checks": [
+    {
+      "config": "A/fp32/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "A/fp32/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "A/fp32/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "A/fp32/1t",
+      "name": "fp32 Δ vs chain reference < 1e-4",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "A/fp32/1t",
+      "name": "fp32 Δ vs PyTorch < 1e-4",
+      "ok": true,
+      "detail": 0.000025818897247287254
+    },
+    {
+      "config": "A/fp32/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9105504587155964
+    },
+    {
+      "config": "B/fp32/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "B/fp32/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "B/fp32/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "B/fp32/1t",
+      "name": "fp32 Δ vs chain reference < 1e-4",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "B/fp32/1t",
+      "name": "fp32 Δ vs PyTorch < 1e-4",
+      "ok": true,
+      "detail": 0.000025818897247287254
+    },
+    {
+      "config": "B/fp32/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9105504587155964
+    },
+    {
+      "config": "B/fp32/1t",
+      "name": "live heap after release = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "fp32 Δ vs chain reference < 1e-4",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "fp32 Δ vs PyTorch < 1e-4",
+      "ok": true,
+      "detail": 0.000025818897247287254
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9105504587155964
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "live heap after release = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/fp32/1t",
+      "name": "never more than 1 Worker alive",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "D/fp32/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "D/fp32/1t",
+      "name": "UA memory API available",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "config": "D/fp32/1t",
+      "name": "terminate() frees ≥ 90% of what loading added",
+      "ok": true,
+      "detail": "added 819.9 MiB, freed 819.9 MiB"
+    },
+    {
+      "config": "D/fp32/1t",
+      "name": "release() alone frees < 10% (heap retained, F-4)",
+      "ok": true,
+      "detail": "freed 0.0 MiB"
+    }
+  ]
+}

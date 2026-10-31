@@ -1,0 +1,9 @@
+{
+  "precision": "fp32",
+  "n": 872,
+  "accuracy": 0.9105504587155964,
+  "comparedWith": "pytorch-fp32 full model",
+  "maxAbsLogitDiff": 0.000025818897247287254,
+  "predictionAgreement": 1,
+  "seconds": 51.582
+}

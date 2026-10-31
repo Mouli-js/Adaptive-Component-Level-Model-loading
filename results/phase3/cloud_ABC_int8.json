@@ -1,0 +1,525 @@
+{
+  "date": "2026-10-31T13:12:08.622Z",
+  "limit": 872,
+  "threads": 1,
+  "results": [
+    {
+      "experiment": "A-mainChain",
+      "precision": "int8",
+      "threads": 1,
+      "date": "2026-10-31T13:10:45.164Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 0.9782110091743119,
+      "maxAbsDiffVsPytorch": 4.358368056907654,
+      "loadMs": 814.3799999998882,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "bytes": 23847966,
+          "fetchMs": 86.70499999984168,
+          "createMs": 336.9200000001583
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 54.27000000001863,
+          "createMs": 26.354999999981374
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 101.23500000010245,
+          "createMs": 36.89999999990687
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "bytes": 14885516,
+          "fetchMs": 117.42000000015832,
+          "createMs": 54.199999999953434
+        }
+      ],
+      "wasmHeapMiB": {
+        "loaded": 111.2,
+        "afterRelease": 111.2
+      },
+      "latencyMs": {
+        "mean": 43.30634174311567,
+        "p50": 41.980000000214204,
+        "p90": 64.47500000009313
+      },
+      "meanChunkRunMs": [
+        0.13759747706860978,
+        14.35291284403642,
+        14.31465596330743,
+        14.389902522933506
+      ],
+      "wallS": 38.607,
+      "pageErrors": []
+    },
+    {
+      "experiment": "B-workersResident",
+      "precision": "int8",
+      "mode": "resident",
+      "threads": 1,
+      "date": "2026-10-31T13:11:26.950Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 0.9782110091743119,
+      "maxAbsDiffVsPytorch": 4.358368056907654,
+      "loadMs": 1517.8850000000093,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "bytes": 23847966,
+          "fetchMs": 81.67999999993481,
+          "createMs": 356.2949999999255,
+          "spawnInitMs": 30.295000000158325,
+          "totalMs": 468.69999999995343,
+          "heapBytes": 80936960
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 68.43500000005588,
+          "createMs": 123.36999999987893,
+          "spawnInitMs": 43.65500000002794,
+          "totalMs": 236.7050000000745,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 132.0800000000745,
+          "createMs": 218.4749999998603,
+          "spawnInitMs": 69.41500000003725,
+          "totalMs": 420.4000000001397,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "bytes": 14885516,
+          "fetchMs": 219.3200000000652,
+          "createMs": 138.98499999986961,
+          "spawnInitMs": 33.04000000003725,
+          "totalMs": 391.8450000002049,
+          "heapBytes": 48627712
+        }
+      ],
+      "totalMs": 39596.62999999989,
+      "meanMsPerSentence": 45.40897935779804,
+      "perChunk": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "meanRunMs": 0.19478784403614188,
+          "meanMessageOverheadMs": 0.21709862385594517
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "meanRunMs": 14.669827981652274,
+          "meanMessageOverheadMs": 0.29951834862057436
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "meanRunMs": 14.615957568807062,
+          "meanMessageOverheadMs": 0.31328555045343953
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "meanRunMs": 14.731209862387981,
+          "meanMessageOverheadMs": 0.3367373853139024
+        }
+      ],
+      "maxActivationMiB": 0,
+      "peakLiveHeapMiB": 214.1,
+      "liveHeapAfterReleaseMiB": 0,
+      "pageHeapMiB": 0,
+      "timeline": [
+        {
+          "t": 469,
+          "event": "loaded",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "workerHeapBytes": 80936960,
+          "liveHeapMiB": 77.2
+        },
+        {
+          "t": 706,
+          "event": "loaded",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 2,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 122.4
+        },
+        {
+          "t": 1126,
+          "event": "loaded",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 3,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 167.7
+        },
+        {
+          "t": 1518,
+          "event": "loaded",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 4,
+          "workerHeapBytes": 48627712,
+          "liveHeapMiB": 214.1
+        },
+        {
+          "t": 41148,
+          "event": "terminated",
+          "chunk": "c0_embed",
+          "liveWorkers": 3,
+          "liveHeapMiB": 136.9
+        },
+        {
+          "t": 41148,
+          "event": "terminated",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 2,
+          "liveHeapMiB": 91.6
+        },
+        {
+          "t": 41148,
+          "event": "terminated",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "liveHeapMiB": 46.4
+        },
+        {
+          "t": 41148,
+          "event": "terminated",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        }
+      ],
+      "wallS": 41.195,
+      "pageErrors": []
+    },
+    {
+      "experiment": "C-workersSequential",
+      "precision": "int8",
+      "mode": "sequential",
+      "threads": 1,
+      "date": "2026-10-31T13:12:08.438Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithChainRef": 1,
+      "maxAbsDiffVsChainRef": 0,
+      "agreementWithPytorch": 0.9782110091743119,
+      "maxAbsDiffVsPytorch": 4.358368056907654,
+      "loadMs": 0.014999999897554517,
+      "loads": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "bytes": 23847966,
+          "fetchMs": 133.39500000001863,
+          "createMs": 355.83499999996275,
+          "spawnInitMs": 33.58499999996275,
+          "totalMs": 524.6099999998696,
+          "heapBytes": 80936960
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 48.12000000011176,
+          "createMs": 384.8649999999907,
+          "spawnInitMs": 23.010000000009313,
+          "totalMs": 460.25499999988824,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "bytes": 14282351,
+          "fetchMs": 49.84499999997206,
+          "createMs": 390.82499999995343,
+          "spawnInitMs": 49.32000000006519,
+          "totalMs": 490.8699999998789,
+          "heapBytes": 47448064
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "bytes": 14885516,
+          "fetchMs": 73.85499999998137,
+          "createMs": 395.25499999988824,
+          "spawnInitMs": 53.669999999925494,
+          "totalMs": 523.5200000000186,
+          "heapBytes": 48627712
+        }
+      ],
+      "totalMs": 40803.35999999987,
+      "meanMsPerSentence": 46.7928440366971,
+      "perChunk": [
+        {
+          "name": "c0_embed",
+          "precision": "int8",
+          "meanRunMs": 0.1294839449494932,
+          "meanMessageOverheadMs": 0.10473623853219553
+        },
+        {
+          "name": "c1_l0_1",
+          "precision": "int8",
+          "meanRunMs": 14.447047018350172,
+          "meanMessageOverheadMs": 0.36189793577736007
+        },
+        {
+          "name": "c2_l2_3",
+          "precision": "int8",
+          "meanRunMs": 14.214311926605376,
+          "meanMessageOverheadMs": 0.3465653669722955
+        },
+        {
+          "name": "c3_l4_5_cls",
+          "precision": "int8",
+          "meanRunMs": 14.459713302750286,
+          "meanMessageOverheadMs": 0.3895584862404759
+        }
+      ],
+      "maxActivationMiB": 64.3,
+      "peakLiveHeapMiB": 77.2,
+      "liveHeapAfterReleaseMiB": 0,
+      "pageHeapMiB": 0,
+      "timeline": [
+        {
+          "t": 562,
+          "event": "loaded",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "workerHeapBytes": 80936960,
+          "liveHeapMiB": 77.2
+        },
+        {
+          "t": 768,
+          "event": "ran",
+          "chunk": "c0_embed",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 77.2
+        },
+        {
+          "t": 768,
+          "event": "terminated",
+          "chunk": "c0_embed",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 1228,
+          "event": "loaded",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 1,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 14153,
+          "event": "ran",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 14153,
+          "event": "terminated",
+          "chunk": "c1_l0_1",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 14648,
+          "event": "loaded",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "workerHeapBytes": 47448064,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 27354,
+          "event": "ran",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 1,
+          "activationBytes": 67408896,
+          "liveHeapMiB": 45.3
+        },
+        {
+          "t": 27354,
+          "event": "terminated",
+          "chunk": "c2_l2_3",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        },
+        {
+          "t": 27878,
+          "event": "loaded",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 1,
+          "workerHeapBytes": 48627712,
+          "liveHeapMiB": 46.4
+        },
+        {
+          "t": 40841,
+          "event": "ran",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 1,
+          "activationBytes": 0,
+          "liveHeapMiB": 46.4
+        },
+        {
+          "t": 40841,
+          "event": "terminated",
+          "chunk": "c3_l4_5_cls",
+          "liveWorkers": 0,
+          "liveHeapMiB": 0
+        }
+      ],
+      "wallS": 40.873,
+      "pageErrors": []
+    }
+  ],
+  "checks": [
+    {
+      "config": "A/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "int8 Δ vs chain reference = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "A/int8/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9002293577981652
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "int8 Δ vs chain reference = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9002293577981652
+    },
+    {
+      "config": "B/int8/1t",
+      "name": "live heap after release = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "100% agreement with chain reference",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "int8 Δ vs chain reference = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "accuracy = reference",
+      "ok": true,
+      "detail": 0.9002293577981652
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "live heap after release = 0",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "config": "C/int8/1t",
+      "name": "never more than 1 Worker alive",
+      "ok": true,
+      "detail": 1
+    }
+  ]
+}

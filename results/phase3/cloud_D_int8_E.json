@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-31T13:09:59.225Z",
+  "limit": 872,
+  "threads": 1,
+  "results": [
+    {
+      "experiment": "D-memoryProof",
+      "precision": "int8",
+      "threads": 1,
+      "date": "2026-10-31T13:09:57.768Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "steps": [
+        {
+          "label": "0 · page only, no Workers",
+          "uaMiB": 2.8,
+          "uaError": null,
+          "ms": 23,
+          "probeLiveMiB": 0
+        },
+        {
+          "label": "1 · 4 resident chunk Workers loaded",
+          "uaMiB": 223.4,
+          "uaError": null,
+          "ms": 35,
+          "probeLiveMiB": 214.1
+        },
+        {
+          "label": "2 · session.release() in every Worker (Workers still alive)",
+          "uaMiB": 223.5,
+          "uaError": null,
+          "ms": 19,
+          "probeLiveMiB": 214.1
+        },
+        {
+          "label": "3 · all Workers terminated",
+          "uaMiB": 2.8,
+          "uaError": null,
+          "ms": 17,
+          "probeLiveMiB": 0
+        }
+      ],
+      "wallS": 2.962,
+      "pageErrors": []
+    },
+    {
+      "experiment": "E-baseOverhead",
+      "threads": 1,
+      "date": "2026-10-31T13:09:59.063Z",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "workers": [
+        {
+          "graph": "e1_after_c1/fp32",
+          "fileMiB": 2.3,
+          "workerHeapMiB": 19.3,
+          "spawnInitMs": 24,
+          "createMs": 319
+        },
+        {
+          "graph": "e1_after_c1/int8",
+          "fileMiB": 0.6,
+          "workerHeapMiB": 16,
+          "spawnInitMs": 25,
+          "createMs": 316
+        }
+      ],
+      "wallS": 0.71,
+      "pageErrors": []
+    }
+  ],
+  "checks": [
+    {
+      "config": "D/int8/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "config": "D/int8/1t",
+      "name": "UA memory API available",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "config": "D/int8/1t",
+      "name": "terminate() frees ≥ 90% of what loading added",
+      "ok": true,
+      "detail": "added 220.6 MiB, freed 220.6 MiB"
+    },
+    {
+      "config": "D/int8/1t",
+      "name": "release() alone frees < 10% (heap retained, F-4)",
+      "ok": true,
+      "detail": "freed -0.1 MiB"
+    },
+    {
+      "config": "E/-/1t",
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    }
+  ]
+}
