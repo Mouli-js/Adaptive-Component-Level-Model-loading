@@ -20,9 +20,9 @@ import { chunkEntry, precisionPlan } from '../manifest.js';
 const cloneT = t => ({ type: t.type, data: t.data.slice(), dims: [...t.dims] });
 
 export class WorkerChainRunner {
-  constructor(manifest, { precision = 'int8', mode = 'resident', workerUrl, ortUrl, wasmPaths, numThreads = 1, sessionOptions = {} } = {}) {
+  constructor(manifest, { precision = 'int8', mode = 'resident', workerUrl, ortUrl, wasmPaths, numThreads = 1, sessionOptions = {}, cache = null } = {}) {
     if (!['resident', 'sequential'].includes(mode)) throw new Error(`unknown mode ${mode}`);
-    Object.assign(this, { manifest, mode, workerOpts: { workerUrl, ortUrl, wasmPaths, numThreads, sessionOptions } });
+    Object.assign(this, { manifest, mode, workerOpts: { workerUrl, ortUrl, wasmPaths, numThreads, sessionOptions, cache } });
     this.plan = precisionPlan(manifest, precision);
     this.entries = manifest.chain.map(n => chunkEntry(manifest, n, this.plan[n]));
     this.workers = new Map();          // name -> WorkerChunk (alive only)

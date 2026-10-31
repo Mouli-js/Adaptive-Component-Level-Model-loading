@@ -1,0 +1,22 @@
+{
+  "experiment": "F3-corruption",
+  "precision": "fp32",
+  "chunk": "c1_l0_1",
+  "date": "2026-10-31T14:57:47.700Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8,
+  "deviceMemory": 16,
+  "crossOriginIsolated": true,
+  "tamperedHashDiffers": true,
+  "detected": true,
+  "refetchedFrom": "network",
+  "others": [
+    "idb",
+    "idb",
+    "idb"
+  ],
+  "maxAbsDiffVsRef": 0,
+  "storeRepaired": true,
+  "_provenance": "Transcribed from the JSON you pasted in chat on 31 Oct 2026. All values are exact, except: (1) the F4_int8 paste was missing its opening '{', which was added; (2) the two budget-run timelines (60 entries each) are condensed to a one-line summary; (3) the key 'budget120MiB' is the page's hard-coded label \u2014 the fp32 run actually used budgetMiB=450 (page bug, fixed).",
+  "_configuration": "MAC-CHROME-W1"
+}

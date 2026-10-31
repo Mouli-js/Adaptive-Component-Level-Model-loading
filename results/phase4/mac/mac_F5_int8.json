@@ -1,0 +1,57 @@
+{
+  "experiment": "F5-verifyCost",
+  "precision": "int8",
+  "date": "2026-10-31T14:55:34.725Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8,
+  "deviceMemory": 16,
+  "crossOriginIsolated": true,
+  "chunks": [
+    {
+      "chunk": "c0_embed",
+      "sizeMiB": 22.74,
+      "fetchMs": 62,
+      "sha256Ms": 19,
+      "hashMBps": 1243,
+      "idbPutMs": 38,
+      "idbReadMs": 16,
+      "hashOk": true,
+      "readBackOk": true
+    },
+    {
+      "chunk": "c1_l0_1",
+      "sizeMiB": 13.62,
+      "fetchMs": 30,
+      "sha256Ms": 9,
+      "hashMBps": 1624,
+      "idbPutMs": 26,
+      "idbReadMs": 19,
+      "hashOk": true,
+      "readBackOk": true
+    },
+    {
+      "chunk": "c2_l2_3",
+      "sizeMiB": 13.62,
+      "fetchMs": 28,
+      "sha256Ms": 7,
+      "hashMBps": 1988,
+      "idbPutMs": 22,
+      "idbReadMs": 10,
+      "hashOk": true,
+      "readBackOk": true
+    },
+    {
+      "chunk": "c3_l4_5_cls",
+      "sizeMiB": 14.2,
+      "fetchMs": 33,
+      "sha256Ms": 10,
+      "hashMBps": 1536,
+      "idbPutMs": 29,
+      "idbReadMs": 17,
+      "hashOk": true,
+      "readBackOk": true
+    }
+  ],
+  "_provenance": "Transcribed from the JSON you pasted in chat on 31 Oct 2026. All values are exact, except: (1) the F4_int8 paste was missing its opening '{', which was added; (2) the two budget-run timelines (60 entries each) are condensed to a one-line summary; (3) the key 'budget120MiB' is the page's hard-coded label \u2014 the fp32 run actually used budgetMiB=450 (page bug, fixed).",
+  "_configuration": "MAC-CHROME-W1"
+}

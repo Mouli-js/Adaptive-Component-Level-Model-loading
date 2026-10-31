@@ -1,0 +1,196 @@
+{
+  "first": {
+    "experiment": "F1-singleRequest",
+    "precision": "fp32",
+    "useCache": true,
+    "verifyOnRead": true,
+    "cacheBudgetMiB": null,
+    "date": "2026-10-31T14:56:59.723Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "deviceMemory": 16,
+    "crossOriginIsolated": true,
+    "totalMs": 3086,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 280.13,
+    "hitRate": 0,
+    "loads": [
+      {
+        "chunk": "c0_embed",
+        "source": "network",
+        "getBytesMs": 648,
+        "idbReadMs": 0,
+        "verifyMs": 65,
+        "netFetchMs": 435,
+        "idbPutMs": 146,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 377,
+        "spawnInitMs": 40
+      },
+      {
+        "chunk": "c1_l0_1",
+        "source": "network",
+        "getBytesMs": 325,
+        "idbReadMs": 0,
+        "verifyMs": 30,
+        "netFetchMs": 153,
+        "idbPutMs": 140,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 265,
+        "spawnInitMs": 20
+      },
+      {
+        "chunk": "c2_l2_3",
+        "source": "network",
+        "getBytesMs": 384,
+        "idbReadMs": 0,
+        "verifyMs": 31,
+        "netFetchMs": 230,
+        "idbPutMs": 122,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 250,
+        "spawnInitMs": 19
+      },
+      {
+        "chunk": "c3_l4_5_cls",
+        "source": "network",
+        "getBytesMs": 408,
+        "idbReadMs": 0,
+        "verifyMs": 33,
+        "netFetchMs": 239,
+        "idbPutMs": 134,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 249,
+        "spawnInitMs": 30
+      }
+    ],
+    "storeAfter": [
+      {
+        "name": "c0_embed",
+        "precision": "fp32",
+        "sizeMiB": 90.93,
+        "hits": 0
+      },
+      {
+        "name": "c1_l0_1",
+        "precision": "fp32",
+        "sizeMiB": 54.1,
+        "hits": 0
+      },
+      {
+        "name": "c2_l2_3",
+        "precision": "fp32",
+        "sizeMiB": 54.1,
+        "hits": 0
+      },
+      {
+        "name": "c3_l4_5_cls",
+        "precision": "fp32",
+        "sizeMiB": 56.36,
+        "hits": 0
+      }
+    ]
+  },
+  "second": {
+    "experiment": "F1-singleRequest",
+    "precision": "fp32",
+    "useCache": true,
+    "verifyOnRead": true,
+    "cacheBudgetMiB": null,
+    "date": "2026-10-31T14:57:01.308Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "deviceMemory": 16,
+    "crossOriginIsolated": true,
+    "totalMs": 1584,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 280.13,
+    "hitRate": 1,
+    "loads": [
+      {
+        "chunk": "c0_embed",
+        "source": "idb",
+        "getBytesMs": 162,
+        "idbReadMs": 101,
+        "verifyMs": 61,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 281,
+        "spawnInitMs": 25
+      },
+      {
+        "chunk": "c1_l0_1",
+        "source": "idb",
+        "getBytesMs": 91,
+        "idbReadMs": 59,
+        "verifyMs": 31,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 266,
+        "spawnInitMs": 21
+      },
+      {
+        "chunk": "c2_l2_3",
+        "source": "idb",
+        "getBytesMs": 63,
+        "idbReadMs": 29,
+        "verifyMs": 34,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 241,
+        "spawnInitMs": 15
+      },
+      {
+        "chunk": "c3_l4_5_cls",
+        "source": "idb",
+        "getBytesMs": 65,
+        "idbReadMs": 31,
+        "verifyMs": 34,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 254,
+        "spawnInitMs": 31
+      }
+    ],
+    "storeAfter": [
+      {
+        "name": "c0_embed",
+        "precision": "fp32",
+        "sizeMiB": 90.93,
+        "hits": 1
+      },
+      {
+        "name": "c1_l0_1",
+        "precision": "fp32",
+        "sizeMiB": 54.1,
+        "hits": 1
+      },
+      {
+        "name": "c2_l2_3",
+        "precision": "fp32",
+        "sizeMiB": 54.1,
+        "hits": 1
+      },
+      {
+        "name": "c3_l4_5_cls",
+        "precision": "fp32",
+        "sizeMiB": 56.36,
+        "hits": 1
+      }
+    ]
+  },
+  "_provenance": "Transcribed from the JSON you pasted in chat on 31 Oct 2026. All values are exact, except: (1) the F4_int8 paste was missing its opening '{', which was added; (2) the two budget-run timelines (60 entries each) are condensed to a one-line summary; (3) the key 'budget120MiB' is the page's hard-coded label \u2014 the fp32 run actually used budgetMiB=450 (page bug, fixed).",
+  "_configuration": "MAC-CHROME-W1"
+}

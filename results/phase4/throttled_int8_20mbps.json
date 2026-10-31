@@ -1,0 +1,288 @@
+{
+  "precision": "int8",
+  "link": {
+    "mbps": 20,
+    "rttMs": 40
+  },
+  "date": "2026-10-31T14:36:20.243Z",
+  "noCache": {
+    "experiment": "F1-singleRequest",
+    "precision": "int8",
+    "useCache": false,
+    "verifyOnRead": true,
+    "cacheBudgetMiB": null,
+    "date": "2026-10-31T14:36:49.467Z",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 2,
+    "deviceMemory": 8,
+    "crossOriginIsolated": true,
+    "totalMs": 28710,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 77.19,
+    "hitRate": 0,
+    "loads": [
+      {
+        "chunk": "c0_embed",
+        "source": "network(no cache)",
+        "getBytesMs": 9476,
+        "idbReadMs": null,
+        "verifyMs": null,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 380,
+        "spawnInitMs": 34
+      },
+      {
+        "chunk": "c1_l0_1",
+        "source": "network(no cache)",
+        "getBytesMs": 5666,
+        "idbReadMs": null,
+        "verifyMs": null,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 385,
+        "spawnInitMs": 30
+      },
+      {
+        "chunk": "c2_l2_3",
+        "source": "network(no cache)",
+        "getBytesMs": 5664,
+        "idbReadMs": null,
+        "verifyMs": null,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 413,
+        "spawnInitMs": 68
+      },
+      {
+        "chunk": "c3_l4_5_cls",
+        "source": "network(no cache)",
+        "getBytesMs": 5907,
+        "idbReadMs": null,
+        "verifyMs": null,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 421,
+        "spawnInitMs": 50
+      }
+    ],
+    "storeAfter": [],
+    "onnxBytesServed": 67298184
+  },
+  "cold": {
+    "experiment": "F1-singleRequest",
+    "precision": "int8",
+    "useCache": true,
+    "verifyOnRead": true,
+    "cacheBudgetMiB": null,
+    "date": "2026-10-31T14:37:19.133Z",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 2,
+    "deviceMemory": 8,
+    "crossOriginIsolated": true,
+    "totalMs": 29076,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 77.19,
+    "hitRate": 0,
+    "loads": [
+      {
+        "chunk": "c0_embed",
+        "source": "network",
+        "getBytesMs": 9580,
+        "idbReadMs": 0,
+        "verifyMs": 24,
+        "netFetchMs": 9475,
+        "idbPutMs": 79,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 388,
+        "spawnInitMs": 34
+      },
+      {
+        "chunk": "c1_l0_1",
+        "source": "network",
+        "getBytesMs": 5743,
+        "idbReadMs": 0,
+        "verifyMs": 15,
+        "netFetchMs": 5667,
+        "idbPutMs": 60,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 431,
+        "spawnInitMs": 47
+      },
+      {
+        "chunk": "c2_l2_3",
+        "source": "network",
+        "getBytesMs": 5734,
+        "idbReadMs": 1,
+        "verifyMs": 14,
+        "netFetchMs": 5664,
+        "idbPutMs": 53,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 400,
+        "spawnInitMs": 66
+      },
+      {
+        "chunk": "c3_l4_5_cls",
+        "source": "network",
+        "getBytesMs": 5974,
+        "idbReadMs": 0,
+        "verifyMs": 15,
+        "netFetchMs": 5908,
+        "idbPutMs": 50,
+        "stored": true,
+        "corruptEvicted": false,
+        "createMs": 371,
+        "spawnInitMs": 99
+      }
+    ],
+    "storeAfter": [
+      {
+        "name": "c0_embed",
+        "precision": "int8",
+        "sizeMiB": 22.74,
+        "hits": 0
+      },
+      {
+        "name": "c1_l0_1",
+        "precision": "int8",
+        "sizeMiB": 13.62,
+        "hits": 0
+      },
+      {
+        "name": "c2_l2_3",
+        "precision": "int8",
+        "sizeMiB": 13.62,
+        "hits": 0
+      },
+      {
+        "name": "c3_l4_5_cls",
+        "precision": "int8",
+        "sizeMiB": 14.2,
+        "hits": 0
+      }
+    ],
+    "onnxBytesServed": 67298184
+  },
+  "warm": {
+    "experiment": "F1-singleRequest",
+    "precision": "int8",
+    "useCache": true,
+    "verifyOnRead": true,
+    "cacheBudgetMiB": null,
+    "date": "2026-10-31T14:37:21.991Z",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 2,
+    "deviceMemory": 8,
+    "crossOriginIsolated": true,
+    "totalMs": 2269,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 77.19,
+    "hitRate": 1,
+    "loads": [
+      {
+        "chunk": "c0_embed",
+        "source": "idb",
+        "getBytesMs": 69,
+        "idbReadMs": 38,
+        "verifyMs": 30,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 366,
+        "spawnInitMs": 26
+      },
+      {
+        "chunk": "c1_l0_1",
+        "source": "idb",
+        "getBytesMs": 39,
+        "idbReadMs": 24,
+        "verifyMs": 14,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 429,
+        "spawnInitMs": 34
+      },
+      {
+        "chunk": "c2_l2_3",
+        "source": "idb",
+        "getBytesMs": 42,
+        "idbReadMs": 27,
+        "verifyMs": 14,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 484,
+        "spawnInitMs": 54
+      },
+      {
+        "chunk": "c3_l4_5_cls",
+        "source": "idb",
+        "getBytesMs": 44,
+        "idbReadMs": 28,
+        "verifyMs": 16,
+        "netFetchMs": null,
+        "idbPutMs": null,
+        "stored": null,
+        "corruptEvicted": false,
+        "createMs": 453,
+        "spawnInitMs": 41
+      }
+    ],
+    "storeAfter": [
+      {
+        "name": "c0_embed",
+        "precision": "int8",
+        "sizeMiB": 22.74,
+        "hits": 1
+      },
+      {
+        "name": "c1_l0_1",
+        "precision": "int8",
+        "sizeMiB": 13.62,
+        "hits": 1
+      },
+      {
+        "name": "c2_l2_3",
+        "precision": "int8",
+        "sizeMiB": 13.62,
+        "hits": 1
+      },
+      {
+        "name": "c3_l4_5_cls",
+        "precision": "int8",
+        "sizeMiB": 14.2,
+        "hits": 1
+      }
+    ],
+    "onnxBytesServed": 0
+  },
+  "checks": [
+    {
+      "name": "outputs = reference",
+      "ok": true
+    },
+    {
+      "name": "warm request served 0 model bytes",
+      "ok": true
+    },
+    {
+      "name": "warm faster than cold",
+      "ok": true
+    }
+  ]
+}

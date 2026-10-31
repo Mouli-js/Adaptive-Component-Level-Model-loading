@@ -1,6 +1,6 @@
 # Progress Tracker — Adaptive Component-Level Model Loading
 
-**Window:** 31 Oct – 30 Nov 2026 · **Last updated:** 31 Oct 2026 · **Today:** Day 1 of 30 · **Schedule:** 🟢 ~9 days ahead (Phase 3 started on Day 1; planned start 10 Nov)
+**Window:** 31 Oct – 30 Nov 2026 · **Last updated:** 31 Oct 2026 · **Today:** Day 1 of 30 · **Schedule:** 🟢 ~13 days ahead (Phase 4 done on Day 1; planned 14–16 Nov)
 
 Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval · ✅ Approved · ⚠️ Blocked / slipped
 
@@ -9,8 +9,8 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 0 | Planning and setup | 31 Oct – 1 Nov | 31 Oct | ✅ Approved 31 Oct | `docs/phase-reports/PHASE_0_REPORT.md` |
 | 1 | Model preparation (Python) | 2 – 6 Nov | 31 Oct | ✅ Approved 31 Oct · commit `437548f` | `docs/phase-reports/PHASE_1_REPORT.md` |
 | 2 | Baseline browser inference | 7 – 9 Nov | 31 Oct | ✅ Approved 31 Oct after the Mac verification passed (all checks; int8 Δ = 0, fp32 2.6e-5) | `docs/phase-reports/PHASE_2_REPORT.md` (§14 = real device) |
-| 3 | Chunked execution and workers | 10 – 13 Nov | 31 Oct | 🟨 48/48 browser gates, 8/8 unit tests, 5/5 regression; **awaiting approval** (Mac check recommended) | `docs/phase-reports/PHASE_3_REPORT.md` |
-| 4 | Storage and cache layer | 14 – 16 Nov | — | ⬜ | — |
+| 3 | Chunked execution and workers | 10 – 13 Nov | 31 Oct | ✅ Approved 31 Oct · commit `b5ba76e` | `docs/phase-reports/PHASE_3_REPORT.md` |
+| 4 | Storage and cache layer | 14 – 16 Nov | 31 Oct | 🟨 26/26 + 26/26 browser gates, 6/6 throttled, 17/17 unit tests, 23/23 + 5/5 regression, **Mac (MAC-CHROME-W1) all checks pass**; awaiting approval | `docs/phase-reports/PHASE_4_REPORT.md` |
 | 5 | Resource monitor and decision engine | 17 – 20 Nov | — | ⬜ | — |
 | 6 | npm package and demo | 21 – 23 Nov | — | ⬜ | — |
 | 7 | Experiments | 24 – 27 Nov | — | ⬜ | — |
@@ -32,6 +32,8 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | **Phase 3: peak WASM memory, fp32** | baseline 656 · chain in one page 403 (−38%) · resident Workers 813 (+24%) · **sequential Workers 280 MiB (−57%)** | `results/phase3/cloud_ABCD_fp32.json` |
 | **Phase 3: peak WASM memory, int8** | baseline 180 · chain 111 (−38%) · resident 214 (+19%) · **sequential 77 MiB (−57%)** | `results/phase3/cloud_ABC_int8.json` |
 | **terminate() vs release()** | terminate frees 100%, release frees 0% (browser memory API) | `results/phase3/cloud_*` (D) |
+| **Phase 4: warm vs cold at 20 Mbit/s** | int8 29.1 → 2.27 s (×12.8), fp32 110.4 → 2.92 s (×37.8), 0 bytes on revisit | `results/phase4/throttled_*` |
+| **Phase 4: LRU under small budgets** | 0% hit rate (cyclic access, F-24) | `results/phase4/cloud_*` |
 
 ## Open items / blockers
 
@@ -44,8 +46,12 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | I-2.6 | Commit the Phase 2 files | Claude | ✅ Committed 31 Oct |
 | I-2.5 | Stray empty file `.git/tD4w3kG` | Claude | ✅ Deleted 31 Oct (delete permission granted for this session) |
 | I-2.2 | UA memory API takes ~60 s with worker threads → WASM probe is the main metric | Claude | Applies from Phase 3 |
-| I-3.1 | Mac run of the Phase 3 page (MAC-CHROME-W1) | Mouli | Recommended |
+| I-3.1 | Mac run of the Phase 3 page (MAC-CHROME-W1) | Mouli | You report it as successful (31 Oct); **result JSONs not received yet**, so no real-device Phase 3 numbers are recorded |
 | I-3.2 | Sequential mode needs a `groupSize` limit on waiting hidden states (F-21) | Claude | Phase 5 |
+| I-4.1 | Eviction strategy for small budgets (LRU 0% hit, F-24) | Claude | Phase 5 |
+| I-4.2 | Session creation 63–72% of a warm request → keep Workers alive / pre-start | Claude | Phase 5 |
+| I-4.7 | Mac run of `demo/phase4-cache.html` | Mouli | ✅ Received 31 Oct: every check passed; recorded as MAC-CHROME-W1 (Phase 4 report §13) |
+| I-4.8 | Why did the Mac fp32 F4 'unlimited' run load from the network? (Was the cache cleared?) | Mouli | Question |
 | I-1.1 | Mixed precision = C2 fp32, rest int8 | Claude | Phase 7 |
 | I-1.3 | Tune τ on the dev split | Claude | Phase 5 |
 | I-0.1 | Git repository | — | ✅ Initialised; first commit `437548f` |
@@ -62,3 +68,6 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 31 Oct 2026 | D-2.1 approved. F-5 and F-6 made mandatory findings (`docs/FINDINGS.md`, master plan v1.2, experiment E-B). Page fixes: UA memory opt-in, thread lock, copy button; re-check 10/10. `.git/tD4w3kG` deleted. Manual verification guide written. |
 | 31 Oct 2026 | Mac verification passed (MAC-CHROME-4T, registered in `bench/configs.json`). Phase 2 approved and committed. Fetch-timing investigation (F-11, F-12, F-14 open); retention and latency recorded (F-4, F-13, F-15, F-16). Phase 3 started. |
 | 31 Oct 2026 | Phase 3 completed: ChunkSession/ChainRunner, one Worker per chunk (resident + sequential), memory-release proof, F-17 to F-21. Baseline unchanged (only `index.js` exports added; regression passes). Awaiting approval. |
+| 31 Oct 2026 | Phase 3 approved and committed (`b5ba76e`); you report the Mac run as successful (data not attached). Phase 4 started. |
+| 31 Oct 2026 | Phase 4 completed: ChunkStore (IndexedDB, SHA-256 content addressing), ChunkLoader integrity, MemoryLRU, WorkerPool hot tier, throttled server; F-22 to F-26. Phase 3 code changed additively only (opt-in cache); regressions pass. Awaiting approval. |
+| 31 Oct 2026 | Mac Phase 4 results recorded (MAC-CHROME-W1): all checks pass; F-22/F-24 confirmed on a real device; F-27 (heap sizes identical across platforms). Fixed 2 bugs found through them (pool timeline order, page label); int8 suite re-run 26/26. |

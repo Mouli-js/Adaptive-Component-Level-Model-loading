@@ -1,0 +1,209 @@
+{
+  "first": {
+    "experiment": "F1-singleRequest",
+    "precision": "int8",
+    "useCache": true,
+    "verifyOnRead": true,
+    "cacheBudgetMiB": null,
+    "date": "2026-10-31T14:54:58.637Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "deviceMemory": 16,
+    "crossOriginIsolated": true,
+    "totalMs": 1668,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 77.19,
+    "hitRate": 0,
+    "loads": [
+      { "chunk": "c0_embed", "source": "network", "getBytesMs": 193, "idbReadMs": 0, "verifyMs": 24, "netFetchMs": 116, "idbPutMs": 45, "stored": true, "corruptEvicted": false, "createMs": 310, "spawnInitMs": 46 },
+      { "chunk": "c1_l0_1", "source": "network", "getBytesMs": 106, "idbReadMs": 0, "verifyMs": 7, "netFetchMs": 57, "idbPutMs": 41, "stored": true, "corruptEvicted": false, "createMs": 248, "spawnInitMs": 16 },
+      { "chunk": "c2_l2_3", "source": "network", "getBytesMs": 113, "idbReadMs": 0, "verifyMs": 9, "netFetchMs": 61, "idbPutMs": 44, "stored": true, "corruptEvicted": false, "createMs": 207, "spawnInitMs": 13 },
+      { "chunk": "c3_l4_5_cls", "source": "network", "getBytesMs": 108, "idbReadMs": 0, "verifyMs": 8, "netFetchMs": 63, "idbPutMs": 37, "stored": true, "corruptEvicted": false, "createMs": 208, "spawnInitMs": 16 }
+    ],
+    "storeAfter": [
+      { "name": "c0_embed", "precision": "int8", "sizeMiB": 22.74, "hits": 0 },
+      { "name": "c1_l0_1", "precision": "int8", "sizeMiB": 13.62, "hits": 0 },
+      { "name": "c2_l2_3", "precision": "int8", "sizeMiB": 13.62, "hits": 0 },
+      { "name": "c3_l4_5_cls", "precision": "int8", "sizeMiB": 14.2, "hits": 0 }
+    ]
+  },
+  "second": {
+    "experiment": "F1-singleRequest",
+    "precision": "int8",
+    "useCache": true,
+    "verifyOnRead": true,
+    "cacheBudgetMiB": null,
+    "date": "2026-10-31T14:54:59.644Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "deviceMemory": 16,
+    "crossOriginIsolated": true,
+    "totalMs": 1006,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 77.19,
+    "hitRate": 1,
+    "loads": [
+      { "chunk": "c0_embed", "source": "idb", "getBytesMs": 25, "idbReadMs": 11, "verifyMs": 13, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 182, "spawnInitMs": 15 },
+      { "chunk": "c1_l0_1", "source": "idb", "getBytesMs": 18, "idbReadMs": 9, "verifyMs": 8, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 205, "spawnInitMs": 13 },
+      { "chunk": "c2_l2_3", "source": "idb", "getBytesMs": 17, "idbReadMs": 9, "verifyMs": 8, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 200, "spawnInitMs": 14 },
+      { "chunk": "c3_l4_5_cls", "source": "idb", "getBytesMs": 18, "idbReadMs": 10, "verifyMs": 8, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 207, "spawnInitMs": 13 }
+    ],
+    "storeAfter": [
+      { "name": "c0_embed", "precision": "int8", "sizeMiB": 22.74, "hits": 1 },
+      { "name": "c1_l0_1", "precision": "int8", "sizeMiB": 13.62, "hits": 1 },
+      { "name": "c2_l2_3", "precision": "int8", "sizeMiB": 13.62, "hits": 1 },
+      { "name": "c3_l4_5_cls", "precision": "int8", "sizeMiB": 14.2, "hits": 1 }
+    ]
+  }
+}
+===
+{
+  "experiment": "F5-verifyCost",
+  "precision": "int8",
+  "date": "2026-10-31T14:55:34.725Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8,
+  "deviceMemory": 16,
+  "crossOriginIsolated": true,
+  "chunks": [
+    { "chunk": "c0_embed", "sizeMiB": 22.74, "fetchMs": 62, "sha256Ms": 19, "hashMBps": 1243, "idbPutMs": 38, "idbReadMs": 16, "hashOk": true, "readBackOk": true },
+    { "chunk": "c1_l0_1", "sizeMiB": 13.62, "fetchMs": 30, "sha256Ms": 9, "hashMBps": 1624, "idbPutMs": 26, "idbReadMs": 19, "hashOk": true, "readBackOk": true },
+    { "chunk": "c2_l2_3", "sizeMiB": 13.62, "fetchMs": 28, "sha256Ms": 7, "hashMBps": 1988, "idbPutMs": 22, "idbReadMs": 10, "hashOk": true, "readBackOk": true },
+    { "chunk": "c3_l4_5_cls", "sizeMiB": 14.2, "fetchMs": 33, "sha256Ms": 10, "hashMBps": 1536, "idbPutMs": 29, "idbReadMs": 17, "hashOk": true, "readBackOk": true }
+  ]
+}
+===
+{
+  "experiment": "F3-corruption",
+  "precision": "int8",
+  "chunk": "c1_l0_1",
+  "date": "2026-10-31T14:55:51.787Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8,
+  "deviceMemory": 16,
+  "crossOriginIsolated": true,
+  "tamperedHashDiffers": true,
+  "detected": true,
+  "refetchedFrom": "network",
+  "others": ["idb", "idb", "idb"],
+  "maxAbsDiffVsRef": 0,
+  "storeRepaired": true
+}
+===
+  "unlimited": {
+    "experiment": "F4-pool", "precision": "int8", "budgetMiB": null, "limit": 20, "date": "2026-10-31T14:56:07.083Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+    "maxAbsDiffVsRef": 0, "peakLiveHeapMiB": 214.06, "withinBudget": true,
+    "poolStats": { "hits": 76, "misses": 4, "evictions": 0, "overBudget": 0 },
+    "hotHitRate": 0.95, "loadsBySource": { "idb": 4 }, "meanMsPerSentence": 89.67124999165534, "firstSentenceMs": 758,
+    "timeline": [
+      { "t": 317, "event": "loaded", "key": "c0_embed/int8", "liveWorkers": 1, "liveHeapMiB": 77.2 },
+      { "t": 444, "event": "loaded", "key": "c1_l0_1/int8", "liveWorkers": 2, "liveHeapMiB": 122.4 },
+      { "t": 578, "event": "loaded", "key": "c2_l2_3/int8", "liveWorkers": 3, "liveHeapMiB": 167.7 },
+      { "t": 746, "event": "loaded", "key": "c3_l4_5_cls/int8", "liveWorkers": 4, "liveHeapMiB": 214.1 },
+      { "t": 1794, "event": "terminated", "key": "c0_embed/int8", "liveWorkers": 4, "liveHeapMiB": 136.9 },
+      { "t": 1794, "event": "terminated", "key": "c1_l0_1/int8", "liveWorkers": 4, "liveHeapMiB": 91.6 },
+      { "t": 1794, "event": "terminated", "key": "c2_l2_3/int8", "liveWorkers": 4, "liveHeapMiB": 46.4 },
+      { "t": 1794, "event": "terminated", "key": "c3_l4_5_cls/int8", "liveWorkers": 4, "liveHeapMiB": 0 }
+    ]
+  },
+  "budget120MiB": {
+    "experiment": "F4-pool", "precision": "int8", "budgetMiB": 120, "limit": 10, "date": "2026-10-31T14:56:14.972Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+    "maxAbsDiffVsRef": 0, "peakLiveHeapMiB": 91.63, "withinBudget": true,
+    "poolStats": { "hits": 0, "misses": 40, "evictions": 38, "overBudget": 0 },
+    "hotHitRate": 0, "loadsBySource": { "idb": 40 }, "meanMsPerSentence": 788.8299999892712, "firstSentenceMs": 735,
+    "timeline": "60 entries as pasted: a repeating cycle per sentence of loaded c0 (77.2) → evicted c0 → loaded c1 (45.3) → loaded c2 (90.5) → evicted c1 → loaded c3 (91.6) → evicted c2 → evicted c3; live heap never above 91.6 MiB; full cycle ≈ 720 ms (e.g. t=237…735, 959…1550, …, 5651…5999)"
+  }
+}
+===
+{
+  "first": {
+    "experiment": "F1-singleRequest", "precision": "fp32", "useCache": true, "verifyOnRead": true, "cacheBudgetMiB": null, "date": "2026-10-31T14:56:59.723Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+    "totalMs": 3086, "maxAbsDiffVsRef": 0, "peakLiveHeapMiB": 280.13, "hitRate": 0,
+    "loads": [
+      { "chunk": "c0_embed", "source": "network", "getBytesMs": 648, "idbReadMs": 0, "verifyMs": 65, "netFetchMs": 435, "idbPutMs": 146, "stored": true, "corruptEvicted": false, "createMs": 377, "spawnInitMs": 40 },
+      { "chunk": "c1_l0_1", "source": "network", "getBytesMs": 325, "idbReadMs": 0, "verifyMs": 30, "netFetchMs": 153, "idbPutMs": 140, "stored": true, "corruptEvicted": false, "createMs": 265, "spawnInitMs": 20 },
+      { "chunk": "c2_l2_3", "source": "network", "getBytesMs": 384, "idbReadMs": 0, "verifyMs": 31, "netFetchMs": 230, "idbPutMs": 122, "stored": true, "corruptEvicted": false, "createMs": 250, "spawnInitMs": 19 },
+      { "chunk": "c3_l4_5_cls", "source": "network", "getBytesMs": 408, "idbReadMs": 0, "verifyMs": 33, "netFetchMs": 239, "idbPutMs": 134, "stored": true, "corruptEvicted": false, "createMs": 249, "spawnInitMs": 30 }
+    ],
+    "storeAfter": [
+      { "name": "c0_embed", "precision": "fp32", "sizeMiB": 90.93, "hits": 0 },
+      { "name": "c1_l0_1", "precision": "fp32", "sizeMiB": 54.1, "hits": 0 },
+      { "name": "c2_l2_3", "precision": "fp32", "sizeMiB": 54.1, "hits": 0 },
+      { "name": "c3_l4_5_cls", "precision": "fp32", "sizeMiB": 56.36, "hits": 0 }
+    ]
+  },
+  "second": {
+    "experiment": "F1-singleRequest", "precision": "fp32", "useCache": true, "verifyOnRead": true, "cacheBudgetMiB": null, "date": "2026-10-31T14:57:01.308Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+    "totalMs": 1584, "maxAbsDiffVsRef": 0, "peakLiveHeapMiB": 280.13, "hitRate": 1,
+    "loads": [
+      { "chunk": "c0_embed", "source": "idb", "getBytesMs": 162, "idbReadMs": 101, "verifyMs": 61, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 281, "spawnInitMs": 25 },
+      { "chunk": "c1_l0_1", "source": "idb", "getBytesMs": 91, "idbReadMs": 59, "verifyMs": 31, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 266, "spawnInitMs": 21 },
+      { "chunk": "c2_l2_3", "source": "idb", "getBytesMs": 63, "idbReadMs": 29, "verifyMs": 34, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 241, "spawnInitMs": 15 },
+      { "chunk": "c3_l4_5_cls", "source": "idb", "getBytesMs": 65, "idbReadMs": 31, "verifyMs": 34, "netFetchMs": null, "idbPutMs": null, "stored": null, "corruptEvicted": false, "createMs": 254, "spawnInitMs": 31 }
+    ],
+    "storeAfter": [
+      { "name": "c0_embed", "precision": "fp32", "sizeMiB": 90.93, "hits": 1 },
+      { "name": "c1_l0_1", "precision": "fp32", "sizeMiB": 54.1, "hits": 1 },
+      { "name": "c2_l2_3", "precision": "fp32", "sizeMiB": 54.1, "hits": 1 },
+      { "name": "c3_l4_5_cls", "precision": "fp32", "sizeMiB": 56.36, "hits": 1 }
+    ]
+  }
+}
+===
+{
+  "experiment": "F5-verifyCost", "precision": "fp32", "date": "2026-10-31T14:57:22.446Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+  "chunks": [
+    { "chunk": "c0_embed", "sizeMiB": 90.93, "fetchMs": 166, "sha256Ms": 62, "hashMBps": 1536, "idbPutMs": 121, "idbReadMs": 58, "hashOk": true, "readBackOk": true },
+    { "chunk": "c1_l0_1", "sizeMiB": 54.1, "fetchMs": 58, "sha256Ms": 38, "hashMBps": 1508, "idbPutMs": 81, "idbReadMs": 25, "hashOk": true, "readBackOk": true },
+    { "chunk": "c2_l2_3", "sizeMiB": 54.1, "fetchMs": 56, "sha256Ms": 32, "hashMBps": 1796, "idbPutMs": 82, "idbReadMs": 37, "hashOk": true, "readBackOk": true },
+    { "chunk": "c3_l4_5_cls", "sizeMiB": 56.36, "fetchMs": 52, "sha256Ms": 32, "hashMBps": 1874, "idbPutMs": 82, "idbReadMs": 54, "hashOk": true, "readBackOk": true }
+  ]
+}
+===
+{
+  "experiment": "F3-corruption", "precision": "fp32", "chunk": "c1_l0_1", "date": "2026-10-31T14:57:47.700Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+  "tamperedHashDiffers": true, "detected": true, "refetchedFrom": "network", "others": ["idb", "idb", "idb"],
+  "maxAbsDiffVsRef": 0, "storeRepaired": true
+}
+===
+{
+  "unlimited": {
+    "experiment": "F4-pool", "precision": "fp32", "budgetMiB": null, "limit": 20, "date": "2026-10-31T14:57:59.347Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+    "maxAbsDiffVsRef": 0, "peakLiveHeapMiB": 813.31, "withinBudget": true,
+    "poolStats": { "hits": 76, "misses": 4, "evictions": 0, "overBudget": 0 },
+    "hotHitRate": 0.95, "loadsBySource": { "network": 4 }, "meanMsPerSentence": 147.82950001060962, "firstSentenceMs": 2002,
+    "timeline": [
+      { "t": 756, "event": "loaded", "key": "c0_embed/fp32", "liveWorkers": 1, "liveHeapMiB": 280.1 },
+      { "t": 1137, "event": "loaded", "key": "c1_l0_1/fp32", "liveWorkers": 2, "liveHeapMiB": 466.4 },
+      { "t": 1582, "event": "loaded", "key": "c2_l2_3/fp32", "liveWorkers": 3, "liveHeapMiB": 652.6 },
+      { "t": 1990, "event": "loaded", "key": "c3_l4_5_cls/fp32", "liveWorkers": 4, "liveHeapMiB": 813.3 },
+      { "t": 2959, "event": "terminated", "key": "c0_embed/fp32", "liveWorkers": 4, "liveHeapMiB": 533.2 },
+      { "t": 2959, "event": "terminated", "key": "c1_l0_1/fp32", "liveWorkers": 4, "liveHeapMiB": 346.9 },
+      { "t": 2959, "event": "terminated", "key": "c2_l2_3/fp32", "liveWorkers": 4, "liveHeapMiB": 160.7 },
+      { "t": 2959, "event": "terminated", "key": "c3_l4_5_cls/fp32", "liveWorkers": 4, "liveHeapMiB": 0 }
+    ]
+  },
+  "budget120MiB": {
+    "experiment": "F4-pool", "precision": "fp32", "budgetMiB": 450, "limit": 10, "date": "2026-10-31T14:58:07.635Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8, "deviceMemory": 16, "crossOriginIsolated": true,
+    "maxAbsDiffVsRef": 0, "peakLiveHeapMiB": 440.81, "withinBudget": true,
+    "poolStats": { "hits": 0, "misses": 40, "evictions": 38, "overBudget": 0 },
+    "hotHitRate": 0, "loadsBySource": { "idb": 40 }, "meanMsPerSentence": 828.6695000171661, "firstSentenceMs": 974,
+    "timeline": "60 entries as pasted: a repeating cycle per sentence of loaded c0 (280.1, or 440.8 when c3 still live) → evicted c3/c0 → loaded c1 (186.3) → loaded c2 (372.5) → evicted c1 → loaded c3 (346.9) → evicted c2; live heap never above 440.8 MiB; full cycle ≈ 820 ms"
+  }
+}

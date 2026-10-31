@@ -25,12 +25,12 @@ export class WorkerChunk {
   }
 
   /** Spawn the Worker, start ORT in it, load the chunk. */
-  static async spawn(entry, { workerUrl, ortUrl, wasmPaths, numThreads = 1, sessionOptions = {} }) {
+  static async spawn(entry, { workerUrl, ortUrl, wasmPaths, numThreads = 1, sessionOptions = {}, cache = null }) {
     const t0 = performance.now();
     const wc = new WorkerChunk(entry, new Worker(workerUrl, { type: 'module', name: entry.name }));
     await wc.call('init', { ortUrl, wasmPaths, numThreads });
     const t1 = performance.now();
-    const r = await wc.call('load', { entry, sessionOptions });
+    const r = await wc.call('load', { entry, sessionOptions, cache });
     wc.stats = { ...r.stats, spawnInitMs: t1 - t0, totalMs: performance.now() - t0, heapBytes: r.heapBytes };
     wc.inputNames = r.inputNames; wc.outputNames = r.outputNames;
     return wc;

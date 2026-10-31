@@ -4,9 +4,18 @@
   "description": "Component-level adaptive loading of transformer models in the browser with onnxruntime-web",
   "type": "module",
   "main": "src/index.js",
-  "exports": { ".": "./src/index.js" },
-  "scripts": { "test": "node --test test/*.test.mjs" },
-  "peerDependencies": { "onnxruntime-web": "1.20.1" },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "peerDependencies": {
+    "onnxruntime-web": "1.20.1"
+  },
   "author": "Moulieswaran M",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "fake-indexeddb": "6.0.0"
+  }
 }

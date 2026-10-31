@@ -1,0 +1,115 @@
+{
+  "unlimited": {
+    "experiment": "F4-pool",
+    "precision": "fp32",
+    "budgetMiB": null,
+    "limit": 20,
+    "date": "2026-10-31T14:57:59.347Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "deviceMemory": 16,
+    "crossOriginIsolated": true,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 813.31,
+    "withinBudget": true,
+    "poolStats": {
+      "hits": 76,
+      "misses": 4,
+      "evictions": 0,
+      "overBudget": 0
+    },
+    "hotHitRate": 0.95,
+    "loadsBySource": {
+      "network": 4
+    },
+    "meanMsPerSentence": 147.82950001060962,
+    "firstSentenceMs": 2002,
+    "timeline": [
+      {
+        "t": 756,
+        "event": "loaded",
+        "key": "c0_embed/fp32",
+        "liveWorkers": 1,
+        "liveHeapMiB": 280.1
+      },
+      {
+        "t": 1137,
+        "event": "loaded",
+        "key": "c1_l0_1/fp32",
+        "liveWorkers": 2,
+        "liveHeapMiB": 466.4
+      },
+      {
+        "t": 1582,
+        "event": "loaded",
+        "key": "c2_l2_3/fp32",
+        "liveWorkers": 3,
+        "liveHeapMiB": 652.6
+      },
+      {
+        "t": 1990,
+        "event": "loaded",
+        "key": "c3_l4_5_cls/fp32",
+        "liveWorkers": 4,
+        "liveHeapMiB": 813.3
+      },
+      {
+        "t": 2959,
+        "event": "terminated",
+        "key": "c0_embed/fp32",
+        "liveWorkers": 4,
+        "liveHeapMiB": 533.2
+      },
+      {
+        "t": 2959,
+        "event": "terminated",
+        "key": "c1_l0_1/fp32",
+        "liveWorkers": 4,
+        "liveHeapMiB": 346.9
+      },
+      {
+        "t": 2959,
+        "event": "terminated",
+        "key": "c2_l2_3/fp32",
+        "liveWorkers": 4,
+        "liveHeapMiB": 160.7
+      },
+      {
+        "t": 2959,
+        "event": "terminated",
+        "key": "c3_l4_5_cls/fp32",
+        "liveWorkers": 4,
+        "liveHeapMiB": 0
+      }
+    ]
+  },
+  "budget120MiB": {
+    "experiment": "F4-pool",
+    "precision": "fp32",
+    "budgetMiB": 450,
+    "limit": 10,
+    "date": "2026-10-31T14:58:07.635Z",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+    "hardwareConcurrency": 8,
+    "deviceMemory": 16,
+    "crossOriginIsolated": true,
+    "maxAbsDiffVsRef": 0,
+    "peakLiveHeapMiB": 440.81,
+    "withinBudget": true,
+    "poolStats": {
+      "hits": 0,
+      "misses": 40,
+      "evictions": 38,
+      "overBudget": 0
+    },
+    "hotHitRate": 0,
+    "loadsBySource": {
+      "idb": 40
+    },
+    "meanMsPerSentence": 828.6695000171661,
+    "firstSentenceMs": 974,
+    "timeline": "60 entries as pasted: a repeating cycle per sentence of loaded c0 (280.1, or 440.8 when c3 still live) \u2192 evicted c3/c0 \u2192 loaded c1 (186.3) \u2192 loaded c2 (372.5) \u2192 evicted c1 \u2192 loaded c3 (346.9) \u2192 evicted c2; live heap never above 440.8 MiB; full cycle \u2248 820 ms"
+  },
+  "_provenance": "Transcribed from the JSON you pasted in chat on 31 Oct 2026. All values are exact, except: (1) the F4_int8 paste was missing its opening '{', which was added; (2) the two budget-run timelines (60 entries each) are condensed to a one-line summary; (3) the key 'budget120MiB' is the page's hard-coded label \u2014 the fp32 run actually used budgetMiB=450 (page bug, fixed).",
+  "_configuration": "MAC-CHROME-W1"
+}

@@ -18,7 +18,9 @@
         "results/phase2/browser_baseline_recheck.json",
         "results/phase3/cloud_ABC_int8.json",
         "results/phase3/cloud_ABCD_fp32.json",
-        "results/phase3/cloud_D_int8_E.json"
+        "results/phase3/cloud_D_int8_E.json",
+        "results/phase4/cloud_int8.json",
+        "results/phase4/cloud_fp32.json"
       ],
       "note": "Phase 3: 1 thread per InferenceSession and per chunk Worker."
     },
@@ -59,9 +61,30 @@
       "browser": "Google Chrome 155 (headed, default flags)",
       "threads": 1,
       "threadsNote": "1 thread per chunk Worker (Phase 3 page)",
-      "automation": "manual, Phase 3 report \u00a711",
-      "results": [],
-      "status": "pending"
+      "automation": "manual: Phase 4 report \u00a711 (demo/phase4-cache.html)",
+      "results": [
+        "results/phase4/mac/mac_F1_int8.json",
+        "results/phase4/mac/mac_F3_int8.json",
+        "results/phase4/mac/mac_F4_int8.json",
+        "results/phase4/mac/mac_F5_int8.json",
+        "results/phase4/mac/mac_F1_fp32.json",
+        "results/phase4/mac/mac_F3_fp32.json",
+        "results/phase4/mac/mac_F4_fp32.json",
+        "results/phase4/mac/mac_F5_fp32.json"
+      ],
+      "status": "Phase 4 results recorded 31 Oct 2026; Phase 3 results not received"
+    },
+    "CLOUD-HL-1T-20MBPS": {
+      "environment": "cloud workspace (shared VM)",
+      "device": "x86-64, 2 vCPU, 7 GB RAM",
+      "browser": "Chromium 153 (Playwright, channel=chromium, persistent profile)",
+      "threads": 1,
+      "network": "bench/throttledServer.mjs: shared token bucket 20 Mbit/s for *.onnx, +20 ms before the first byte (RTT 40 ms)",
+      "automation": "bench/phase4_throttled_test.mjs",
+      "results": [
+        "results/phase4/throttled_int8_20mbps.json",
+        "results/phase4/throttled_fp32_20mbps.json"
+      ]
     }
   }
 }

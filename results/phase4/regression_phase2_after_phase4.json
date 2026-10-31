@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-31T14:44:16.207Z",
+  "results": [
+    {
+      "page": "phase2-baseline",
+      "date": "2026-10-31T14:44:15.986Z",
+      "precision": "int8",
+      "threads": 1,
+      "uaMemory": true,
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hardwareConcurrency": 2,
+      "deviceMemory": 8,
+      "crossOriginIsolated": true,
+      "load": {
+        "precision": "int8",
+        "threads": 1,
+        "url": "/models/onnx/int8/full.onnx",
+        "bytes": 67354909,
+        "fetchMs": 3221.155000000028,
+        "createMs": 503.8649999999907,
+        "loadMs": 3725.0200000000186,
+        "memBefore": {
+          "t": 182.25500000012107,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 0,
+          "wasmMemories": 0,
+          "jsHeapUsedBytes": 3173504,
+          "uaBytes": 2960952,
+          "uaByType": {
+            "DOM": 42272,
+            "Shared": 278264,
+            "JavaScript": 2640416
+          }
+        },
+        "memAfter": {
+          "t": 3927.25,
+          "crossOriginIsolated": true,
+          "wasmHeapBytes": 189005824,
+          "wasmMemories": 1,
+          "jsHeapUsedBytes": 71615246,
+          "uaBytes": 193304026,
+          "uaByType": {
+            "Shared": 284292,
+            "JavaScript": 192977462,
+            "DOM": 42272
+          }
+        }
+      },
+      "n": 872,
+      "accuracy": 0.9002293577981652,
+      "agreementWithPytorch": 0.9782110091743119,
+      "reference": "onnxruntime-web-wasm-node-int8",
+      "agreementWithNativeInt8": 0.9988532110091743,
+      "agreementWithReference": 1,
+      "maxAbsLogitDiffVsReference": 0,
+      "tokenizerMismatches": 0,
+      "latencyMs": {
+        "mean": 44.28588876146914,
+        "p50": 43.105000000214204,
+        "p90": 65.78000000002794,
+        "p99": 83.87999999988824,
+        "min": 14.104999999981374,
+        "max": 89.69000000017695
+      },
+      "memLoaded": {
+        "t": 42914.05500000017,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189005824,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 5576720,
+        "uaBytes": 194039481,
+        "uaByType": {
+          "DOM": 42272,
+          "JavaScript": 193645564,
+          "Shared": 351645
+        }
+      },
+      "memReleased": {
+        "t": 42936.74500000011,
+        "crossOriginIsolated": true,
+        "wasmHeapBytes": 189005824,
+        "wasmMemories": 1,
+        "jsHeapUsedBytes": 5576720,
+        "uaBytes": 194043507,
+        "uaByType": {
+          "JavaScript": 193648456,
+          "DOM": 42272,
+          "Shared": 352779
+        }
+      },
+      "wallS": 42.779
+    }
+  ],
+  "checks": [
+    {
+      "config": "int8/1t",
+      "name": "crossOriginIsolated",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "config": "int8/1t",
+      "name": "tokenizer parity",
+      "ok": true,
+      "detail": "0 mismatches"
+    },
+    {
+      "config": "int8/1t",
+      "name": "accuracy = same-kernel reference (±0.1 pt)",
+      "ok": true,
+      "detail": "90.02% vs 90.02%"
+    },
+    {
+      "config": "int8/1t",
+      "name": "|Δlogit| vs onnxruntime-web-wasm-node-int8 < 1e-3",
+      "ok": true,
+      "detail": "0.00e+0"
+    },
+    {
+      "config": "int8/1t",
+      "name": "100% prediction agreement with reference",
+      "ok": true,
+      "detail": "100.00%"
+    }
+  ]
+}
