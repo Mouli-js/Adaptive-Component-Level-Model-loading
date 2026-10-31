@@ -1,0 +1,489 @@
+{
+  "model": "distilbert-base-uncased-finetuned-sst-2-english",
+  "task": "sst2-sentiment",
+  "labels": [
+    "NEGATIVE",
+    "POSITIVE"
+  ],
+  "hidden_size": 768,
+  "max_length": 128,
+  "opset": 17,
+  "tokenizer": {
+    "type": "wordpiece",
+    "vocab": "vocab.txt",
+    "lowercase": true,
+    "cls_id": 101,
+    "sep_id": 102,
+    "pad_id": 0,
+    "unk_id": 100
+  },
+  "chain": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "c3_l4_5_cls"
+  ],
+  "baseline": {
+    "fp32": {
+      "file": "fp32/full.onnx",
+      "bytes": 267936691,
+      "sha256": "9ffaf3b64b547312254c9302c78f0335be039c10d4dd1d5345e2be7f148de53f",
+      "inputs": [
+        {
+          "name": "input_ids",
+          "dtype": "int64",
+          "shape": [
+            "batch",
+            "seq"
+          ]
+        },
+        {
+          "name": "attention_mask",
+          "dtype": "int64",
+          "shape": [
+            "batch",
+            "seq"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "logits",
+          "dtype": "float32",
+          "shape": [
+            "batch",
+            2
+          ]
+        }
+      ]
+    },
+    "int8": {
+      "file": "int8/full.onnx",
+      "bytes": 67354909,
+      "sha256": "2ff6186532a2b11f37a9c681e1dea51613f954de12b93baf080327414640acfd",
+      "inputs": [
+        {
+          "name": "input_ids",
+          "dtype": "int64",
+          "shape": [
+            "batch",
+            "seq"
+          ]
+        },
+        {
+          "name": "attention_mask",
+          "dtype": "int64",
+          "shape": [
+            "batch",
+            "seq"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "logits",
+          "dtype": "float32",
+          "shape": [
+            "batch",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "chunks": {
+    "c0_embed": {
+      "layers": null,
+      "fp32": {
+        "file": "fp32/c0_embed.onnx",
+        "bytes": 95348751,
+        "sha256": "3f4cf3d8e4b872a4e3304497279c89a4e08d660e4da79ee636aa15695f2d21ee",
+        "inputs": [
+          {
+            "name": "input_ids",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "hidden",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ]
+      },
+      "int8": {
+        "file": "int8/c0_embed.onnx",
+        "bytes": 23847966,
+        "sha256": "4c4a6f57a156382994afd197ceb86cc40b60a06f1e2ff2d63f0c0d00ab339a25",
+        "inputs": [
+          {
+            "name": "input_ids",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "hidden",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ]
+      }
+    },
+    "c1_l0_1": {
+      "layers": [
+        0,
+        2
+      ],
+      "fp32": {
+        "file": "fp32/c1_l0_1.onnx",
+        "bytes": 56727109,
+        "sha256": "51428f2c70f42c15bcd4b51fbf8c2c59cc81ab807dad58e4c601a4f86a60fb08",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          },
+          {
+            "name": "attention_mask",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "hidden",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ]
+      },
+      "int8": {
+        "file": "int8/c1_l0_1.onnx",
+        "bytes": 14282351,
+        "sha256": "bbdc0e3a6337f8172a12380d3ddb543bf6ea5fd8ace171c97cd4817e6e1f52bd",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          },
+          {
+            "name": "attention_mask",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "hidden",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ]
+      }
+    },
+    "c2_l2_3": {
+      "layers": [
+        2,
+        4
+      ],
+      "fp32": {
+        "file": "fp32/c2_l2_3.onnx",
+        "bytes": 56727109,
+        "sha256": "9362004377eb5727ec9f05b85729b91d7f52a42caa51b7a15b424234be18fa1b",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          },
+          {
+            "name": "attention_mask",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "hidden",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ]
+      },
+      "int8": {
+        "file": "int8/c2_l2_3.onnx",
+        "bytes": 14282351,
+        "sha256": "0068dcc8b0148f2ffd70f5bccf27d1782e41020c9d11d7a405bc8bd640a07d65",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          },
+          {
+            "name": "attention_mask",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "hidden",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ]
+      }
+    },
+    "c3_l4_5_cls": {
+      "layers": [
+        4,
+        6
+      ],
+      "fp32": {
+        "file": "fp32/c3_l4_5_cls.onnx",
+        "bytes": 59100002,
+        "sha256": "0d218e1297cffa75030e3583fced004849047a540d08b99ae6c1f999511ccb0e",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          },
+          {
+            "name": "attention_mask",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "logits",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              2
+            ]
+          }
+        ]
+      },
+      "int8": {
+        "file": "int8/c3_l4_5_cls.onnx",
+        "bytes": 14885516,
+        "sha256": "76fc9bb2cbf14f70cea94f15f294b06ccf9669fb13841f27042f05ee79d28a91",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          },
+          {
+            "name": "attention_mask",
+            "dtype": "int64",
+            "shape": [
+              "batch",
+              "seq"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "logits",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "exits": {
+    "e1_after_c1": {
+      "after": "c1_l0_1",
+      "fp32": {
+        "file": "fp32/e1_after_c1.onnx",
+        "bytes": 2369281,
+        "sha256": "b34b3ac8f80beaa912610cfc2b6e3b67a752ffb48a5de3e9a801816c2e30eb96",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "logits",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              2
+            ]
+          }
+        ]
+      },
+      "int8": {
+        "file": "int8/e1_after_c1.onnx",
+        "bytes": 597297,
+        "sha256": "67e16cbe2627a2900360c6ddad8c9c7636db66c1ae76a6477402b8d6fd02c211",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "logits",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              2
+            ]
+          }
+        ]
+      }
+    },
+    "e2_after_c2": {
+      "after": "c2_l2_3",
+      "fp32": {
+        "file": "fp32/e2_after_c2.onnx",
+        "bytes": 2369281,
+        "sha256": "05c6a75fc46bae3238e5f91e73f60d1258f481732c10d36b853149e8baec6d8d",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "logits",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              2
+            ]
+          }
+        ]
+      },
+      "int8": {
+        "file": "int8/e2_after_c2.onnx",
+        "bytes": 597297,
+        "sha256": "7e6c5afaaae8dfba9cca8571b17bda7dcc1da317dc479fc62c9caec7dada2922",
+        "inputs": [
+          {
+            "name": "hidden_in",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              "seq",
+              768
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "name": "logits",
+            "dtype": "float32",
+            "shape": [
+              "batch",
+              2
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

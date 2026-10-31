@@ -1,0 +1,90 @@
+# =====================================================================
+# Adaptive Component-Level Model Loading — .gitignore
+# Rule of thumb: commit SOURCE + small EVIDENCE; never commit anything
+# that a script in this repo can regenerate or download.
+# =====================================================================
+
+# ---------- Model weights & generated artifacts ----------
+# Downloaded checkpoint (~257 MB) -> scripts/fetch_resources.sh
+models/hf/*
+# keep checksums: proves which weights were used
+!models/hf/SHA256SUMS.txt
+# Exported ONNX graphs (~650 MB)  -> python/run_phase1.sh
+*.onnx
+*.onnx.data
+*.ort
+# copied from models/hf by run_phase1.sh
+models/onnx/vocab.txt
+# models/onnx/manifest.json is intentionally TRACKED (small; runtime contract)
+# Trained head weights            -> python/train_exit_heads.py
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# ---------- Datasets & caches ----------
+# SST-2 parquet -> scripts/fetch_resources.sh
+data/
+*.parquet
+*.npz
+*.npy
+results/raw/
+results/**/feat_cache/
+bench/traces/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# ---------- Virtual environments ----------
+.venv*/
+venv/
+env/
+.python-version
+
+# ---------- JavaScript / Node ----------
+node_modules/
+.npm/
+.vite/
+.parcel-cache/
+coverage/
+# npm pack output
+*.tgz
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Browser test tooling ----------
+playwright-report/
+test-results/
+.cache/
+
+# ---------- OS / editors ----------
+.DS_Store
+._*
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+*.swp
+*~
+
+# ---------- Temporary / local-only ----------
+_to_delete/
+tmp/
+*.tmp
+*.log
+*-inferred.onnx
+.env
+.env.*

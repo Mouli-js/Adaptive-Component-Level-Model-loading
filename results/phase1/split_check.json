@@ -1,0 +1,19 @@
+{
+  "weights": "distilbert-base-uncased-finetuned-sst-2-english",
+  "n_sentences": 872,
+  "max_abs_logit_diff_full_vs_chain": 0.0,
+  "prediction_agreement": 1.0,
+  "accuracy_full": 0.9105504751205444,
+  "accuracy_chain": 0.9105504751205444,
+  "time_full_s": 12.79,
+  "time_chain_s": 11.92,
+  "params": {
+    "c0_embed": 23835648,
+    "c1_l0_1": 14175744,
+    "c2_l2_3": 14175744,
+    "c3_l4_5_cls": 14767874
+  },
+  "params_total_model": 66955010,
+  "params_sum_of_chunks": 66955010,
+  "PASS": true
+}

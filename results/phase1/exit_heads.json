@@ -1,0 +1,20 @@
+{
+  "n_train": 18000,
+  "n_dev": 2000,
+  "n_val": 872,
+  "full_model_val_acc": 0.9105504751205444,
+  "e1_after_c1": {
+    "val_acc_before_training": 0.4919724762439728,
+    "dev_acc": 0.8665000200271606,
+    "val_acc": 0.7637614607810974,
+    "best_epoch": 5,
+    "mean_confidence": 0.8045908808708191
+  },
+  "e2_after_c2": {
+    "val_acc_before_training": 0.7786697149276733,
+    "dev_acc": 0.9154999852180481,
+    "val_acc": 0.8130733966827393,
+    "best_epoch": 7,
+    "mean_confidence": 0.8680617213249207
+  }
+}
