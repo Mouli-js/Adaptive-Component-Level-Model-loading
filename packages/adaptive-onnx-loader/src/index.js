@@ -20,3 +20,4 @@ export { predictMemory, predictTime, chunkInfo } from './engine/costModel.js';
 export { DEFAULT_CALIBRATION, ACCURACY, PRECISION_PLANS } from './engine/measurements.js';
 export { PlanRunner } from './workers/planRunner.js';
 export { calibrate } from './engine/calibrate.js';
+export { loadModel, AdaptiveModel, AdaptiveLoaderError } from './api.js';

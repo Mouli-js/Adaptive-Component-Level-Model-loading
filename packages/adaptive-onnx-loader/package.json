@@ -1,11 +1,15 @@
 {
   "name": "adaptive-onnx-loader",
   "version": "0.1.0",
-  "description": "Component-level adaptive loading of transformer models in the browser with onnxruntime-web",
+  "description": "Component-level adaptive loading of transformer models in the browser: one Web Worker per model chunk, IndexedDB chunk cache, and a deterministic decision engine (onnxruntime-web).",
   "type": "module",
   "main": "src/index.js",
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs"
@@ -17,5 +21,27 @@
   "license": "MIT",
   "devDependencies": {
     "fake-indexeddb": "6.0.0"
-  }
+  },
+  "types": "index.d.ts",
+  "files": [
+    "src",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "onnx",
+    "onnxruntime-web",
+    "webassembly",
+    "web-workers",
+    "indexeddb",
+    "transformer",
+    "distilbert",
+    "adaptive-loading",
+    "browser-inference"
+  ]
 }

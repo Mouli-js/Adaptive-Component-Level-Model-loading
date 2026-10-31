@@ -1,0 +1,36 @@
+{
+  "tau": 0.95,
+  "tunedOn": "dev (last 2,000 of the 20,000-sentence training sample; seed 0)",
+  "rule": "smallest τ with agreementWithFull ≥ 0.99",
+  "heads": {
+    "after_c1_l0_1": "e1_after_c1",
+    "after_c2_l2_3": "e2_after_c2"
+  },
+  "headPrecision": "fp32",
+  "plans": {
+    "int8": {
+      "accuracy": 0.8990825688073395,
+      "accuracyWithoutEarlyExit": 0.9002293577981652,
+      "exit1Frac": 0.1720183486238532,
+      "exit2Frac": 0.2396788990825688,
+      "fullFrac": 0.588302752293578,
+      "measuredOn": "SST-2 validation (872), onnxruntime-web WASM"
+    },
+    "fp32": {
+      "accuracy": 0.9071100917431193,
+      "accuracyWithoutEarlyExit": 0.9105504587155964,
+      "exit1Frac": 0.2006880733944954,
+      "exit2Frac": 0.2396788990825688,
+      "fullFrac": 0.5596330275229358,
+      "measuredOn": "SST-2 validation (872), onnxruntime-web WASM"
+    },
+    "mixedC2": {
+      "accuracy": 0.9059633027522935,
+      "accuracyWithoutEarlyExit": 0.908256880733945,
+      "exit1Frac": 0.1720183486238532,
+      "exit2Frac": 0.2511467889908257,
+      "fullFrac": 0.5768348623853211,
+      "measuredOn": "SST-2 validation (872), onnxruntime-web WASM"
+    }
+  }
+}

@@ -48,6 +48,8 @@ export class PlanRunner {
     for (let g0 = 0; g0 < n; g0 += G) {
       const idx = [...Array(Math.min(G, n - g0)).keys()].map(k => g0 + k);
       const st = new Map(idx.map(j => [j, encodeToTensors(tokenizer, [texts[j]])]));
+      // instrumentation only (does not affect execution): chunks visited + time inside the Workers per sentence
+      const trace = new Map(idx.map(j => [j, { path: [], computeMs: 0, transferMs: 0 }]));
       let active = idx, warming = null;
       for (let i = 0; i < this.entries.length && active.length; i++) {
         const e = this.entries[i];
@@ -62,12 +64,13 @@ export class PlanRunner {
         for (const j of active) {
           const s = st.get(j), f = feedsFor(e.name, i, s);
           if (f.attention_mask) f.attention_mask = cloneT(f.attention_mask);
-          const { outputs } = await w.run(f, { withExit });
-          if (outputs.logits) { results[j] = { logits: logitsRows(outputs.logits)[0], exitAt: 'full' }; continue; }
+          const { outputs, runMs, overheadMs } = await w.run(f, { withExit });
+          const tr = trace.get(j); tr.path.push(e.name); tr.computeMs += runMs; tr.transferMs += overheadMs;
+          if (outputs.logits) { results[j] = { logits: logitsRows(outputs.logits)[0], exitAt: 'full', ...tr }; continue; }
           s.hidden = outputs.hidden; if (i === 0) delete s.input_ids;
           if (withExit) {
             const lg = logitsRows(outputs.exitLogits)[0];
-            if (conf(lg) >= this.tau) { results[j] = { logits: lg, exitAt: e.name === 'c1_l0_1' ? 'e1' : 'e2' }; continue; }
+            if (conf(lg) >= this.tau) { tr.path.push(EXIT_AFTER[e.name]); results[j] = { logits: lg, exitAt: e.name === 'c1_l0_1' ? 'e1' : 'e2', ...tr }; continue; }
           }
           still.push(j);
         }

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptive Model Loader</title><link rel="icon" href="data:,">
+<script type="importmap">
+{ "imports": {
+  "adaptive-onnx-loader": "/packages/adaptive-onnx-loader/src/index.js",
+  "onnxruntime-web": "/node_modules/onnxruntime-web/dist/ort.wasm.min.mjs"
+} }
+</script>
+<style>
+  :root { --bg:#f7f7f5; --fg:#1c1917; --muted:#6b6560; --card:#fff; --line:#e7e5e4; --accent:#2563eb; --pos:#15803d; --neg:#b91c1c; --bar:#dbeafe; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161412; --fg:#f5f5f4; --muted:#a8a29e; --card:#211e1b; --line:#3a3532; --accent:#60a5fa; --pos:#4ade80; --neg:#f87171; --bar:#1e3a5f; } }
+  * { box-sizing: border-box } body { font: 15px/1.5 system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--fg); margin: 0; padding: 24px 16px; }
+  main { max-width: 1040px; margin: auto; display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { main { grid-template-columns: 1.15fr 0.85fr; } header, .wide { grid-column: 1 / -1; } }
+  header h1 { font-size: 24px; margin: 0 } header p { color: var(--muted); margin: 4px 0 0 }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; min-width: 0 }
+  h2 { font-size: 15px; margin: 0 0 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center } label, select, button, textarea { font: inherit }
+  select, textarea { background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px }
+  textarea { width: 100%; min-height: 84px; resize: vertical }
+  button { padding: 8px 14px; border: 0; border-radius: 6px; background: var(--accent); color: #fff; cursor: pointer } button:disabled { opacity: .5; cursor: default }
+  button.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent) }
+  ol { margin: 0; padding-left: 20px } ol li { margin-bottom: 4px }
+  .plan { font-family: ui-monospace, monospace; font-size: 13px; background: var(--bg); border-radius: 6px; padding: 6px 8px; overflow-wrap: anywhere }
+  .kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: 14px } .kv dt { color: var(--muted) } .kv dd { margin: 0; font-variant-numeric: tabular-nums }
+  .meter { height: 10px; background: var(--bg); border-radius: 5px; overflow: hidden; margin: 6px 0 2px } .meter i { display: block; height: 100%; background: var(--accent) }
+  .res { display: grid; gap: 6px; margin-top: 10px } .res div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding: 4px 0 }
+  .POSITIVE { color: var(--pos); font-weight: 600 } .NEGATIVE { color: var(--neg); font-weight: 600 } small, .muted { color: var(--muted) }
+  .err { color: var(--neg); white-space: pre-wrap }
+  .note { margin: 10px 0 0; padding: 8px 10px; border-left: 3px solid var(--accent); background: var(--bg); border-radius: 0 6px 6px 0; font-size: 14px }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums } th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top }
+  th { color: var(--muted); font-weight: 600 } td.num, th.num { text-align: right }
+  .alts { margin-top: 12px; border: 1px solid var(--line); border-radius: 8px; max-height: 230px; overflow: auto }
+  .alts h3 { position: sticky; top: 0; margin: 0; padding: 6px 8px; font-size: 13px; background: var(--card); color: var(--muted); border-bottom: 1px solid var(--line) }
+  .chosen { color: var(--pos); font-weight: 600 } .feasible { color: var(--accent) } .rejected { color: var(--neg) }
+  details.r summary { display: flex; justify-content: space-between; gap: 12px; cursor: pointer; list-style: none; padding: 4px 0 } details.r summary::-webkit-details-marker { display: none }
+  details.r { border-bottom: 1px solid var(--line) } details.r .kv { margin: 4px 0 8px 12px; font-size: 13px }
+  .tip { cursor: help; border-bottom: 1px dotted var(--muted) }
+  details.debug > summary { cursor: pointer; font-weight: 600; color: var(--muted) } details.debug h3 { font-size: 13px; color: var(--muted); margin: 14px 0 6px }
+</style>
+</head>
+<body>
+<main>
+  <header><h1>Adaptive model loader</h1>
+    <p>DistilBERT sentiment model split into 4 chunks, each in its own Web Worker. The decision engine picks how to run it for this device. Cross-origin isolated: <b id="coi"></b></p></header>
+
+  <section>
+    <h2>Configure</h2>
+    <div class="row">
+      <label>Device profile <select id="profile"><option value="">this browser</option><option value="low">low · 150 MiB</option><option value="mid" selected>mid · 512 MiB</option><option value="high">high · 1536 MiB</option></select></label>
+      <label>Sentences per request <select id="spr"><option>1</option><option>32</option></select></label>
+    </div>
+    <div class="row" style="margin-top:8px">
+      <label><input type="checkbox" id="ee"> Allow early exit <small>(changes predictions)</small></label>
+      <label><input type="checkbox" id="cal"> Calibrate timings on this device <small>(~7 s)</small></label>
+    </div>
+    <div class="row" style="margin-top:12px"><button id="load">Load model</button><button class="ghost" id="dispose" disabled>Dispose</button></div>
+    <p id="err" class="err"></p>
+  </section>
+
+  <section>
+    <h2>Live state</h2>
+    <dl class="kv" id="state"><dt>Status</dt><dd>not loaded</dd></dl>
+    <div id="meterBox" hidden><div class="meter"><i id="meter" style="width:0"></i></div><small id="meterTxt"></small></div>
+    <table id="memTable" style="margin-top:10px" hidden><thead><tr><th>Memory</th><th class="num">MiB</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="wide">
+    <h2>Why this plan</h2>
+    <div class="plan" id="planId">—</div>
+    <div class="note" id="eeNote" hidden></div>
+    <ol id="why" style="margin-top:10px"><li class="muted">Load the model to see the engine's decision.</li></ol>
+    <div class="alts" id="altsBox" hidden><h3>Alternatives considered — best plan of each family, or the hard constraint that ruled the family out</h3>
+      <table><thead><tr><th>Plan family</th><th>Status</th><th>Why</th><th class="num">Candidates</th></tr></thead><tbody id="alts"></tbody></table></div>
+  </section>
+
+  <section>
+    <h2>Classify</h2>
+    <textarea id="text">a gorgeous, witty, seductive movie.
+the plot is dull and the acting is worse.
+an uneven but often charming film.</textarea>
+    <div class="row" style="margin-top:8px"><button id="go" disabled>Classify (one sentence per line)</button><small id="took"></small></div>
+    <div class="row" style="justify-content:space-between;margin-top:10px" id="resHead" hidden><small>Sentence</small>
+      <small><span class="tip" title="Model confidence = the softmax probability the model assigns to its own predicted label for THIS sentence. It is not accuracy: accuracy is measured on a labelled dataset (e.g. 90.83% on SST-2 validation for the mixed plan). A model can be confident and wrong.">Label · model confidence ⓘ</span></small></div>
+    <div class="res" id="res"></div>
+  </section>
+
+  <section>
+    <h2>Chunk cache (IndexedDB)</h2>
+    <dl class="kv" id="cache"><dt>Entries</dt><dd>—</dd></dl>
+    <div class="row" style="margin-top:10px"><button class="ghost" id="clear" disabled>Clear cache</button></div>
+  </section>
+  <section class="wide">
+    <h2>Same model, different devices</h2>
+    <p class="muted" style="margin:0 0 8px;font-size:14px">The engine's choice for each profile, with the current options (sentences per request, early exit, calibration) and the <b>current cache contents</b> — cached chunks load faster, so a choice can change after a request. Previews only — the running plan is unchanged. Refreshed after every action.</p>
+    <table><thead><tr><th>Profile</th><th>Usable memory</th><th>Selected plan</th><th class="num">Predicted peak</th><th class="num">Predicted ms / sentence</th><th class="num">Accuracy</th><th class="num">Feasible plans</th></tr></thead>
+      <tbody id="cmp"><tr><td colspan="7" class="muted">Load the model to compare.</td></tr></tbody></table>
+  </section>
+
+  <section class="wide">
+    <details class="debug" id="debug"><summary>Experiment / debug view</summary><div id="debugBody" class="muted">Load the model first.</div></details>
+  </section>
+</main>
+<script type="module" src="/demo/index.js"></script>
+</body></html>

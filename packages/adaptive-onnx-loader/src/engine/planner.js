@@ -34,30 +34,36 @@ function planAccuracy(plan, eeTable) {
   return eeTable?.[plan.precision]?.accuracy ?? null;
 }
 
-export function decide({ manifest, signals, profile = null, overrides = {}, calibration = DEFAULT_CALIBRATION, earlyExitTable = null }) {
+/**
+ * `trace: true` additionally returns one record per candidate (status, reason, predicted memory,
+ * accuracy, cost). It is OUTPUT ONLY: the same plan is chosen with or without it (unit-tested).
+ */
+export function decide({ manifest, signals, profile = null, overrides = {}, calibration = DEFAULT_CALIBRATION, earlyExitTable = null, trace = false }) {
   // 1–2
   const ctx = applyProfile(signals, profile, overrides);
   const budget = usableBudget(ctx);
   // 3
   const cands = generateCandidates({ earlyExit: ctx.earlyExit });
-  const rejected = { memory: 0, accuracy: 0, unverified: 0 }, feasible = [];
+  const rejected = { memory: 0, accuracy: 0, unverified: 0 }, feasible = [], records = trace ? [] : null;
   for (const plan of cands) {
     const chunks = chunkInfo(manifest, plan);
     const mem = predictMemory(plan, chunks, ctx);
     const acc = planAccuracy(plan, earlyExitTable);
+    const rec = records ? { id: plan.id, precision: plan.precision, pinned: plan.pinned.length, earlyExit: plan.earlyExit, prewarm: plan.prewarm,
+                            groupSize: plan.groupSize, accuracy: acc, peakMiB: +mem.peakMiB.toFixed(1) } : null;
     // 4 — HARD constraints, checked before any cost is considered
-    if (acc == null) { rejected.unverified++; continue; }                  // no measured, reference-checked accuracy
-    if (acc < ctx.minAccuracy) { rejected.accuracy++; continue; }
-    if (mem.peakMiB > budget.usableMiB) { rejected.memory++; continue; }
+    if (acc == null) { rejected.unverified++; if (rec) records.push({ ...rec, status: 'rejected', reason: 'unverified', detail: 'accuracy never measured' }); continue; }
+    if (acc < ctx.minAccuracy) { rejected.accuracy++; if (rec) records.push({ ...rec, status: 'rejected', reason: 'accuracy', detail: `${(acc * 100).toFixed(2)}% < ${(ctx.minAccuracy * 100).toFixed(1)}% floor` }); continue; }
+    if (mem.peakMiB > budget.usableMiB) { rejected.memory++; if (rec) records.push({ ...rec, status: 'rejected', reason: 'memory', detail: `${mem.peakMiB.toFixed(1)} MiB > ${budget.usableMiB.toFixed(1)} MiB usable` }); continue; }
     // 5
     const diskNeedMiB = chunks.reduce((s, c) => s + c.sizeMiB, 0);
     const diskFits = diskNeedMiB <= budget.diskUsableMiB;
     const time = predictTime(plan, chunks, ctx, calibration, { exitStats: earlyExitTable?.[plan.precision], diskFits });
-    feasible.push({ plan, mem, time, accuracy: acc, diskNeedMiB, diskFits });
+    feasible.push({ plan, mem, time, accuracy: acc, diskNeedMiB, diskFits, rec });
   }
   const base = { profile: ctx.profile, context: ctx, budget, calibrationSource: calibration.source,
                  candidates: { total: cands.length, rejected, feasible: feasible.length } };
-  if (!feasible.length) return { ...base, feasible: false, plan: null,
+  if (!feasible.length) return { ...base, feasible: false, plan: null, ...(records ? { trace: records } : {}),
     explanation: [`No plan satisfies the hard constraints: usable memory ${budget.usableMiB.toFixed(1)} MiB, minimum accuracy ${ctx.minAccuracy}.`,
                   `Rejected: ${rejected.memory} for memory, ${rejected.accuracy} for accuracy, ${rejected.unverified} unverified.`] };
   // 5 — normalised weighted cost (each term divided by the best feasible value)
@@ -74,9 +80,11 @@ export function decide({ manifest, signals, profile = null, overrides = {}, cali
   feasible.sort((a, b) => (a.cost - b.cost) || (a.time.startupsPerSentence - b.time.startupsPerSentence)
                        || (a.time.networkMiBFirstRequest - b.time.networkMiBFirstRequest) || a.plan.id.localeCompare(b.plan.id));
   const chosen = feasible[0];
+  if (records) feasible.forEach((f, i) => records.push({ ...f.rec, status: i === 0 ? 'chosen' : 'feasible', rank: i + 1, cost: +f.cost.toFixed(4),
+    perSentenceMs: +f.time.perSentenceMs.toFixed(1), initialLoadMs: Math.round(f.time.initialLoadMs) }));
   // 7
   return { ...base, feasible: true, plan: chosen.plan, predicted: summarize(chosen), runnersUp: feasible.slice(1, 4).map(summarize),
-           explanation: explain(chosen, ctx, budget, base.candidates, feasible) };
+           explanation: explain(chosen, ctx, budget, base.candidates, feasible), ...(records ? { trace: records } : {}) };
 }
 
 const r1 = x => Math.round(x * 10) / 10;

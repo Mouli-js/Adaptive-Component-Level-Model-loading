@@ -1,0 +1,109 @@
+{
+  "work": "/sessions/rcw-01yla87ancocqy7yaf4ylkt4/p6work",
+  "checks": [
+    {
+      "name": "tarball contains only src/, index.d.ts, README.md, LICENSE, package.json",
+      "ok": true,
+      "detail": [
+        "LICENSE",
+        "README.md",
+        "index.d.ts",
+        "package.json"
+      ]
+    },
+    {
+      "name": "no tests, fixtures or node_modules in the tarball",
+      "ok": true,
+      "detail": "30 files"
+    },
+    {
+      "name": "Worker script is included",
+      "ok": true,
+      "detail": "src/workers/chunkWorker.js"
+    },
+    {
+      "name": "installed by package name",
+      "ok": true,
+      "detail": "0.1.0"
+    },
+    {
+      "name": "Node import + tokenizer",
+      "ok": true,
+      "detail": [
+        101,
+        7592,
+        1010,
+        2088,
+        999,
+        102
+      ]
+    },
+    {
+      "name": "Node decision engine via package",
+      "ok": true,
+      "detail": "int8|sequential|pin=-|G=1|pw=0|ee=0"
+    },
+    {
+      "name": "loadModel throws a typed error outside a browser",
+      "ok": true,
+      "detail": "NOT_ISOLATED"
+    },
+    {
+      "name": "TypeScript consumer type-checks (strict)",
+      "ok": true,
+      "detail": "no errors"
+    }
+  ],
+  "tarball": "/sessions/rcw-01yla87ancocqy7yaf4ylkt4/p6work/adaptive-onnx-loader-0.1.0.tgz",
+  "size": 37228,
+  "unpackedSize": 111333,
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.d.ts",
+    "package.json",
+    "src/api.js",
+    "src/baseline/fullModel.js",
+    "src/cache/chunkLoader.js",
+    "src/cache/chunkStore.js",
+    "src/cache/hash.js",
+    "src/cache/memoryLRU.js",
+    "src/chunks/chain.js",
+    "src/chunks/chainRunner.js",
+    "src/chunks/chunkSession.js",
+    "src/engine/calibrate.js",
+    "src/engine/costModel.js",
+    "src/engine/measurements.js",
+    "src/engine/monitor.js",
+    "src/engine/planner.js",
+    "src/engine/profiles.js",
+    "src/index.js",
+    "src/manifest.js",
+    "src/metrics/memory.js",
+    "src/tensors.js",
+    "src/tokenizer/wordpiece.js",
+    "src/workers/chunkWorker.js",
+    "src/workers/planRunner.js",
+    "src/workers/pooledChainRunner.js",
+    "src/workers/workerChainRunner.js",
+    "src/workers/workerChunk.js",
+    "src/workers/workerPool.js"
+  ],
+  "smoke": {
+    "ids": [
+      101,
+      7592,
+      1010,
+      2088,
+      999,
+      102
+    ],
+    "plan": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+    "profiles": [
+      "low",
+      "mid",
+      "high"
+    ],
+    "errorInNode": "NOT_ISOLATED"
+  }
+}

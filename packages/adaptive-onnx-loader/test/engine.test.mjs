@@ -91,3 +91,17 @@ test('explanation names the budget, constraints, predicted costs and the runner-
   const e = run('mid').explanation.join('\n');
   for (const s of ['usable', 'reserve', 'rejected', 'Predicted peak memory', 'per sentence', 'weighted cost', 'next best']) assert.ok(e.includes(s), s);
 });
+
+test('trace is output-only: identical decision with and without it', () => {
+  for (const p of ['low', 'mid', 'high']) for (const earlyExit of [false, true]) {
+    const a = decide({ manifest, signals, profile: p, overrides: { earlyExit }, earlyExitTable: eeTable });
+    const b = decide({ manifest, signals, profile: p, overrides: { earlyExit }, earlyExitTable: eeTable, trace: true });
+    const { trace, ...rest } = b;
+    assert.equal(JSON.stringify(rest), JSON.stringify(a), `${p} ee=${earlyExit}`);
+    assert.equal(trace.length, a.candidates.total);
+    assert.equal(trace.filter(r => r.status === 'chosen').length, 1);
+    assert.equal(trace.find(r => r.status === 'chosen').id, a.plan.id);
+    assert.equal(trace.filter(r => r.status !== 'rejected').length, a.candidates.feasible);
+    for (const k of ['memory', 'accuracy', 'unverified']) assert.equal(trace.filter(r => r.reason === k).length, a.candidates.rejected[k], k);
+  }
+});

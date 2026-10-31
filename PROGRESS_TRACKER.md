@@ -1,6 +1,6 @@
 # Progress Tracker — Adaptive Component-Level Model Loading
 
-**Window:** 31 Oct – 30 Nov 2026 · **Last updated:** 31 Oct 2026 · **Today:** Day 1 of 30 · **Schedule:** 🟢 ~17 days ahead (Phase 5 done on Day 1; planned 17–20 Nov)
+**Window:** 31 Oct – 30 Nov 2026 · **Last updated:** 31 Oct 2026 · **Today:** Day 1 of 30 · **Schedule:** 🟢 ~21 days ahead (Phases 0–6 done on Day 1)
 
 Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval · ✅ Approved · ⚠️ Blocked / slipped
 
@@ -11,9 +11,9 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 2 | Baseline browser inference | 7 – 9 Nov | 31 Oct | ✅ Approved 31 Oct after the Mac verification passed (all checks; int8 Δ = 0, fp32 2.6e-5) | `docs/phase-reports/PHASE_2_REPORT.md` (§14 = real device) |
 | 3 | Chunked execution and workers | 10 – 13 Nov | 31 Oct | ✅ Approved 31 Oct · commit `b5ba76e` | `docs/phase-reports/PHASE_3_REPORT.md` |
 | 4 | Storage and cache layer | 14 – 16 Nov | 31 Oct | ✅ Approved 31 Oct · commit `8433ae0` | `docs/phase-reports/PHASE_4_REPORT.md` (§13 = Mac) |
-| 5 | Resource monitor and decision engine | 17 – 20 Nov | 31 Oct | 🟨 14/14 engine + 31/31 total unit tests, 53/53 browser gates, regressions 5/5 · 23/23 · 26/26; **awaiting approval** | `docs/phase-reports/PHASE_5_REPORT.md` |
-| 6 | npm package and demo | 21 – 23 Nov | — | ⬜ | — |
-| 7 | Experiments | 24 – 27 Nov | — | ⬜ | — |
+| 5 | Resource monitor and decision engine | 17 – 20 Nov | 31 Oct | ✅ Approved 31 Oct · commit `54945c3` | `docs/phase-reports/PHASE_5_REPORT.md` |
+| 6 | npm package and demo | 21 – 23 Nov | 31 Oct | ✅ Approved 31 Oct (commit below) | `docs/phase-reports/PHASE_6_REPORT.md` |
+| 7 | Experiments | 24 – 27 Nov | — | 🟨 **Experiment plan drafted, awaiting your review** (no experiments run) | `docs/PHASE_7_EXPERIMENT_PLAN.md` |
 | 8 | Report and VIVA preparation | 28 – 30 Nov | — | ⬜ | — |
 
 ## Key results so far
@@ -52,6 +52,9 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | I-4.2 | Session creation 63–72% of a warm request → keep Workers alive / pre-start | Claude | ✅ Resolved in Phase 5 (resident / pinned / pre-start plans) |
 | I-5.1 | Hybrid / pre-start time predictions 23–35% optimistic (F-32) | Claude | Phase 7 refit |
 | I-5.3 | Mac run of `demo/phase5-engine.html` | Mouli | Recommended |
+| I-6.6 | Package licence | Mouli | ✅ MIT, © Moulieswaran M (31 Oct). Third-party licences kept separate in `THIRD_PARTY_NOTICES.md` |
+| I-6.4 | Publish to the npm registry? | Mouli | Optional, your decision |
+| I-6.1 | Cost model / accuracy table are model-specific (DistilBERT-SST2) | — | Documented limitation |
 | I-4.7 | Mac run of `demo/phase4-cache.html` | Mouli | ✅ Received 31 Oct: every check passed; recorded as MAC-CHROME-W1 (Phase 4 report §13) |
 | I-4.8 | Why did the Mac fp32 F4 'unlimited' run load from the network? (Was the cache cleared?) | Mouli | Question |
 | I-1.1 | Mixed precision = C2 fp32, rest int8 | Claude | ✅ Measured: 90.83% (F-30); in the engine |
@@ -75,3 +78,7 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 31 Oct 2026 | Mac Phase 4 results recorded (MAC-CHROME-W1): all checks pass; F-22/F-24 confirmed on a real device; F-27 (heap sizes identical across platforms). Fixed 2 bugs found through them (pool timeline order, page label); int8 suite re-run 26/26. |
 | 31 Oct 2026 | Phase 4 approved and committed (`8433ae0`). Next: Phase 5 (resource monitor and decision engine). |
 | 31 Oct 2026 | Phase 5 completed with your 5 adjustments: deterministic 7-step engine, weighted cost, hard constraints separate from preferences, 15% reserve + heap ×1.10, separate memory/time components, disk vs residency separated, early exit opt-in (τ on dev). Calibration rebuilt twice (F-28, F-29). Awaiting approval. |
+| 31 Oct 2026 | Phase 5 approved and committed (`54945c3`). Phase 6 started. |
+| 31 Oct 2026 | Phase 6 completed: `loadModel` facade, typed errors, `index.d.ts`, README, LICENSE, demo (public API only); tarball tested in a clean consumer project (8/8 + 17/17); 2 API bugs found by the consumer test and fixed. Awaiting approval. |
+| 31 Oct 2026 | Demo improved after your review: early-exit status, predicted vs measured memory, per-sentence path/time, profile comparison (`previewPlan`), alternatives box, collapsible debug view. Output-only trace added to `decide()` and per-sentence records to `PlanRunner` (decisions byte-identical; Phase 5 53/53). |
+| 31 Oct 2026 | Phase 6 approved: licence MIT © Moulieswaran M; `THIRD_PARTY_NOTICES.md` added (DistilBERT Apache-2.0, SST-2 licence unknown, onnxruntime-web MIT). Phase 6 committed. Phase 7 experiment plan drafted for review; no experiment run. |

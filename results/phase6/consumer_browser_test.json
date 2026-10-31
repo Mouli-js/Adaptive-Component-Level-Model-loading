@@ -1,0 +1,648 @@
+{
+  "date": "2026-10-31T16:23:18.455Z",
+  "tarball": "adaptive-onnx-loader-0.1.0.tgz",
+  "result": {
+    "low": {
+      "plan": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "why": [
+        "Profile \"low\": allowance 150 MiB − 15% reserve = usable 127.5 MiB; minimum accuracy 0.9.",
+        "Hard constraints rejected 234 plans for memory and 0 for accuracy; 3 of 237 remain.",
+        "Chosen: int8 weights, one chunk Worker at a time, groups of 1.",
+        "Predicted peak memory 90.3 MiB (Workers 84.9 incl. ×1.1 uncertainty, tensors 0.4, overhead 5.0), 71% of the usable budget.",
+        "Predicted 1922.3 ms per sentence and 362.11 s initial load; accuracy 90.02%.",
+        "Weights m=0.6 t=0.2 l=0.2: lowest weighted cost 1.000 (next best int8|sequential|pin=-|G=8|pw=0|ee=0 at 1.017)."
+      ],
+      "maxDiff": 0,
+      "labelsConsistent": true,
+      "singleIsObject": true,
+      "stats": {
+        "planId": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+        "disposed": false,
+        "persistent": {
+          "enabled": true,
+          "entries": [
+            {
+              "name": "c2_l2_3",
+              "precision": "int8",
+              "sizeMiB": 13.62,
+              "hits": 6
+            },
+            {
+              "name": "c0_embed",
+              "precision": "int8",
+              "sizeMiB": 22.74,
+              "hits": 6
+            },
+            {
+              "name": "c3_l4_5_cls",
+              "precision": "int8",
+              "sizeMiB": 14.2,
+              "hits": 6
+            },
+            {
+              "name": "c1_l0_1",
+              "precision": "int8",
+              "sizeMiB": 13.62,
+              "hits": 6
+            }
+          ],
+          "usageMiB": 64.18,
+          "storage": {
+            "supported": true,
+            "quota": 10799010747,
+            "usage": 61592507,
+            "persisted": false
+          }
+        },
+        "runtime": {
+          "liveWorkers": 0,
+          "liveWasmMiB": 0,
+          "peakWasmMiB": 77.19,
+          "workerStarts": 28,
+          "lastInferMs": 2081.7999999999884,
+          "requests": 2,
+          "sentences": 7
+        }
+      },
+      "paths": [
+        "c0_embed>c1_l0_1>c2_l2_3>c3_l4_5_cls",
+        "c0_embed>c1_l0_1>c2_l2_3>c3_l4_5_cls",
+        "c0_embed>c1_l0_1>c2_l2_3>c3_l4_5_cls",
+        "c0_embed>c1_l0_1>c2_l2_3>c3_l4_5_cls",
+        "c0_embed>c1_l0_1>c2_l2_3>c3_l4_5_cls",
+        "c0_embed>c1_l0_1>c2_l2_3>c3_l4_5_cls"
+      ],
+      "timesOk": true,
+      "alternatives": 9,
+      "altCandidates": 237,
+      "eeStatus": {
+        "requested": false,
+        "used": false,
+        "tau": null,
+        "reason": "Off — early exit is opt-in (it changes predictions)."
+      },
+      "ctxSources": 7,
+      "preview": {
+        "previewId": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "unchanged": true
+      }
+    },
+    "high": {
+      "explain": {
+        "planId": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "plan": {
+          "precision": "fp32",
+          "pinned": [
+            "c0_embed",
+            "c1_l0_1",
+            "c2_l2_3",
+            "c3_l4_5_cls"
+          ],
+          "groupSize": 1,
+          "prewarm": false,
+          "earlyExit": false,
+          "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+        },
+        "profile": "high",
+        "explanation": [
+          "Profile \"high\": allowance 1536 MiB − 15% reserve = usable 1305.6 MiB; minimum accuracy 0.91.",
+          "Hard constraints rejected 0 plans for memory and 158 for accuracy; 79 of 237 remain.",
+          "Chosen: fp32 weights, all chunk Workers resident.",
+          "Predicted peak memory 905.9 MiB (Workers 894.6 incl. ×1.1 uncertainty, tensors 0.4, overhead 11.0), 69% of the usable budget.",
+          "Predicted 72.5 ms per sentence and 45.54 s initial load; accuracy 91.06%.",
+          "Weights m=0.1 t=0.6 l=0.3: lowest weighted cost 1.189 (next best fp32|hybrid|pin=c0+c1+c3|G=1|pw=0|ee=0 at 4.691)."
+        ],
+        "predicted": {
+          "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+          "cost": 1.1893,
+          "terms": {
+            "m": 2.89,
+            "t": 1,
+            "l": 1.001,
+            "n": 1
+          },
+          "accuracy": 0.9105504587155964,
+          "memory": {
+            "peakMiB": 905.9,
+            "workerWasmMiB": 894.6,
+            "pageTensorsMiB": 0.4,
+            "cachedBytesMiB": 0,
+            "browserOverheadMiB": 11,
+            "maxLiveWorkers": 4
+          },
+          "time": {
+            "perSentenceMs": 72.5,
+            "computeMs": 72.5,
+            "reloadPerSentenceMs": 0,
+            "transferMs": 1.3,
+            "initialLoadMs": 45543,
+            "startupsPerSentence": 0,
+            "effectiveGroupSize": 1
+          },
+          "network": {
+            "firstRequestMiB": 255.5,
+            "persistentCache": true,
+            "diskNeedMiB": 255.5
+          },
+          "loadBreakdownFirst": [
+            {
+              "chunk": "c0_embed",
+              "download": 15296,
+              "fromDisk": 0,
+              "store": 318,
+              "verify": 106,
+              "create": 527,
+              "total": 16247
+            },
+            {
+              "chunk": "c1_l0_1",
+              "download": 9116,
+              "fromDisk": 0,
+              "store": 189,
+              "verify": 63,
+              "create": 266,
+              "total": 9634
+            },
+            {
+              "chunk": "c2_l2_3",
+              "download": 9116,
+              "fromDisk": 0,
+              "store": 189,
+              "verify": 63,
+              "create": 266,
+              "total": 9634
+            },
+            {
+              "chunk": "c3_l4_5_cls",
+              "download": 9496,
+              "fromDisk": 0,
+              "store": 197,
+              "verify": 66,
+              "create": 269,
+              "total": 10028
+            }
+          ]
+        },
+        "budget": {
+          "allowanceMiB": 1536,
+          "reserveFraction": 0.15,
+          "reserveMiB": 230.4000000000001,
+          "usableMiB": 1305.6,
+          "diskUsableMiB": 9216
+        },
+        "candidates": {
+          "total": 237,
+          "rejected": {
+            "memory": 0,
+            "accuracy": 158,
+            "unverified": 0
+          },
+          "feasible": 79
+        },
+        "calibration": "default: CLOUD-HL-1T (Phases 3–4)",
+        "runnersUp": [
+          "fp32|hybrid|pin=c0+c1+c3|G=1|pw=0|ee=0",
+          "fp32|hybrid|pin=c0+c2+c3|G=1|pw=0|ee=0",
+          "fp32|hybrid|pin=c0+c1+c3|G=8|pw=0|ee=0"
+        ],
+        "earlyExit": {
+          "requested": false,
+          "used": false,
+          "tau": null,
+          "reason": "Off — early exit is opt-in (it changes predictions)."
+        },
+        "alternatives": [
+          {
+            "family": "fp32 · resident · full",
+            "precision": "fp32",
+            "mode": "resident",
+            "earlyExit": false,
+            "status": "chosen",
+            "detail": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0 · cost 1.1893",
+            "candidates": 1,
+            "rejected": {},
+            "rank": 0
+          },
+          {
+            "family": "fp32 · hybrid (some pinned) · full",
+            "precision": "fp32",
+            "mode": "hybrid (some pinned)",
+            "earlyExit": false,
+            "status": "feasible",
+            "detail": "best fp32|hybrid|pin=c0+c1+c3|G=1|pw=0|ee=0 · rank 2 · cost 4.6911",
+            "candidates": 72,
+            "rejected": {},
+            "rank": 2
+          },
+          {
+            "family": "fp32 · one at a time · full",
+            "precision": "fp32",
+            "mode": "one at a time",
+            "earlyExit": false,
+            "status": "feasible",
+            "detail": "best fp32|sequential|pin=-|G=1|pw=1|ee=0 · rank 74 · cost 16.0758",
+            "candidates": 6,
+            "rejected": {},
+            "rank": 74
+          },
+          {
+            "family": "int8 · hybrid (some pinned) · full",
+            "precision": "int8",
+            "mode": "hybrid (some pinned)",
+            "earlyExit": false,
+            "status": "rejected",
+            "detail": "accuracy 90.02% < 91.0% floor",
+            "candidates": 72,
+            "rejected": {
+              "accuracy": 72
+            },
+            "rank": null
+          },
+          {
+            "family": "int8 · one at a time · full",
+            "precision": "int8",
+            "mode": "one at a time",
+            "earlyExit": false,
+            "status": "rejected",
+            "detail": "accuracy 90.02% < 91.0% floor",
+            "candidates": 6,
+            "rejected": {
+              "accuracy": 6
+            },
+            "rank": null
+          },
+          {
+            "family": "int8 · resident · full",
+            "precision": "int8",
+            "mode": "resident",
+            "earlyExit": false,
+            "status": "rejected",
+            "detail": "accuracy 90.02% < 91.0% floor",
+            "candidates": 1,
+            "rejected": {
+              "accuracy": 1
+            },
+            "rank": null
+          },
+          {
+            "family": "mixedC2 · hybrid (some pinned) · full",
+            "precision": "mixedC2",
+            "mode": "hybrid (some pinned)",
+            "earlyExit": false,
+            "status": "rejected",
+            "detail": "accuracy 90.83% < 91.0% floor",
+            "candidates": 72,
+            "rejected": {
+              "accuracy": 72
+            },
+            "rank": null
+          },
+          {
+            "family": "mixedC2 · one at a time · full",
+            "precision": "mixedC2",
+            "mode": "one at a time",
+            "earlyExit": false,
+            "status": "rejected",
+            "detail": "accuracy 90.83% < 91.0% floor",
+            "candidates": 6,
+            "rejected": {
+              "accuracy": 6
+            },
+            "rank": null
+          },
+          {
+            "family": "mixedC2 · resident · full",
+            "precision": "mixedC2",
+            "mode": "resident",
+            "earlyExit": false,
+            "status": "rejected",
+            "detail": "accuracy 90.83% < 91.0% floor",
+            "candidates": 1,
+            "rejected": {
+              "accuracy": 1
+            },
+            "rank": null
+          }
+        ],
+        "context": {
+          "profile": "high",
+          "deviceMemoryGiB": 8,
+          "cores": 8,
+          "downlinkMbps": 50,
+          "rttMs": 40,
+          "allowanceMiB": 1536,
+          "minAccuracy": 0.91,
+          "weights": {
+            "m": 0.1,
+            "t": 0.6,
+            "l": 0.3,
+            "n": 0
+          },
+          "reserveFraction": 0.15,
+          "heapUncertainty": 1.1,
+          "sentencesPerRequest": 1,
+          "earlyExit": false,
+          "diskFreeMiB": 10240,
+          "crossOriginIsolated": true,
+          "sources": {
+            "deviceMemoryGiB": "profile:high",
+            "cores": "profile:high",
+            "downlinkMbps": "profile:high",
+            "rttMs": "profile:high",
+            "allowanceMiB": "profile:high",
+            "minAccuracy": "profile:high",
+            "weights": "profile:high"
+          },
+          "cachedChunks": 4
+        },
+        "calibrationValues": {
+          "source": "default: CLOUD-HL-1T (Phases 3–4)",
+          "spawnMs": 40,
+          "createBaseWarmMs": 150,
+          "createBaseColdMs": 360,
+          "createPerMiBMs": 1.4,
+          "inferC1Ms": {
+            "int8": 14.67,
+            "fp32": 23.56
+          },
+          "transferMs": 0.33,
+          "idbReadMBps": 600,
+          "hashMBps": 900
+        }
+      },
+      "maxDiff": 0,
+      "stats": {
+        "planId": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "disposed": false,
+        "persistent": {
+          "enabled": true,
+          "entries": [
+            {
+              "name": "c2_l2_3",
+              "precision": "int8",
+              "sizeMiB": 13.62,
+              "hits": 6
+            },
+            {
+              "name": "c3_l4_5_cls",
+              "precision": "fp32",
+              "sizeMiB": 56.36,
+              "hits": 0
+            },
+            {
+              "name": "c0_embed",
+              "precision": "fp32",
+              "sizeMiB": 90.93,
+              "hits": 0
+            },
+            {
+              "name": "c0_embed",
+              "precision": "int8",
+              "sizeMiB": 22.74,
+              "hits": 6
+            },
+            {
+              "name": "c1_l0_1",
+              "precision": "fp32",
+              "sizeMiB": 54.1,
+              "hits": 0
+            },
+            {
+              "name": "c3_l4_5_cls",
+              "precision": "int8",
+              "sizeMiB": 14.2,
+              "hits": 6
+            },
+            {
+              "name": "c2_l2_3",
+              "precision": "fp32",
+              "sizeMiB": 54.1,
+              "hits": 0
+            },
+            {
+              "name": "c1_l0_1",
+              "precision": "int8",
+              "sizeMiB": 13.62,
+              "hits": 6
+            }
+          ],
+          "usageMiB": 319.67,
+          "storage": {
+            "supported": true,
+            "quota": 11066925015,
+            "usage": 329506775,
+            "persisted": false
+          }
+        },
+        "runtime": {
+          "liveWorkers": 4,
+          "liveWasmMiB": 813.31,
+          "peakWasmMiB": 813.31,
+          "workerStarts": 4,
+          "lastInferMs": 3774.5899999999674,
+          "requests": 3,
+          "sentences": 13
+        }
+      }
+    },
+    "earlyExitWithoutMeta": "EARLY_EXIT_UNAVAILABLE",
+    "afterDispose": {
+      "stats": {
+        "liveWorkers": 0,
+        "liveWasmMiB": 0,
+        "peakWasmMiB": 813.31,
+        "workerStarts": 4,
+        "lastInferMs": 3774.5899999999674,
+        "requests": 3,
+        "sentences": 13
+      },
+      "inferCode": "DISPOSED"
+    },
+    "earlyExit": {
+      "plan": "int8|sequential|pin=-|G=32|pw=0|ee=1",
+      "maxDiff": 0,
+      "exitMismatch": 0,
+      "tau": 0.95,
+      "pathsConsistent": true,
+      "exits": {
+        "e1": 8,
+        "e2": 10,
+        "full": 14
+      },
+      "entriesAfterClear": 0
+    },
+    "infeasible": {
+      "code": "NO_FEASIBLE_PLAN",
+      "hasExplanation": true,
+      "feasible": false
+    },
+    "noCache": {
+      "enabled": false,
+      "entries": [],
+      "usageMiB": 0,
+      "storage": {
+        "supported": true,
+        "quota": 10737534242,
+        "usage": 116002,
+        "persisted": false
+      }
+    },
+    "badOptions": "BAD_OPTIONS",
+    "wallS": 25.476
+  },
+  "checks": [
+    {
+      "name": "no page errors",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "name": "low: engine chose int8 sequential",
+      "ok": true,
+      "detail": "int8|sequential|pin=-|G=1|pw=0|ee=0"
+    },
+    {
+      "name": "low: outputs = reference (Δ = 0)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "low: labels/scores consistent; single string -> object",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "name": "low: 4 int8 chunks cached in IndexedDB",
+      "ok": true,
+      "detail": [
+        "c2_l2_3",
+        "c0_embed",
+        "c3_l4_5_cls",
+        "c1_l0_1"
+      ]
+    },
+    {
+      "name": "low: sequential leaves 0 live Workers between calls",
+      "ok": true,
+      "detail": {
+        "liveWorkers": 0,
+        "liveWasmMiB": 0,
+        "peakWasmMiB": 77.19,
+        "workerStarts": 28,
+        "lastInferMs": 2081.7999999999884,
+        "requests": 2,
+        "sentences": 7
+      }
+    },
+    {
+      "name": "replan high: fp32 resident",
+      "ok": true,
+      "detail": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+    },
+    {
+      "name": "high: outputs = reference (Δ < 1e-4)",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "high: 4 resident Workers, live WASM ≈ 813 MiB",
+      "ok": true,
+      "detail": 813.31
+    },
+    {
+      "name": "replan(earlyExit) without metadata -> EARLY_EXIT_UNAVAILABLE",
+      "ok": true,
+      "detail": "EARLY_EXIT_UNAVAILABLE"
+    },
+    {
+      "name": "dispose: 0 live Workers; infer -> DISPOSED",
+      "ok": true,
+      "detail": {
+        "stats": {
+          "liveWorkers": 0,
+          "liveWasmMiB": 0,
+          "peakWasmMiB": 813.31,
+          "workerStarts": 4,
+          "lastInferMs": 3774.5899999999674,
+          "requests": 3,
+          "sentences": 13
+        },
+        "inferCode": "DISPOSED"
+      }
+    },
+    {
+      "name": "early exit opt-in: plan ee=1",
+      "ok": true,
+      "detail": "int8|sequential|pin=-|G=32|pw=0|ee=1"
+    },
+    {
+      "name": "early exit: outputs and exit points = reference",
+      "ok": true,
+      "detail": {
+        "plan": "int8|sequential|pin=-|G=32|pw=0|ee=1",
+        "maxDiff": 0,
+        "exitMismatch": 0,
+        "tau": 0.95,
+        "pathsConsistent": true,
+        "exits": {
+          "e1": 8,
+          "e2": 10,
+          "full": 14
+        },
+        "entriesAfterClear": 0
+      }
+    },
+    {
+      "name": "clearCache empties IndexedDB",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "infeasible budget -> NO_FEASIBLE_PLAN with explanation",
+      "ok": true,
+      "detail": {
+        "code": "NO_FEASIBLE_PLAN",
+        "hasExplanation": true,
+        "feasible": false
+      }
+    },
+    {
+      "name": "cache: false -> nothing stored",
+      "ok": true,
+      "detail": false
+    },
+    {
+      "name": "loadModel({}) -> BAD_OPTIONS",
+      "ok": true,
+      "detail": "BAD_OPTIONS"
+    },
+    {
+      "name": "infer results carry the execution path (4 chunks, full model)",
+      "ok": true,
+      "detail": "c0_embed>c1_l0_1>c2_l2_3>c3_l4_5_cls"
+    },
+    {
+      "name": "explainPlan: one alternatives row per family, covering every candidate",
+      "ok": true,
+      "detail": "9 rows / 237"
+    },
+    {
+      "name": "explainPlan: early exit status (off) and signal sources present",
+      "ok": true,
+      "detail": "Off — early exit is opt-in (it changes predictions)."
+    },
+    {
+      "name": "previewPlan returns a plan without changing the running one",
+      "ok": true,
+      "detail": {
+        "previewId": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+        "unchanged": true
+      }
+    },
+    {
+      "name": "early exit: τ reported; path ends at the exit head or C3",
+      "ok": true,
+      "detail": "τ 0.95"
+    }
+  ]
+}
