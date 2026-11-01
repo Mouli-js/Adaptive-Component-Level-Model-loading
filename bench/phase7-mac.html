@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phase 7 — Mac experiments</title><link rel="icon" href="data:,">
+<script type="importmap">
+{ "imports": {
+  "onnxruntime-web": "/node_modules/onnxruntime-web/dist/ort.wasm.min.mjs",
+  "adaptive-onnx-loader": "/packages/adaptive-onnx-loader/src/index.js"
+} }
+</script>
+<style>
+  :root { --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --card:#fff; --line:#e7e5e4; --accent:#2563eb; --ok:#15803d; --bad:#b91c1c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1c1917; --fg:#f5f5f4; --muted:#a8a29e; --card:#292524; --line:#44403c; --accent:#60a5fa; --ok:#4ade80; --bad:#f87171; } }
+  body { font: 15px/1.5 system-ui, sans-serif; background: var(--bg); color: var(--fg); margin: 0; padding: 24px 16px; }
+  main { max-width: 760px; margin: auto; } h1 { font-size: 22px; margin: 0 0 4px } p.sub { color: var(--muted); margin: 0 0 16px }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+  button { font: inherit; padding: 8px 14px; border: 0; border-radius: 6px; background: var(--accent); color: #fff; cursor: pointer; margin: 0 6px 6px 0; }
+  button.secondary { background: transparent; color: var(--fg); border: 1px solid var(--line); } button:disabled { opacity: .5; cursor: default }
+  .ok { color: var(--ok) } .bad { color: var(--bad) } code { font-size: 13px }
+  progress { width: 100%; height: 14px } ol { padding-left: 20px } li { margin-bottom: 4px }
+  pre { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 10px; overflow: auto; max-height: 220px; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Phase 7 — Mac experiments</h1>
+  <p class="sub">MAC-1 thread sweep · MAC-2 decision engine · MAC-3 policies / early exit · MAC-4 session creation. Results stay in this browser until you download them.</p>
+
+  <section>
+    <b>Before you start</b>
+    <ol>
+      <li>Mac on power, other tabs and heavy apps closed, display kept awake.</li>
+      <li>Server started from the project folder with <code>NO_CACHE=1 node demo/server.mjs</code>, and this page opened as <code>http://localhost:8080/bench/phase7-mac.html</code> (always <code>localhost</code>, never 127.0.0.1: the cache is per address).</li>
+      <li>Leave this tab in the foreground. The page reloads itself before every run; that is expected. If the tab is hidden, the run pauses and continues when you bring it back; a run that was hidden is repeated.</li>
+      <li><b>Re-run (1 Nov):</b> open <a href="/bench/phase7-mac.html?only=MAC-2,MAC-3,MAC-4"><code>/bench/phase7-mac.html?only=MAC-2,MAC-3,MAC-4</code></a> and click Start. The earlier run's stored rows are archived in this browser (not deleted).</li>
+    </ol>
+    <p>Cross-origin isolated: <b id="coi">?</b> · Origin: <code id="origin"></code></p>
+  </section>
+
+  <section>
+    <div><b id="status">Not started.</b></div>
+    <progress id="bar" max="1" value="0"></progress>
+    <p id="detail" class="sub"></p>
+    <button id="start">Start (≈ 30 min)</button>
+    <button id="pause" class="secondary">Pause</button>
+    <button id="resume" class="secondary">Resume</button>
+    <button id="download">Download results JSON</button>
+    <button id="reset" class="secondary">Reset (click twice)</button>
+  </section>
+
+  <section>
+    <b>After it finishes: MAC-5 (F-14 fetch diagnostic, ~3 min)</b>
+    <ol>
+      <li>Open <a href="/bench/diag-fetch.html?threads=4">/bench/diag-fetch.html?threads=4</a>, run it, and copy its JSON.</li>
+      <li>Send me both files: the results JSON from this page and the MAC-5 JSON.</li>
+    </ol>
+  </section>
+
+  <section><b>Last rows</b><pre id="log">—</pre></section>
+</main>
+<script type="module" src="/bench/phase7/runner.js"></script>
+<script type="module" src="/bench/phase7/mac.js"></script>
+</body>
+</html>

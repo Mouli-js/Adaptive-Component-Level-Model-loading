@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><title>Phase 7 experiment runner</title><link rel="icon" href="data:,">
+<script type="importmap">
+{ "imports": {
+  "onnxruntime-web": "/node_modules/onnxruntime-web/dist/ort.wasm.min.mjs",
+  "adaptive-onnx-loader": "/packages/adaptive-onnx-loader/src/index.js"
+} }
+</script>
+</head>
+<body style="font:14px system-ui;margin:16px">
+<p>Phase 7 automated runner (driven by <code>bench/phase7/*.mjs</code>). Cross-origin isolated: <b id="coi">?</b></p>
+<pre id="log"></pre>
+<script type="module" src="/bench/phase7/runner.js"></script>
+</body>
+</html>

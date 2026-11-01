@@ -1,0 +1,7 @@
+run 1 finished 21 steps
+visibility while hidden: after hide: hidden | 8 s hidden: step 11, guardPauses 1 | status text: Paused: the page is hidden. Bring this tab to the front to continue (step 12 of 13). | after unhide: step undefined
+only: [ 'MAC-2', 'MAC-3', 'MAC-4' ] | blocks in rows: MAC-3,MAC-4,MAC-2 | archived earlier runs: 1 1 | guardPauses: 1
+rows 14 failed 0 anomalous (hidden) rows 1 pageErrors 0 []
+   mac2|int8|sequential|pin=-|G=8|pw=0|ee=0|cold|rep0 page hidden during the run (kept; the step is repeated as a new row) retryOf - {"atStart":"visible","atEnd":"visible","changes":1,"hiddenMs":0}
+   mac2|int8|sequential|pin=-|G=8|pw=0|ee=0|cold|rep0  retryOf 1 {"atStart":"visible","atEnd":"visible","changes":0,"hiddenMs":0}
+every clean row has visibility recorded: true | duplicate clean keys: 0 | steps 13/13

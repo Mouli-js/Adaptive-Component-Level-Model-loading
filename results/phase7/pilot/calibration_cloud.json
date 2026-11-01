@@ -1,0 +1,91 @@
+{
+ "source": "calibrated on this device (3 loads × 2 precisions, 16 sentences after 3 warm-up runs; 6663 ms)",
+ "spawnMs": 59.21499999985099,
+ "createBaseMs": 106.25676669194482,
+ "createBaseColdMs": 407.3930166919262,
+ "createPerMiBMs": 1.654336015776837,
+ "inferMs": {
+  "int8": {
+   "c0_embed": 0.2013002726620466,
+   "c1_l0_1": 15.542499999748543,
+   "c2_l2_3": 15.489526243784846,
+   "c3_l4_5_cls": 15.606068506904979
+  },
+  "fp32": {
+   "c0_embed": 0.22774299660342603,
+   "c1_l0_1": 21.462499999906868,
+   "c2_l2_3": 21.508048599227553,
+   "c3_l4_5_cls": 21.67202355678202
+  }
+ },
+ "exitHeadMs": 0.3,
+ "transferMs": 0.2962499998975545,
+ "idbReadMBps": 634.1058461885045,
+ "idbWriteMBps": 300,
+ "hashMBps": 971.1051784638163,
+ "raw": {
+  "int8": {
+   "sizeMiB": 13.620711326599121,
+   "createMs": 128.79000000003725,
+   "createColdMs": 475.0425000002142,
+   "coldSamples": [
+    524,
+    426
+   ],
+   "spawnMs": 51.6999999997206,
+   "inferC1": 15.542499999748543,
+   "overhead": 0.22749999957159162,
+   "loads": [
+    {
+     "totalMs": 202,
+     "createMs": 111,
+     "source": "idb"
+    },
+    {
+     "totalMs": 334,
+     "createMs": 153,
+     "source": "idb"
+    },
+    {
+     "totalMs": 221,
+     "createMs": 129,
+     "source": "idb"
+    }
+   ],
+   "idbReadMBps": 474.1029377593361,
+   "hashMBps": 996.6748778733945
+  },
+  "fp32": {
+   "sizeMiB": 54.09918689727783,
+   "createMs": 195.7550000003539,
+   "createColdMs": 451.7750000001397,
+   "coldSamples": [
+    457,
+    446
+   ],
+   "spawnMs": 66.72999999998137,
+   "inferC1": 21.462499999906868,
+   "overhead": 0.3650000002235174,
+   "loads": [
+    {
+     "totalMs": 400,
+     "createMs": 196,
+     "source": "idb"
+    },
+    {
+     "totalMs": 449,
+     "createMs": 219,
+     "source": "idb"
+    },
+    {
+     "totalMs": 394,
+     "createMs": 178,
+     "source": "idb"
+    }
+   ],
+   "idbReadMBps": 634.1058461885045,
+   "hashMBps": 971.1051784638163
+  }
+ },
+ "notes": []
+}

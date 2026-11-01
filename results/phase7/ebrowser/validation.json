@@ -1,0 +1,42 @@
+{
+ "block": "ebrowser",
+ "smoke": false,
+ "date": "2026-11-01T05:57:44.451Z",
+ "pass": true,
+ "rows": 2,
+ "successfulKeys": 2,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "row count = 2",
+   "pass": true,
+   "detail": "2 successful keys"
+  },
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "0 runs checked"
+  },
+  {
+   "name": "browser batch 1 = Node WASM batch 1 (same logits hash)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "browser batch 32 = Node WASM batch 32 (same logits hash)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  }
+ ]
+}

@@ -1,0 +1,179 @@
+{
+ "step": "f28",
+ "env": {
+  "date": "2026-10-31T17:43:48.653Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "rows": [
+  {
+   "state": "a",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 501.25499999988824,
+   "spawnInitMs": 37.24000000022352,
+   "createMs": 415.3599999998696,
+   "bytesMs": 46.375,
+   "source": "idb",
+   "rep": 0
+  },
+  {
+   "state": "a",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 583.320000000298,
+   "spawnInitMs": 92.7550000003539,
+   "createMs": 445.2949999999255,
+   "bytesMs": 43.075000000186265,
+   "source": "idb",
+   "rep": 1
+  },
+  {
+   "state": "a",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 488.8950000000186,
+   "spawnInitMs": 51.83500000042841,
+   "createMs": 392.714999999851,
+   "bytesMs": 43.47500000009313,
+   "source": "idb",
+   "rep": 2
+  },
+  {
+   "state": "b",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 222.30500000016764,
+   "spawnInitMs": 29.884999999776483,
+   "createMs": 150.02499999990687,
+   "bytesMs": 39.375,
+   "source": "idb",
+   "rep": 0
+  },
+  {
+   "state": "b",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 247.42499999981374,
+   "spawnInitMs": 26.929999999701977,
+   "createMs": 181.46500000031665,
+   "bytesMs": 38.4499999997206,
+   "source": "idb",
+   "rep": 1
+  },
+  {
+   "state": "b",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 255.38499999977648,
+   "spawnInitMs": 63.03500000014901,
+   "createMs": 147.285000000149,
+   "bytesMs": 44.40499999979511,
+   "source": "idb",
+   "rep": 2
+  },
+  {
+   "state": "c",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 510.46999999973923,
+   "spawnInitMs": 27.645000000018626,
+   "createMs": 434.6750000002794,
+   "bytesMs": 47.28499999968335,
+   "source": "idb",
+   "rep": 0
+  },
+  {
+   "state": "c",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 499.929999999702,
+   "spawnInitMs": 41.88499999977648,
+   "createMs": 410.4349999995902,
+   "bytesMs": 46.734999999869615,
+   "source": "idb",
+   "rep": 1
+  },
+  {
+   "state": "c",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 490.0449999999255,
+   "spawnInitMs": 37.78500000014901,
+   "createMs": 407.8549999999814,
+   "bytesMs": 41.56500000040978,
+   "source": "idb",
+   "rep": 2
+  },
+  {
+   "state": "d",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 479.35000000009313,
+   "spawnInitMs": 29.635000000242144,
+   "createMs": 399.5449999999255,
+   "bytesMs": 45.47999999998137,
+   "source": "idb",
+   "rep": 0
+  },
+  {
+   "state": "d",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 473.15500000026077,
+   "spawnInitMs": 30.46500000031665,
+   "createMs": 398.0950000002049,
+   "bytesMs": 43.78000000026077,
+   "source": "idb",
+   "rep": 1
+  },
+  {
+   "state": "d",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 477.8549999999814,
+   "spawnInitMs": 27.96499999985099,
+   "createMs": 404.12999999988824,
+   "bytesMs": 43.31000000005588,
+   "source": "idb",
+   "rep": 2
+  },
+  {
+   "state": "e",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 202.04000000003725,
+   "spawnInitMs": 41.53500000014901,
+   "createMs": 111.98499999986961,
+   "bytesMs": 47.919999999925494,
+   "source": "idb",
+   "rep": 0
+  },
+  {
+   "state": "e",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 222.15500000026077,
+   "spawnInitMs": 28.99500000011176,
+   "createMs": 150.964999999851,
+   "bytesMs": 41.640000000130385,
+   "source": "idb",
+   "rep": 1
+  },
+  {
+   "state": "e",
+   "chunk": "c1_l0_1",
+   "precision": "int8",
+   "totalMs": 205.86500000022352,
+   "spawnInitMs": 26.850000000093132,
+   "createMs": 139.38499999977648,
+   "bytesMs": 39.174999999813735,
+   "source": "idb",
+   "rep": 2
+  }
+ ],
+ "wallS": 18.824
+}

@@ -1,0 +1,104 @@
+{
+ "block": "eng",
+ "smoke": false,
+ "date": "2026-11-01T06:48:56.230Z",
+ "pass": true,
+ "rows": 200,
+ "successfulKeys": 200,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "row count = 20 plans × 2 cache states × 5",
+   "pass": true,
+   "detail": "200"
+  },
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "200 runs checked"
+  },
+  {
+   "name": "cold runs: IndexedDB empty before the run, bytes came from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "warm runs: identical primed cache before the run (same entry count as the master), 0 bytes from the server",
+   "pass": true,
+   "detail": "100 runs"
+  },
+  {
+   "name": "one fixed calibration file used (D-7.4)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "warm decisions saw the full primed cache; cold decisions an empty one",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  },
+  {
+   "name": "decision cold low ee0",
+   "detail": "int8|sequential|pin=-|G=32|pw=0|ee=0 (margin to #2: 13.35%)"
+  },
+  {
+   "name": "decision cold low ee1",
+   "detail": "int8|sequential|pin=-|G=32|pw=0|ee=0 (margin to #2: 13.35%)"
+  },
+  {
+   "name": "decision cold mid ee0",
+   "detail": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0 (margin to #2: 1.91%)"
+  },
+  {
+   "name": "decision cold mid ee1",
+   "detail": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1 (margin to #2: 0.91%)"
+  },
+  {
+   "name": "decision cold high ee0",
+   "detail": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0 (margin to #2: 9.95%)"
+  },
+  {
+   "name": "decision cold high ee1",
+   "detail": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0 (margin to #2: 9.95%)"
+  },
+  {
+   "name": "decision warm low ee0",
+   "detail": "int8|sequential|pin=-|G=32|pw=0|ee=0 (margin to #2: 13.35%)"
+  },
+  {
+   "name": "decision warm low ee1",
+   "detail": "int8|sequential|pin=-|G=32|pw=0|ee=0 (margin to #2: 13.35%)"
+  },
+  {
+   "name": "decision warm mid ee0",
+   "detail": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0 (margin to #2: 2.60%)"
+  },
+  {
+   "name": "decision warm mid ee1",
+   "detail": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1 (margin to #2: 0.31%)"
+  },
+  {
+   "name": "decision warm high ee0",
+   "detail": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0 (margin to #2: 9.32%)"
+  },
+  {
+   "name": "decision warm high ee1",
+   "detail": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0 (margin to #2: 9.32%)"
+  },
+  {
+   "name": "OUTCOME (not a validity check): runs whose measured memory (probe or upper bound) exceeded the prediction",
+   "detail": []
+  }
+ ]
+}

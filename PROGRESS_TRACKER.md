@@ -1,6 +1,6 @@
 # Progress Tracker — Adaptive Component-Level Model Loading
 
-**Window:** 31 Oct – 30 Nov 2026 · **Last updated:** 31 Oct 2026 · **Today:** Day 1 of 30 · **Schedule:** 🟢 ~21 days ahead (Phases 0–6 done on Day 1)
+**Window:** 31 Oct – 30 Nov 2026 · **Last updated:** 1 Nov 2026 · **Today:** Day 2 of 30 · **Schedule:** 🟢 ~26 days ahead (Phases 0–7 done by Day 2); development frozen after the Phase 7 commit
 
 Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval · ✅ Approved · ⚠️ Blocked / slipped
 
@@ -12,8 +12,8 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 3 | Chunked execution and workers | 10 – 13 Nov | 31 Oct | ✅ Approved 31 Oct · commit `b5ba76e` | `docs/phase-reports/PHASE_3_REPORT.md` |
 | 4 | Storage and cache layer | 14 – 16 Nov | 31 Oct | ✅ Approved 31 Oct · commit `8433ae0` | `docs/phase-reports/PHASE_4_REPORT.md` (§13 = Mac) |
 | 5 | Resource monitor and decision engine | 17 – 20 Nov | 31 Oct | ✅ Approved 31 Oct · commit `54945c3` | `docs/phase-reports/PHASE_5_REPORT.md` |
-| 6 | npm package and demo | 21 – 23 Nov | 31 Oct | ✅ Approved 31 Oct (commit below) | `docs/phase-reports/PHASE_6_REPORT.md` |
-| 7 | Experiments | 24 – 27 Nov | — | 🟨 **Experiment plan drafted, awaiting your review** (no experiments run) | `docs/PHASE_7_EXPERIMENT_PLAN.md` |
+| 6 | npm package and demo | 21 – 23 Nov | 31 Oct | ✅ Approved 31 Oct · commit `caae0e9` | `docs/phase-reports/PHASE_6_REPORT.md` |
+| 7 | Experiments | 24 – 27 Nov | 31 Oct – 1 Nov | ✅ **Approved 1 Nov** · commit pending your review of the proposed contents | `docs/phase-reports/PHASE_7_REPORT.md`, `PHASE_7_RESULTS_REPORT.md` (final, Part A cloud / Part B Mac), `PHASE_7_MAC_RESULTS.md` |
 | 8 | Report and VIVA preparation | 28 – 30 Nov | — | ⬜ | — |
 
 ## Key results so far
@@ -42,7 +42,7 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | D-2.1 | int8 gate: WASM-kernel reference instead of native Python | Mouli | ✅ Approved 31 Oct; native difference mandatory in final report (F-5) |
 | F-6 | Batch-size dependence of dynamic int8 → experiment E-B in Phase 7 | Claude | Planned (`docs/FINDINGS.md`) |
 | I-2.1 | Manual browser verification on your Mac | Mouli | ✅ Passed 31 Oct (`results/phase2/mac_*_4t.json`) |
-| I-2.7 | Mac run of `bench/diag-fetch.html?threads=4` to explain F-14 (int8 fetch slower than fp32 on the Mac) | Mouli | **Open** (doesn't block Phase 3) |
+| I-2.7 | Mac run of `bench/diag-fetch.html?threads=4` to explain F-14 | Mouli | ✅ Run 1 Nov (MAC-5): F-14 not reproduced (int8 faster in all 6 rounds); lower byte rate reproduces |
 | I-2.6 | Commit the Phase 2 files | Claude | ✅ Committed 31 Oct |
 | I-2.5 | Stray empty file `.git/tD4w3kG` | Claude | ✅ Deleted 31 Oct (delete permission granted for this session) |
 | I-2.2 | UA memory API takes ~60 s with worker threads → WASM probe is the main metric | Claude | Applies from Phase 3 |
@@ -50,13 +50,24 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | I-3.2 | Sequential mode needs a `groupSize` limit on waiting hidden states (F-21) | Claude | ✅ Resolved in Phase 5 (group size is a plan dimension) |
 | I-4.1 | Eviction strategy for small budgets (LRU 0% hit, F-24) | Claude | ✅ Resolved in Phase 5 (pinning + chunk-major plans chosen by the engine) |
 | I-4.2 | Session creation 63–72% of a warm request → keep Workers alive / pre-start | Claude | ✅ Resolved in Phase 5 (resident / pinned / pre-start plans) |
-| I-5.1 | Hybrid / pre-start time predictions 23–35% optimistic (F-32) | Claude | Phase 7 refit |
-| I-5.3 | Mac run of `demo/phase5-engine.html` | Mouli | Recommended |
+| I-5.1 | Hybrid / pre-start time predictions optimistic | Claude | Measured in Phase 7: −28…−52% (F-39); refit trades error onto resident plans → not recommended; engine unchanged |
+| I-5.3 | Mac run of the engine | Mouli | ✅ Done (MAC-2 re-run): 10 / 12 decisions = cloud; memory safe; time-model pattern confirmed (F-39) |
+| I-7.1 | Pilot proposals R1–R5 | Mouli | ✅ Approved 1 Nov (plan v1.2) |
+| I-7.5 | Go-ahead for the full suite | Mouli | ✅ Approved 1 Nov; Steps 1–13 done |
+| I-7.8 | Step 14: Mac run | Mouli | ✅ Received 1 Nov (283/283 steps). MAC-1 / MAC-5 valid and clean |
+| I-7.10 | MAC-2 timing invalid in the first Mac run | Mouli | ✅ Re-run 1 Nov 10:43–10:58 UTC: valid (235 / 235, foreground guard clean, CPU stable). First run kept, not used for MAC-2/3/4 |
+| I-7.11 | Confound I introduced: aarch64 native passes ran on your Mac 03:46–04:10 during the Mac run (MAC-3 overlapped reps 2.4–7.5% slower) | Claude | Disclosed; no concurrent work during the re-run |
+| I-7.9 | Engine time-model optimism (F-39), confirmed on both machines | — | ✅ Decided 1 Nov: **future work**; not investigated; engine unchanged |
+| I-7.6 | Harness port bug: random port → per-origin IndexedDB looked empty across invocations (F-36) | Claude | ✅ Fixed before any suite run (fixed ports; origin stamped on primed profiles) |
+| I-7.7 | Mac page reloads one tab (not a new process) → creation/cold-start times not comparable with the cloud (F-37) | Claude | Documented; Mac and cloud reported separately |
+| I-7.2 | `bench/throttledServer.mjs` stalled forever below ~5.24 Mbit/s (bucket smaller than one 64 KiB write) | Claude | ✅ Fixed in the pilot; Phase 4 results (20 Mbit/s) unaffected |
+| I-7.3 | Native int8 reference depends on CPU architecture and ORT version (F-34) | Claude | ✅ Approved (R4); aarch64 sandbox reproduces the Phase 1 native file (max Δ 5e-7). Runs in step 2 of the checklist |
+| I-7.4 | Engine decision for mid + early exit flips with calibration noise (top-2 gap 0.27–1.22%) | Claude | E-ENG uses one fixed calibration and reports margins |
 | I-6.6 | Package licence | Mouli | ✅ MIT, © Moulieswaran M (31 Oct). Third-party licences kept separate in `THIRD_PARTY_NOTICES.md` |
 | I-6.4 | Publish to the npm registry? | Mouli | Optional, your decision |
 | I-6.1 | Cost model / accuracy table are model-specific (DistilBERT-SST2) | — | Documented limitation |
 | I-4.7 | Mac run of `demo/phase4-cache.html` | Mouli | ✅ Received 31 Oct: every check passed; recorded as MAC-CHROME-W1 (Phase 4 report §13) |
-| I-4.8 | Why did the Mac fp32 F4 'unlimited' run load from the network? (Was the cache cleared?) | Mouli | Question |
+| I-4.8 | Why did the Mac fp32 F4 'unlimited' run load from the network? | Claude | **Unexplained observation.** You did not clear the cache. Mac JSONs checked (1 Nov): all 4 fp32 entries were present when F3 finished (14:57:47; 3 hits + repaired chunk) and all 4 were missing when F4 started ~9–12 s later; IndexedDB worked right after (F4's downloads stored, next run 40/40 hits). Code rules out a key mismatch or an IndexedDB open failure. Candidates: a different origin/tab (fits every fact; F-36 shows the mechanism), browser eviction (less likely). Not reclassified. |
 | I-1.1 | Mixed precision = C2 fp32, rest int8 | Claude | ✅ Measured: 90.83% (F-30); in the engine |
 | I-1.3 | Tune τ on the dev split | Claude | ✅ τ = 0.95 on dev (F-31) |
 | I-0.1 | Git repository | — | ✅ Initialised; first commit `437548f` |
@@ -82,3 +93,10 @@ Status key: ⬜ Not started · 🟦 In progress · 🟨 Done, awaiting approval 
 | 31 Oct 2026 | Phase 6 completed: `loadModel` facade, typed errors, `index.d.ts`, README, LICENSE, demo (public API only); tarball tested in a clean consumer project (8/8 + 17/17); 2 API bugs found by the consumer test and fixed. Awaiting approval. |
 | 31 Oct 2026 | Demo improved after your review: early-exit status, predicted vs measured memory, per-sentence path/time, profile comparison (`previewPlan`), alternatives box, collapsible debug view. Output-only trace added to `decide()` and per-sentence records to `PlanRunner` (decisions byte-identical; Phase 5 53/53). |
 | 31 Oct 2026 | Phase 6 approved: licence MIT © Moulieswaran M; `THIRD_PARTY_NOTICES.md` added (DistilBERT Apache-2.0, SST-2 licence unknown, onnxruntime-web MIT). Phase 6 committed. Phase 7 experiment plan drafted for review; no experiment run. |
+| 31 Oct 2026 | Phase 7 plan v1.1: your 7 decisions + 3 instructions applied. Harness built (`bench/phase7/`) and pilot run: CDP CPU throttling does not reach Workers (dropped), network throttle within ±5%, logits bit-identical across processes, Worker probe within 3.2% of the browser's measurement. 5 harness defects found and fixed (one in `throttledServer.mjs`). Unexpected: the native int8 reference is platform- and version-dependent. E2/E3 exceed the time gate → redesign proposed. Full suite not started. |
+| 1 Nov 2026 | R1–R5 approved; plan v1.2 written; suite (10 blocks), validator, offline runner and Mac page built; aarch64 native environment verified (= Phase 1 file). 6 preparation problems found and fixed (S-1 to S-6), incl. a per-origin cache bug the validator caught (F-36). FINDINGS F-33 to F-37 added, F-5 now names its platform; configs registry extended. All 10 blocks smoke-tested and VALID. I-4.8 narrowed to a 9–12 s window, still unexplained. Execution checklist awaiting your go-ahead; full suite not started. |
+| 1 Nov 2026 | Phase 7 Steps 1–13 run: 1,310 browser runs + 249 offline passes, all blocks VALID, 0 failures, 6.0 h. Verdicts: H1 ✅, H2 ❌ (TTFI), H3 latency ✅ / bytes partly / accuracy loss not significant, H4 descriptive only, H5 ✅, H6 partly (no growth with batch; sorting doesn't help), engine regret 24–43% for the mid profile. FINDINGS F-38 to F-42. Engine/package/baseline/demo unchanged; nothing committed. Waiting for the Mac run. |
+| 1 Nov 2026 | Step 14 Mac results analysed (`PHASE_7_MAC_RESULTS.md`): F-13 extended (int8 never faster on the Mac; 8 threads slower than 4, F-43), F-27 holds incl. mixedC2, early exit −20% latency on the Mac, F-14 not reproduced. MAC-2 timing invalid (CPU slowdown from 03:51:37 UTC) and my concurrent aarch64 runs disclosed as a confound; re-run proposed. One validator check changed after seeing the data (cache-off criterion), disclosed. |
+| 1 Nov 2026 | Mac page: `?only=MAC-2,MAC-3,MAC-4`, foreground guard (records visibilityState; pauses while hidden; a run hidden at any moment is kept as an anomalous row and repeated), earlier runs archived in the browser instead of deleted. Self-tested in the cloud (quick mode; hidden state simulated because headless/Xvfb windows never become hidden). Mac validator extended (re-run mode, visibility, absolute CPU check). Engine/package/baseline/demo unchanged; nothing committed. |
+| 1 Nov 2026 | Mac re-run of MAC-2/3/4 received and **valid** (no hidden periods, CPU stable, no concurrent load). Mac: all 12 decisions rank 1 among their top-4 predicted plans; time-model optimism −15…−29% (cloud −28…−52%); early exit −21% (resident); F-27 identical. Consolidated `PHASE_7_REPORT.md` written with 11 remaining limitations. Phase 7 awaiting approval; nothing committed. |
+| 1 Nov 2026 | **Phase 7 approved.** `PHASE_7_RESULTS_REPORT.md` finalised (Part A cloud + offline, Part B Mac, validation outcomes, side-by-side verdicts, 11 limitations, raw-data index). Time-prediction model recorded as future work. Commit contents prepared for review; development to be frozen; next: final MCA documentation and VIVA preparation. |

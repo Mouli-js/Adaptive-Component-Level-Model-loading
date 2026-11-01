@@ -1,0 +1,132 @@
+{
+ "step": "probe",
+ "env": {
+  "date": "2026-10-31T17:31:12.526Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "rows": {
+  "int8": {
+   "plan": "int8|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "perWorker": [
+    {
+     "chunk": "c0_embed",
+     "heapMiB": 77.19
+    },
+    {
+     "chunk": "c1_l0_1",
+     "heapMiB": 45.25
+    },
+    {
+     "chunk": "c2_l2_3",
+     "heapMiB": 45.25
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "heapMiB": 46.38
+    }
+   ],
+   "probeSumMiB": 214.06,
+   "liveWorkersAtMeasure": 4,
+   "before": {
+    "uaMiB": 2.64,
+    "uaByType": {
+     "DOM": 27760,
+     "JavaScript": 2468928,
+     "Shared": 276048
+    },
+    "pageWasmMiB": 0
+   },
+   "during": {
+    "uaMiB": 223.81,
+    "uaByType": {
+     "DOM": 27760,
+     "JavaScript": 234438639,
+     "Shared": 217276
+    },
+    "pageWasmMiB": 0
+   },
+   "after": {
+    "uaMiB": 2.72,
+    "uaByType": {
+     "Shared": 279579,
+     "JavaScript": 2545140,
+     "DOM": 27760
+    },
+    "pageWasmMiB": 0
+   },
+   "wallS": 2.249,
+   "errors": [],
+   "check": {
+    "allWorkersReported": true,
+    "uaDuringMinusBeforeMiB": 221.17,
+    "uaDropAfterTerminateMiB": 221.09,
+    "uaWasmTypeDuringMiB": 0,
+    "probeVsUaIncreasePct": -3.2
+   }
+  },
+  "fp32": {
+   "plan": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "perWorker": [
+    {
+     "chunk": "c0_embed",
+     "heapMiB": 280.13
+    },
+    {
+     "chunk": "c1_l0_1",
+     "heapMiB": 186.25
+    },
+    {
+     "chunk": "c2_l2_3",
+     "heapMiB": 186.25
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "heapMiB": 160.69
+    }
+   ],
+   "probeSumMiB": 813.31,
+   "liveWorkersAtMeasure": 4,
+   "before": {
+    "uaMiB": 2.64,
+    "uaByType": {
+     "JavaScript": 2468884,
+     "DOM": 27760,
+     "Shared": 276048
+    },
+    "pageWasmMiB": 0
+   },
+   "during": {
+    "uaMiB": 823.06,
+    "uaByType": {
+     "JavaScript": 862700981,
+     "DOM": 27760,
+     "Shared": 311995
+    },
+    "pageWasmMiB": 0
+   },
+   "after": {
+    "uaMiB": 2.71,
+    "uaByType": {
+     "JavaScript": 1730261,
+     "Shared": 1085844,
+     "DOM": 27760
+    },
+    "pageWasmMiB": 0
+   },
+   "wallS": 3.601,
+   "errors": [],
+   "check": {
+    "allWorkersReported": true,
+    "uaDuringMinusBeforeMiB": 820.42,
+    "uaDropAfterTerminateMiB": 820.35,
+    "uaWasmTypeDuringMiB": 0,
+    "probeVsUaIncreasePct": -0.9
+   }
+  }
+ },
+ "wallS": 7.085
+}

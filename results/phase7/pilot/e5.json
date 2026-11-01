@@ -1,0 +1,317 @@
+{
+ "step": "e5",
+ "env": {
+  "date": "2026-10-31T17:38:53.738Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "link": "50 Mbit/s, RTT 40 ms",
+ "rows": [
+  {
+   "visit": 0,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 12998,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 161.9,
+   "workloadMs": 3239,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 78.66,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 3877,
+     "createMs": 421,
+     "totalMs": 4333
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 2349,
+     "createMs": 445,
+     "totalMs": 2830
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 2310,
+     "createMs": 433,
+     "totalMs": 2813
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 2422,
+     "createMs": 377,
+     "totalMs": 2857
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 16.279,
+   "errors": []
+  },
+  {
+   "visit": 1,
+   "cacheState": "warm",
+   "planId": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 2196,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 161.2,
+   "workloadMs": 3223,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 78.66,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 0,
+   "serverRequests": 0,
+   "sources": [
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "idb",
+     "bytesMs": 66,
+     "createMs": 392,
+     "totalMs": 490
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "idb",
+     "bytesMs": 38,
+     "createMs": 421,
+     "totalMs": 500
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "idb",
+     "bytesMs": 46,
+     "createMs": 382,
+     "totalMs": 522
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "idb",
+     "bytesMs": 48,
+     "createMs": 374,
+     "totalMs": 498
+    }
+   ],
+   "cacheBefore": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 5.451,
+   "errors": []
+  },
+  {
+   "visit": 2,
+   "cacheState": "warm",
+   "planId": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 2242,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 155.4,
+   "workloadMs": 3108,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 78.66,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 0,
+   "serverRequests": 0,
+   "sources": [
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "idb",
+     "bytesMs": 62,
+     "createMs": 390,
+     "totalMs": 481
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "idb",
+     "bytesMs": 43,
+     "createMs": 402,
+     "totalMs": 486
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "idb",
+     "bytesMs": 45,
+     "createMs": 454,
+     "totalMs": 547
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "idb",
+     "bytesMs": 52,
+     "createMs": 476,
+     "totalMs": 579
+    }
+   ],
+   "cacheBefore": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 5.383,
+   "errors": []
+  },
+  {
+   "visit": 3,
+   "cacheState": "warm",
+   "planId": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 2089,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 155.5,
+   "workloadMs": 3110,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 78.66,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 0,
+   "serverRequests": 0,
+   "sources": [
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "idb",
+     "bytesMs": 67,
+     "createMs": 358,
+     "totalMs": 456
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "idb",
+     "bytesMs": 40,
+     "createMs": 387,
+     "totalMs": 486
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "idb",
+     "bytesMs": 42,
+     "createMs": 408,
+     "totalMs": 516
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "idb",
+     "bytesMs": 46,
+     "createMs": 399,
+     "totalMs": 498
+    }
+   ],
+   "cacheBefore": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 5.216,
+   "errors": []
+  }
+ ],
+ "m6HitRateRevisits": 1,
+ "speedup": 5.97,
+ "wallS": 34.717
+}

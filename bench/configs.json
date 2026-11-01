@@ -23,7 +23,8 @@
         "results/phase4/cloud_fp32.json",
         "results/phase5/cloud_engine.json"
       ],
-      "note": "Phase 3: 1 thread per InferenceSession and per chunk Worker."
+      "note": "Phase 3: 1 thread per InferenceSession and per chunk Worker.",
+      "phase7Note": "Phase 7: unthrottled server on fixed port 8790 (F-36), one browser process per run"
     },
     "CLOUD-HL-2T": {
       "environment": "cloud workspace (shared VM)",
@@ -73,7 +74,8 @@
         "results/phase4/mac/mac_F4_fp32.json",
         "results/phase4/mac/mac_F5_fp32.json"
       ],
-      "status": "Phase 4 results recorded 31 Oct 2026; Phase 3 results not received"
+      "status": "Phase 4 results recorded 31 Oct 2026; Phase 3 results not received",
+      "phase7Note": "Phase 7 MAC-2/3/4 via bench/phase7-mac.html: one tab, page reload per run (not one process per run; see F-37)"
     },
     "CLOUD-HL-1T-20MBPS": {
       "environment": "cloud workspace (shared VM)",
@@ -86,6 +88,112 @@
         "results/phase4/throttled_int8_20mbps.json",
         "results/phase4/throttled_fp32_20mbps.json"
       ]
+    },
+    "CLOUD-HL-1T-NET-50": {
+      "environment": "cloud workspace (shared VM)",
+      "device": "x86-64 Intel Xeon (model not exposed), 2 vCPU, AVX2/AVX-512/AVX-512-VNNI, 7 GiB RAM",
+      "os": "Linux 6.18 (VM)",
+      "browser": "Chromium 153.0.8010.12 (Playwright 1.63.0, channel=chromium, headless)",
+      "threads": 1,
+      "network": "bench/throttledServer.mjs: shared token bucket 50 Mbit/s for *.onnx (capacity max(0.1 s, 64 KiB)), first-byte delay 20 ms (labelled 'RTT 40' in Phase 4)",
+      "port": 8750,
+      "automation": "bench/phase7/suite.mjs (net, e5x)",
+      "results": []
+    },
+    "CLOUD-HL-1T-NET-20": {
+      "environment": "cloud workspace (shared VM)",
+      "device": "x86-64 Intel Xeon (model not exposed), 2 vCPU, AVX2/AVX-512/AVX-512-VNNI, 7 GiB RAM",
+      "os": "Linux 6.18 (VM)",
+      "browser": "Chromium 153.0.8010.12 (Playwright 1.63.0, channel=chromium, headless)",
+      "threads": 1,
+      "network": "bench/throttledServer.mjs: shared token bucket 20 Mbit/s for *.onnx (capacity max(0.1 s, 64 KiB)), first-byte delay 20 ms (labelled 'RTT 40' in Phase 4)",
+      "port": 8720,
+      "automation": "bench/phase7/suite.mjs (net, e5x)",
+      "results": []
+    },
+    "CLOUD-HL-1T-NET-10": {
+      "environment": "cloud workspace (shared VM)",
+      "device": "x86-64 Intel Xeon (model not exposed), 2 vCPU, AVX2/AVX-512/AVX-512-VNNI, 7 GiB RAM",
+      "os": "Linux 6.18 (VM)",
+      "browser": "Chromium 153.0.8010.12 (Playwright 1.63.0, channel=chromium, headless)",
+      "threads": 1,
+      "network": "bench/throttledServer.mjs: shared token bucket 10 Mbit/s for *.onnx (capacity max(0.1 s, 64 KiB)), first-byte delay 20 ms (labelled 'RTT 40' in Phase 4)",
+      "port": 8710,
+      "automation": "bench/phase7/suite.mjs (net, e5x)",
+      "results": []
+    },
+    "CLOUD-HL-1T-NET-5": {
+      "environment": "cloud workspace (shared VM)",
+      "device": "x86-64 Intel Xeon (model not exposed), 2 vCPU, AVX2/AVX-512/AVX-512-VNNI, 7 GiB RAM",
+      "os": "Linux 6.18 (VM)",
+      "browser": "Chromium 153.0.8010.12 (Playwright 1.63.0, channel=chromium, headless)",
+      "threads": 1,
+      "network": "bench/throttledServer.mjs: shared token bucket 5 Mbit/s for *.onnx (capacity max(0.1 s, 64 KiB)), first-byte delay 20 ms (labelled 'RTT 40' in Phase 4)",
+      "port": 8705,
+      "automation": "bench/phase7/suite.mjs (net, e5x)",
+      "results": []
+    },
+    "MAC-CHROME-T1": {
+      "environment": "your Mac (real device, interactive)",
+      "device": "Apple Silicon Mac, as MAC-CHROME-4T",
+      "browser": "Google Chrome (headed, default flags; version recorded in the results JSON)",
+      "threads": 1,
+      "threadsNote": "page ORT threads for the baseline (MAC-1 thread sweep)",
+      "automation": "bench/phase7-mac.html (one page reload per run)",
+      "results": []
+    },
+    "MAC-CHROME-T2": {
+      "environment": "your Mac (real device, interactive)",
+      "device": "Apple Silicon Mac, as MAC-CHROME-4T",
+      "browser": "Google Chrome (headed, default flags; version recorded in the results JSON)",
+      "threads": 2,
+      "threadsNote": "page ORT threads for the baseline (MAC-1 thread sweep)",
+      "automation": "bench/phase7-mac.html (one page reload per run)",
+      "results": []
+    },
+    "MAC-CHROME-T4": {
+      "environment": "your Mac (real device, interactive)",
+      "device": "Apple Silicon Mac, as MAC-CHROME-4T",
+      "browser": "Google Chrome (headed, default flags; version recorded in the results JSON)",
+      "threads": 4,
+      "threadsNote": "page ORT threads for the baseline (MAC-1 thread sweep)",
+      "automation": "bench/phase7-mac.html (one page reload per run)",
+      "results": []
+    },
+    "MAC-CHROME-T8": {
+      "environment": "your Mac (real device, interactive)",
+      "device": "Apple Silicon Mac, as MAC-CHROME-4T",
+      "browser": "Google Chrome (headed, default flags; version recorded in the results JSON)",
+      "threads": 8,
+      "threadsNote": "page ORT threads for the baseline (MAC-1 thread sweep)",
+      "automation": "bench/phase7-mac.html (one page reload per run)",
+      "results": []
+    },
+    "NODE-WASM-X86": {
+      "environment": "cloud workspace",
+      "runtime": "onnxruntime-web 1.20.1 WASM in Node 22.23, 1 thread",
+      "note": "same kernels as the browser (int8 hashes equal Chromium's)",
+      "automation": "bench/phase7/offline.mjs wasm",
+      "results": []
+    },
+    "NATIVE-X86-ORT1.20.1": {
+      "environment": "cloud workspace",
+      "runtime": "Python onnxruntime 1.20.1 CPU EP, x86-64 (AVX-512-VNNI), 1 intra-op thread",
+      "automation": "bench/phase7/offline.mjs native-x86",
+      "results": []
+    },
+    "NATIVE-X86-ORT1.29.0": {
+      "environment": "cloud workspace",
+      "runtime": "Python onnxruntime 1.29.0 CPU EP, x86-64 (supplementary version row)",
+      "automation": "bench/phase7/offline.mjs native-x86-129",
+      "results": []
+    },
+    "NATIVE-ARM64-ORT1.20.1": {
+      "environment": "your Mac's Linux sandbox (aarch64 Ubuntu 22.04, 4 vCPU)",
+      "runtime": "Python onnxruntime 1.20.1 CPU EP (Phase 1 venv), aarch64 (asimddp), 1 intra-op thread",
+      "note": "the platform of the Phase 1 / F-5 'native' numbers",
+      "automation": "bench/phase7/offline.mjs native-arm64",
+      "results": []
     }
   }
 }

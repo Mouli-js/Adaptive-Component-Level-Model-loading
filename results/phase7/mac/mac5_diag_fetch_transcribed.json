@@ -1,0 +1,60 @@
+{
+  "_provenance": "Transcribed from the JSON you pasted in chat on 1 Nov 2026 (bench/diag-fetch.html?threads=4 on your Mac, MAC-5). Values copied exactly; nothing added or removed.",
+  "_configuration": "MAC-CHROME-4T",
+  "page": "diag-fetch",
+  "date": "2026-11-01T05:25:59.734Z",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 8,
+  "deviceMemory": 16,
+  "crossOriginIsolated": true,
+  "threads": 4,
+  "summary": {
+    "T1_rawFetch_byFile": {
+      "int8": { "n": 6, "medianMs": 140.3949999809265, "minMs": 69.97000002861023, "maxMs": 241.11000001430511, "medianMBps": 748.6374233475749 },
+      "fp32": { "n": 6, "medianMs": 261.4150000214577, "minMs": 196.13000005483627, "maxMs": 356.3449999690056, "medianMBps": 1042.778380616313 }
+    },
+    "T1_firstFetchOfPage": { "round": 0, "label": "int8", "bytes": 67354909, "totalMs": 140.3949999809265, "MBps": 479.75290437088614, "queueMs": 0.5400000214576721, "ttfbMs": 4.129999995231628, "downloadMs": 98.73500001430511, "toArrayBufferMs": 36.90499997138977, "protocol": "http/1.1" },
+    "T3_byCondition": {
+      "int8": {
+        "immediately after 20 inferences": { "n": 2, "medianMs": 105.86000001430511, "minMs": 63.064999997615814, "maxMs": 105.86000001430511, "medianMBps": 1068.0236106009097 },
+        "after 3 s idle": { "n": 2, "medianMs": 181.3400000333786, "minMs": 77.7950000166893, "maxMs": 181.3400000333786, "medianMBps": 865.7999741056675 }
+      },
+      "fp32": {
+        "immediately after 20 inferences": { "n": 2, "medianMs": 419.5750000476837, "minMs": 408.3700000047684, "maxMs": 419.5750000476837, "medianMBps": 656.1125719246551 },
+        "after 3 s idle": { "n": 2, "medianMs": 526.8550000190735, "minMs": 462.9249999523163, "maxMs": 526.8550000190735, "medianMBps": 578.7907134581171 }
+      }
+    }
+  },
+  "T1_rawFetch": [
+    { "round": 0, "label": "int8", "bytes": 67354909, "totalMs": 140.3949999809265, "MBps": 479.75290437088614, "queueMs": 0.5400000214576721, "ttfbMs": 4.129999995231628, "downloadMs": 98.73500001430511, "toArrayBufferMs": 36.90499997138977, "protocol": "http/1.1" },
+    { "round": 0, "label": "fp32", "bytes": 267936691, "totalMs": 356.3449999690056, "MBps": 751.9024850167808, "queueMs": 5.055000007152557, "ttfbMs": 3.584999978542328, "downloadMs": 255.08500003814697, "toArrayBufferMs": 91.7849999666214, "protocol": "http/1.1" },
+    { "round": 1, "label": "fp32", "bytes": 267936691, "totalMs": 256.94499999284744, "MBps": 1042.778380616313, "queueMs": 12.080000042915344, "ttfbMs": 1.5149999856948853, "downloadMs": 158.88499999046326, "toArrayBufferMs": 83.18500000238419, "protocol": "http/1.1" },
+    { "round": 1, "label": "int8", "bytes": 67354909, "totalMs": 73.26499998569489, "MBps": 919.3326829065879, "queueMs": 1.5600000023841858, "ttfbMs": 5.5200000405311584, "downloadMs": 57.52999997138977, "toArrayBufferMs": 8.375, "protocol": "http/1.1" },
+    { "round": 2, "label": "int8", "bytes": 67354909, "totalMs": 89.97000002861023, "MBps": 748.6374233475749, "queueMs": 3.7549999952316284, "ttfbMs": 1.8349999785423279, "downloadMs": 75.92500001192093, "toArrayBufferMs": 8.1700000166893, "protocol": "http/1.1" },
+    { "round": 2, "label": "fp32", "bytes": 267936691, "totalMs": 280.15499997138977, "MBps": 956.3873249713996, "queueMs": 1.475000023841858, "ttfbMs": 1.4800000190734863, "downloadMs": 185.0649999976158, "toArrayBufferMs": 91.92999994754791, "protocol": "http/1.1" },
+    { "round": 3, "label": "fp32", "bytes": 267936691, "totalMs": 243.05500000715256, "MBps": 1102.3706197861193, "queueMs": 1.2800000309944153, "ttfbMs": 1.3299999833106995, "downloadMs": 153.60000002384186, "toArrayBufferMs": 86.59999996423721, "protocol": "http/1.1" },
+    { "round": 3, "label": "int8", "bytes": 67354909, "totalMs": 195.83999997377396, "MBps": 343.92825270128617, "queueMs": 4.650000035762787, "ttfbMs": 3.435000002384186, "downloadMs": 124.22499996423721, "toArrayBufferMs": 63.24500000476837, "protocol": "http/1.1" },
+    { "round": 4, "label": "int8", "bytes": 67354909, "totalMs": 241.11000001430511, "MBps": 279.3534444693452, "queueMs": 3.3050000071525574, "ttfbMs": 0.7799999713897705, "downloadMs": 211.9200000166893, "toArrayBufferMs": 24.855000019073486, "protocol": "http/1.1" },
+    { "round": 4, "label": "fp32", "bytes": 267936691, "totalMs": 261.4150000214577, "MBps": 1024.9476540290611, "queueMs": 8.089999973773956, "ttfbMs": 1.2049999833106995, "downloadMs": 171.30500000715256, "toArrayBufferMs": 80.40000003576279, "protocol": "http/1.1" },
+    { "round": 5, "label": "fp32", "bytes": 267936691, "totalMs": 196.13000005483627, "MBps": 1366.1178347274113, "queueMs": 11.925000011920929, "ttfbMs": 0.9300000071525574, "downloadMs": 152.2249999642372, "toArrayBufferMs": 30.400000035762787, "protocol": "http/1.1" },
+    { "round": 5, "label": "int8", "bytes": 67354909, "totalMs": 69.97000002861023, "MBps": 962.6255391233252, "queueMs": 4.490000009536743, "ttfbMs": 1.4149999618530273, "downloadMs": 54.485000014305115, "toArrayBufferMs": 9.410000026226044, "protocol": "http/1.1" }
+  ],
+  "T2_replay": [
+    { "step": "int8: load #1 (UI button)", "fetchMs": 76.50999999046326, "createMs": 309.6550000309944, "MBps": 880.3412496195999, "heapMiB": 181.5 },
+    { "step": "int8: load #2 (benchmark)", "fetchMs": 82.45500004291534, "createMs": 66.69499999284744, "MBps": 816.8687037164976, "heapMiB": 181.5 },
+    { "step": "fp32: load #1 (UI button)", "fetchMs": 364.1899999976158, "createMs": 192.66500002145767, "MBps": 735.7057881923009, "heapMiB": 696.9375 },
+    { "step": "fp32: load #2 (benchmark)", "fetchMs": 284.1299999952316, "createMs": 133.25999999046326, "MBps": 943.0073945183423, "heapMiB": 696.9375 },
+    { "step": "int8: load #1 (UI button)", "fetchMs": 74.51999998092651, "createMs": 44.60000002384186, "MBps": 903.8500941658559, "heapMiB": 696.9375 },
+    { "step": "int8: load #2 (benchmark)", "fetchMs": 54.82499998807907, "createMs": 44.67500001192093, "MBps": 1228.5437120774352, "heapMiB": 696.9375 }
+  ],
+  "T3_afterCompute": [
+    { "condition": "immediately after 20 inferences", "label": "int8", "bytes": 67354909, "totalMs": 63.064999997615814, "MBps": 1068.0236106009097, "queueMs": 1.1450000405311584, "ttfbMs": 0.8899999856948853, "downloadMs": 52.714999973773956, "toArrayBufferMs": 8.225000023841858, "protocol": "http/1.1" },
+    { "condition": "after 3 s idle", "label": "int8", "bytes": 67354909, "totalMs": 77.7950000166893, "MBps": 865.7999741056675, "queueMs": 2.3399999737739563, "ttfbMs": 2.5350000262260437, "downloadMs": 57.84999996423721, "toArrayBufferMs": 14.800000011920929, "protocol": "http/1.1" },
+    { "condition": "immediately after 20 inferences", "label": "int8", "bytes": 67354909, "totalMs": 105.86000001430511, "MBps": 636.2640184290401, "queueMs": 1.0049999952316284, "ttfbMs": 1.0950000286102295, "downloadMs": 58.45999997854233, "toArrayBufferMs": 45.2150000333786, "protocol": "http/1.1" },
+    { "condition": "after 3 s idle", "label": "int8", "bytes": 67354909, "totalMs": 181.3400000333786, "MBps": 371.4288573265812, "queueMs": 24.19999998807907, "ttfbMs": 3.880000054836273, "downloadMs": 92.99499994516373, "toArrayBufferMs": 59.64000004529953, "protocol": "http/1.1" },
+    { "condition": "immediately after 20 inferences", "label": "fp32", "bytes": 267936691, "totalMs": 408.3700000047684, "MBps": 656.1125719246551, "queueMs": 6.930000007152557, "ttfbMs": 4.030000030994415, "downloadMs": 205.26499998569489, "toArrayBufferMs": 191.66000002622604, "protocol": "http/1.1" },
+    { "condition": "after 3 s idle", "label": "fp32", "bytes": 267936691, "totalMs": 526.8550000190735, "MBps": 508.5586944990557, "queueMs": 10.990000009536743, "ttfbMs": 1.2800000309944153, "downloadMs": 270.93000000715256, "toArrayBufferMs": 243.25999999046326, "protocol": "http/1.1" },
+    { "condition": "immediately after 20 inferences", "label": "fp32", "bytes": 267936691, "totalMs": 419.5750000476837, "MBps": 638.5906952739072, "queueMs": 15.495000004768372, "ttfbMs": 1.2549999952316284, "downloadMs": 185.07499998807907, "toArrayBufferMs": 216.33000004291534, "protocol": "http/1.1" },
+    { "condition": "after 3 s idle", "label": "fp32", "bytes": 267936691, "totalMs": 462.9249999523163, "MBps": 578.7907134581171, "queueMs": 1.6949999928474426, "ttfbMs": 0.8899999856948853, "downloadMs": 206.8100000023842, "toArrayBufferMs": 252.94499999284744, "protocol": "http/1.1" }
+  ]
+}

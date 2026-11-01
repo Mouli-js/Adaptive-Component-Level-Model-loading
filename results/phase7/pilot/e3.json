@@ -1,0 +1,878 @@
+{
+ "step": "e3",
+ "env": {
+  "date": "2026-10-31T17:38:06.822Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "rows": [
+  {
+   "part": "bytes",
+   "sentence": 0,
+   "expectExit": "e1",
+   "earlyExit": false,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+   "ttfiMs": 2490,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2262.3,
+   "workloadMs": 2262,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 165,
+     "createMs": 357,
+     "totalMs": 555
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 126,
+     "createMs": 396,
+     "totalMs": 556
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 126,
+     "createMs": 415,
+     "totalMs": 593
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 149,
+     "createMs": 408,
+     "totalMs": 611
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 1
+   },
+   "hash": "8cfda1189eb8794c",
+   "wallS": 4.783,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "c3_l4_5_cls"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 0,
+   "expectExit": "e1",
+   "earlyExit": true,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=0|ee=1",
+   "ttfiMs": 1324,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 1118.2,
+   "workloadMs": 1118,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 4,
+   "serverBytes": 40499598,
+   "serverRequests": 3,
+   "sources": [
+    "network",
+    "network",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 183,
+     "createMs": 403,
+     "totalMs": 620
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 127,
+     "createMs": 409,
+     "totalMs": 642
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 3,
+    "bytes": 40499598
+   },
+   "exits": {
+    "e1": 1
+   },
+   "hash": "764556b8727844b4",
+   "wallS": 2.494,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "e1_after_c1"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 0,
+   "expectExit": "e1",
+   "earlyExit": true,
+   "prewarm": true,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=1|ee=1",
+   "ttfiMs": 1937,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 1628.9,
+   "workloadMs": 1629,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 122.5
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 6,
+   "serverBytes": 57151230,
+   "serverRequests": 5,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 169,
+     "createMs": 357,
+     "totalMs": 556
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 119,
+     "createMs": 390,
+     "totalMs": 617
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 162,
+     "createMs": 406,
+     "totalMs": 762
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 5,
+    "bytes": 57151230
+   },
+   "exits": {
+    "e1": 1
+   },
+   "hash": "764556b8727844b4",
+   "wallS": 3.596,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "e1_after_c1"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 1,
+   "expectExit": "e2",
+   "earlyExit": false,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+   "ttfiMs": 2507,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2328.1,
+   "workloadMs": 2328,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 180,
+     "createMs": 358,
+     "totalMs": 571
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 119,
+     "createMs": 420,
+     "totalMs": 595
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 112,
+     "createMs": 423,
+     "totalMs": 594
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 153,
+     "createMs": 387,
+     "totalMs": 589
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 1
+   },
+   "hash": "54a656505d9dd6b7",
+   "wallS": 4.888,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "c3_l4_5_cls"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 1,
+   "expectExit": "e2",
+   "earlyExit": true,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=0|ee=1",
+   "ttfiMs": 1932,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 1679.6,
+   "workloadMs": 1680,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 6,
+   "serverBytes": 57151230,
+   "serverRequests": 5,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 160,
+     "createMs": 376,
+     "totalMs": 563
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 116,
+     "createMs": 391,
+     "totalMs": 614
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 132,
+     "createMs": 387,
+     "totalMs": 634
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 5,
+    "bytes": 57151230
+   },
+   "exits": {
+    "e2": 1
+   },
+   "hash": "9f07e108df86c9ce",
+   "wallS": 3.656,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "e2_after_c2"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 1,
+   "expectExit": "e2",
+   "earlyExit": true,
+   "prewarm": true,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=1|ee=1",
+   "ttfiMs": 2553,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2124,
+   "workloadMs": 2124,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 122.5
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 72036746,
+   "serverRequests": 6,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 153,
+     "createMs": 375,
+     "totalMs": 555
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 110,
+     "createMs": 460,
+     "totalMs": 648
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 147,
+     "createMs": 401,
+     "totalMs": 765
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 125,
+     "createMs": 386,
+     "totalMs": 583
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 6,
+    "bytes": 72036746
+   },
+   "exits": {
+    "e2": 1
+   },
+   "hash": "9f07e108df86c9ce",
+   "wallS": 4.703,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "e2_after_c2"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 3,
+   "expectExit": "full",
+   "earlyExit": false,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+   "ttfiMs": 2528,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2213.2,
+   "workloadMs": 2213,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 159,
+     "createMs": 363,
+     "totalMs": 551
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 116,
+     "createMs": 389,
+     "totalMs": 539
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 116,
+     "createMs": 388,
+     "totalMs": 560
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 126,
+     "createMs": 399,
+     "totalMs": 598
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 1
+   },
+   "hash": "c808f183e06a64ff",
+   "wallS": 4.787,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "c3_l4_5_cls"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 3,
+   "expectExit": "full",
+   "earlyExit": true,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=0|ee=1",
+   "ttfiMs": 2779,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2405.5,
+   "workloadMs": 2406,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 72036746,
+   "serverRequests": 6,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 203,
+     "createMs": 371,
+     "totalMs": 602
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 113,
+     "createMs": 413,
+     "totalMs": 641
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 109,
+     "createMs": 395,
+     "totalMs": 637
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 137,
+     "createMs": 469,
+     "totalMs": 680
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 6,
+    "bytes": 72036746
+   },
+   "exits": {
+    "full": 1
+   },
+   "hash": "c808f183e06a64ff",
+   "wallS": 5.203,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "c3_l4_5_cls"
+   ]
+  },
+  {
+   "part": "bytes",
+   "sentence": 3,
+   "expectExit": "full",
+   "earlyExit": true,
+   "prewarm": true,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=1|ee=1",
+   "ttfiMs": 2635,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2280.4,
+   "workloadMs": 2280,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 122.5
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 72036746,
+   "serverRequests": 6,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 175,
+     "createMs": 377,
+     "totalMs": 581
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 128,
+     "createMs": 382,
+     "totalMs": 627
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 132,
+     "createMs": 437,
+     "totalMs": 732
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 154,
+     "createMs": 397,
+     "totalMs": 607
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 6,
+    "bytes": 72036746
+   },
+   "exits": {
+    "full": 1
+   },
+   "hash": "c808f183e06a64ff",
+   "wallS": 4.967,
+   "errors": [],
+   "path": [
+    "c0_embed",
+    "c1_l0_1",
+    "c2_l2_3",
+    "c3_l4_5_cls"
+   ]
+  },
+  {
+   "part": "latency",
+   "earlyExit": false,
+   "planId": "int8|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "ttfiMs": 1346,
+   "m4MedianMs": 50.8,
+   "m4AmortisedMs": 50.7,
+   "workloadMs": 1015,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 214.06,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 214.06,
+    "lifetimeOverlapUpperMiB": 214.2
+   },
+   "maxLiveWorkers": 4,
+   "spawns": 4,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 53,
+     "createMs": 382,
+     "totalMs": 471
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 48,
+     "createMs": 160,
+     "totalMs": 236
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 79,
+     "createMs": 176,
+     "totalMs": 340
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 65,
+     "createMs": 106,
+     "totalMs": 220
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 2.403,
+   "errors": []
+  },
+  {
+   "part": "latency",
+   "earlyExit": true,
+   "planId": "int8|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+   "ttfiMs": 1150,
+   "m4MedianMs": 49.8,
+   "m4AmortisedMs": 55.2,
+   "workloadMs": 1103,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 214.06,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 214.06,
+    "lifetimeOverlapUpperMiB": 214.2
+   },
+   "maxLiveWorkers": 4,
+   "spawns": 4,
+   "serverBytes": 72036746,
+   "serverRequests": 6,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 46,
+     "createMs": 394,
+     "totalMs": 471
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 50,
+     "createMs": 154,
+     "totalMs": 289
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 124,
+     "createMs": 113,
+     "totalMs": 325
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "e2": 7,
+    "full": 10,
+    "e1": 3
+   },
+   "hash": "16f4c2cc34684b69",
+   "wallS": 2.286,
+   "errors": []
+  }
+ ],
+ "wallS": 50.249
+}

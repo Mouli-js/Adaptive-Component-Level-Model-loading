@@ -1,0 +1,96 @@
+{
+ "step": "net",
+ "env": {
+  "date": "2026-10-31T17:24:33.914Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "file": "/models/onnx/int8/c1_l0_1.onnx",
+ "rttTargetMs": 40,
+ "rows": [
+  {
+   "mbps": 50,
+   "concurrent": 1,
+   "where": "page",
+   "bytes": 14282351,
+   "bodySpanMs": 2216,
+   "ttfbMs": [
+    26.2
+   ],
+   "measuredMbps": 51.552,
+   "errorPct": 3.1,
+   "within5pct": true
+  },
+  {
+   "mbps": 20,
+   "concurrent": 1,
+   "where": "page",
+   "bytes": 14282351,
+   "bodySpanMs": 5645,
+   "ttfbMs": [
+    22.9
+   ],
+   "measuredMbps": 20.24,
+   "errorPct": 1.2,
+   "within5pct": true
+  },
+  {
+   "mbps": 10,
+   "concurrent": 1,
+   "where": "page",
+   "bytes": 14282351,
+   "bodySpanMs": 11358,
+   "ttfbMs": [
+    22
+   ],
+   "measuredMbps": 10.059,
+   "errorPct": 0.59,
+   "within5pct": true
+  },
+  {
+   "mbps": 5,
+   "concurrent": 1,
+   "where": "page",
+   "bytes": 14282351,
+   "bodySpanMs": 22859,
+   "ttfbMs": [
+    22.5
+   ],
+   "measuredMbps": 4.998,
+   "errorPct": -0.03,
+   "within5pct": true
+  },
+  {
+   "mbps": 20,
+   "concurrent": 2,
+   "where": "page",
+   "bytes": 28564702,
+   "bodySpanMs": 11356,
+   "ttfbMs": [
+    23,
+    630.4
+   ],
+   "measuredMbps": 20.123,
+   "errorPct": 0.61,
+   "within5pct": true
+  },
+  {
+   "mbps": 20,
+   "concurrent": 1,
+   "where": "worker",
+   "bytes": 14282351,
+   "bodySpanMs": 5644,
+   "ttfbMs": [
+    29.1
+   ],
+   "measuredMbps": 20.246,
+   "errorPct": 1.23,
+   "within5pct": true
+  }
+ ],
+ "allWithin5pct": true,
+ "wallS": 62.794
+}

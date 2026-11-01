@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Phase 7 CPU throttling check</title><link rel="icon" href="data:,"></head>
+<body><p>CPU throttling check (driven by bench/phase7/pilot.mjs)</p>
+<script type="module">
+const busy = n => { let x = 0; for (let i = 0; i < n; i++) x = (x + Math.sqrt(i * 1.0001)) % 1e9; return x; };
+const median = a => { const s = [...a].sort((x, y) => x - y); return s[s.length >> 1]; };
+async function main(n, reps) { const r = []; for (let k = 0; k < reps; k++) { const t = performance.now(); busy(n); r.push(performance.now() - t); } return { median: median(r), all: r }; }
+async function worker(n, reps, fresh = false) {
+  let w = new Worker('/bench/phase7/busyWorker.js'); const r = [];
+  for (let k = 0; k < reps; k++) {
+    if (fresh && k) { w.terminate(); w = new Worker('/bench/phase7/busyWorker.js'); }
+    r.push(await new Promise(res => { w.onmessage = e => res(e.data.ms); w.postMessage({ n }); }));
+  }
+  w.terminate(); return { median: median(r), all: r };
+}
+const spawnIdle = () => { const w = new Worker('/bench/phase7/busyWorker.js'); window.__idle = w; return true; };
+window.cpu = { main, worker, spawnIdle, ready: true };
+</script></body></html>

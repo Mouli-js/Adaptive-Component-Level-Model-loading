@@ -18,10 +18,14 @@ const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 export function createThrottledServer({ bytesPerSec, latencyMs = 0, root = ROOT }) {
+  // Bucket capacity: 0.1 s of bandwidth, but at least one 64 KiB write. Without the floor, rates below
+  // ~5.24 Mbit/s could never send a 64 KiB piece and the download stalled forever (found in the Phase 7 pilot;
+  // the Phase 4 results used 20 Mbit/s, where capacity was 250 KB, so they were not affected).
+  const CAP = Math.max(bytesPerSec * 0.1, 64 * 1024);
   let available = 0, last = Date.now();
   const take = async n => {                         // shared token bucket, refilled continuously
     for (;;) {
-      const now = Date.now(); available = Math.min(bytesPerSec * 0.1, available + (now - last) / 1000 * bytesPerSec); last = now;
+      const now = Date.now(); available = Math.min(CAP, available + (now - last) / 1000 * bytesPerSec); last = now;
       if (available >= n) { available -= n; return; }
       await sleep(Math.max(1, ((n - available) / bytesPerSec) * 1000));
     }

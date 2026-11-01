@@ -1,0 +1,994 @@
+{
+ "step": "engstab",
+ "env": {
+  "date": "2026-10-31T17:42:35.654Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "fixed": [
+  {
+   "low|ee0": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2247
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.6259
+     }
+    ]
+   },
+   "low|ee1": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2247
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.6259
+     }
+    ]
+   },
+   "mid|ee0": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.2812
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3102
+     },
+     {
+      "id": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.342
+     }
+    ]
+   },
+   "mid|ee1": {
+    "chosen": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+    "top3": [
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+      "cost": 1.3529
+     },
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+      "cost": 1.3606
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3845
+     }
+    ]
+   },
+   "high|ee0": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1892
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3186
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3756
+     }
+    ]
+   },
+   "high|ee1": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1892
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3186
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3756
+     }
+    ]
+   }
+  },
+  {
+   "low|ee0": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2247
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.6259
+     }
+    ]
+   },
+   "low|ee1": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2247
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.6259
+     }
+    ]
+   },
+   "mid|ee0": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.2812
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3102
+     },
+     {
+      "id": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.342
+     }
+    ]
+   },
+   "mid|ee1": {
+    "chosen": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+    "top3": [
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+      "cost": 1.3529
+     },
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+      "cost": 1.3606
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3845
+     }
+    ]
+   },
+   "high|ee0": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1892
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3186
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3756
+     }
+    ]
+   },
+   "high|ee1": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1892
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3186
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3756
+     }
+    ]
+   }
+  },
+  {
+   "low|ee0": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2247
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.6259
+     }
+    ]
+   },
+   "low|ee1": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2247
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.6259
+     }
+    ]
+   },
+   "mid|ee0": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.2812
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3102
+     },
+     {
+      "id": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.342
+     }
+    ]
+   },
+   "mid|ee1": {
+    "chosen": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+    "top3": [
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+      "cost": 1.3529
+     },
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+      "cost": 1.3606
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3845
+     }
+    ]
+   },
+   "high|ee0": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1892
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3186
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3756
+     }
+    ]
+   },
+   "high|ee1": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1892
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3186
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3756
+     }
+    ]
+   }
+  }
+ ],
+ "fresh": [
+  {
+   "low|ee0": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2215
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.5849
+     }
+    ]
+   },
+   "low|ee1": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2215
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.5849
+     }
+    ]
+   },
+   "mid|ee0": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.278
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3102
+     },
+     {
+      "id": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3411
+     }
+    ]
+   },
+   "mid|ee1": {
+    "chosen": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+    "top3": [
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+      "cost": 1.353
+     },
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+      "cost": 1.3566
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3844
+     }
+    ]
+   },
+   "high|ee0": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1896
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.313
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.37
+     }
+    ]
+   },
+   "high|ee1": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1896
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.313
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.37
+     }
+    ]
+   },
+   "_calibration": {
+    "source": "calibrated on this device (3 loads × 2 precisions, 16 sentences after 3 warm-up runs; 7121 ms)",
+    "spawnMs": 59.00500000012107,
+    "createBaseMs": 95.9507468661842,
+    "createBaseColdMs": 372.29074686661727,
+    "createPerMiBMs": 1.5450186578997356,
+    "inferMs": {
+     "int8": {
+      "c0_embed": 0.19945466939211348,
+      "c1_l0_1": 15.399999999906868,
+      "c2_l2_3": 15.347511929014205,
+      "c3_l4_5_cls": 15.462985684978062
+     },
+     "fp32": {
+      "c0_embed": 0.23785016977721163,
+      "c1_l0_1": 22.414999999804422,
+      "c2_l2_3": 22.462570033759867,
+      "c3_l4_5_cls": 22.633822155999457
+     }
+    },
+    "exitHeadMs": 0.3,
+    "transferMs": 0.2950000000419095,
+    "idbReadMBps": 583.8694027347419,
+    "idbWriteMBps": 300,
+    "hashMBps": 790.7823764966665,
+    "raw": {
+     "int8": {
+      "sizeMiB": 13.620711326599121,
+      "createMs": 116.9949999996461,
+      "createColdMs": 390.7950000001583,
+      "coldSamples": [
+       398,
+       384
+      ],
+      "spawnMs": 52.205000000074506,
+      "inferC1": 15.399999999906868,
+      "overhead": 0.2149999998509884,
+      "loads": [
+       {
+        "totalMs": 268,
+        "createMs": 117,
+        "source": "network"
+       },
+       {
+        "totalMs": 288,
+        "createMs": 128,
+        "source": "idb"
+       },
+       {
+        "totalMs": 203,
+        "createMs": 106,
+        "source": "idb"
+       }
+      ],
+      "idbReadMBps": 405.04563671651414,
+      "hashMBps": 692.4177684721602
+     },
+     "fp32": {
+      "sizeMiB": 54.09918689727783,
+      "createMs": 179.53499999968335,
+      "createColdMs": 458.41500000003725,
+      "coldSamples": [
+       459,
+       458
+      ],
+      "spawnMs": 65.80500000016764,
+      "inferC1": 22.414999999804422,
+      "overhead": 0.37500000023283064,
+      "loads": [
+       {
+        "totalMs": 629,
+        "createMs": 227,
+        "source": "network"
+       },
+       {
+        "totalMs": 430,
+        "createMs": 180,
+        "source": "idb"
+       },
+       {
+        "totalMs": 407,
+        "createMs": 177,
+        "source": "idb"
+       }
+      ],
+      "idbReadMBps": 583.8694027347419,
+      "hashMBps": 790.7823764966665
+     }
+    },
+    "notes": []
+   }
+  },
+  {
+   "low|ee0": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2188
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.5509
+     }
+    ]
+   },
+   "low|ee1": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2188
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.5509
+     }
+    ]
+   },
+   "mid|ee0": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.2621
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3102
+     },
+     {
+      "id": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3281
+     }
+    ]
+   },
+   "mid|ee1": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+      "cost": 1.3367
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+      "cost": 1.353
+     },
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.3718
+     }
+    ]
+   },
+   "high|ee0": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1896
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.2998
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3568
+     }
+    ]
+   },
+   "high|ee1": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1896
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.2998
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3568
+     }
+    ]
+   },
+   "_calibration": {
+    "source": "calibrated on this device (3 loads × 2 precisions, 16 sentences after 3 warm-up runs; 6901 ms)",
+    "spawnMs": 48.64500000001863,
+    "createBaseMs": 115.69652560006234,
+    "createBaseColdMs": 381.1352756002672,
+    "createPerMiBMs": 1.1349241628478524,
+    "inferMs": {
+     "int8": {
+      "c0_embed": 0.20152692569641306,
+      "c1_l0_1": 15.559999999823049,
+      "c2_l2_3": 15.506966598323993,
+      "c3_l4_5_cls": 15.623640081621918
+     },
+     "fp32": {
+      "c0_embed": 0.23286290322649825,
+      "c1_l0_1": 21.945000000065193,
+      "c2_l2_3": 21.991572580710493,
+      "c3_l4_5_cls": 22.15923387103357
+     }
+    },
+    "exitHeadMs": 0.3,
+    "transferMs": 0.28625000012107193,
+    "idbReadMBps": 676.9109402324815,
+    "idbWriteMBps": 300,
+    "hashMBps": 951.4186489438388,
+    "raw": {
+     "int8": {
+      "sizeMiB": 13.620711326599121,
+      "createMs": 131.1549999997951,
+      "createColdMs": 407.0175000000745,
+      "coldSamples": [
+       422,
+       392
+      ],
+      "spawnMs": 48.25999999977648,
+      "inferC1": 15.559999999823049,
+      "overhead": 0.2099999999627471,
+      "loads": [
+       {
+        "totalMs": 291,
+        "createMs": 140,
+        "source": "network"
+       },
+       {
+        "totalMs": 300,
+        "createMs": 131,
+        "source": "idb"
+       },
+       {
+        "totalMs": 195,
+        "createMs": 103,
+        "source": "idb"
+       }
+      ],
+      "idbReadMBps": 371.04997602166793,
+      "hashMBps": 819.1644085902358
+     },
+     "fp32": {
+      "sizeMiB": 54.09918689727783,
+      "createMs": 177.0950000002049,
+      "createColdMs": 432.1100000003353,
+      "coldSamples": [
+       430,
+       435
+      ],
+      "spawnMs": 49.03000000026077,
+      "inferC1": 21.945000000065193,
+      "overhead": 0.3625000002793968,
+      "loads": [
+       {
+        "totalMs": 610,
+        "createMs": 228,
+        "source": "network"
+       },
+       {
+        "totalMs": 370,
+        "createMs": 173,
+        "source": "idb"
+       },
+       {
+        "totalMs": 396,
+        "createMs": 177,
+        "source": "idb"
+       }
+      ],
+      "idbReadMBps": 676.9109402324815,
+      "hashMBps": 951.4186489438388
+     }
+    },
+    "notes": []
+   }
+  },
+  {
+   "low|ee0": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2157
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.511
+     }
+    ]
+   },
+   "low|ee1": {
+    "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+      "cost": 1.0773
+     },
+     {
+      "id": "int8|sequential|pin=-|G=8|pw=0|ee=0",
+      "cost": 1.2157
+     },
+     {
+      "id": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+      "cost": 3.511
+     }
+    ]
+   },
+   "mid|ee0": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.267
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.3102
+     },
+     {
+      "id": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3294
+     }
+    ]
+   },
+   "mid|ee1": {
+    "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+    "top3": [
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+      "cost": 1.3426
+     },
+     {
+      "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+      "cost": 1.353
+     },
+     {
+      "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+      "cost": 1.3784
+     }
+    ]
+   },
+   "high|ee0": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1896
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3069
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3639
+     }
+    ]
+   },
+   "high|ee1": {
+    "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "top3": [
+     {
+      "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+      "cost": 1.1896
+     },
+     {
+      "id": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+      "cost": 1.3069
+     },
+     {
+      "id": "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+      "cost": 1.3639
+     }
+    ]
+   },
+   "_calibration": {
+    "source": "calibrated on this device (3 loads × 2 precisions, 16 sentences after 3 warm-up runs; 6809 ms)",
+    "spawnMs": 50.28250000020489,
+    "createBaseMs": 138.2187012136625,
+    "createBaseColdMs": 383.92870121362523,
+    "createPerMiBMs": 0.5705501423692075,
+    "inferMs": {
+     "int8": {
+      "c0_embed": 0.2102692569853597,
+      "c1_l0_1": 16.234999999869615,
+      "c2_l2_3": 16.179665984873466,
+      "c3_l4_5_cls": 16.30140081786499
+     },
+     "fp32": {
+      "c0_embed": 0.22432088285367557,
+      "c1_l0_1": 21.140000000130385,
+      "c2_l2_3": 21.184864176701122,
+      "c3_l4_5_cls": 21.346375212355767
+     }
+    },
+    "exitHeadMs": 0.3,
+    "transferMs": 0.30875000008381903,
+    "idbReadMBps": 592.6898525752299,
+    "idbWriteMBps": 300,
+    "hashMBps": 1001.236829092041,
+    "raw": {
+     "int8": {
+      "sizeMiB": 13.620711326599121,
+      "createMs": 145.99000000022352,
+      "createColdMs": 397.09499999997206,
+      "coldSamples": [
+       391,
+       403
+      ],
+      "spawnMs": 42.90500000026077,
+      "inferC1": 16.234999999869615,
+      "overhead": 0.3175000003539026,
+      "loads": [
+       {
+        "totalMs": 299,
+        "createMs": 154,
+        "source": "network"
+       },
+       {
+        "totalMs": 285,
+        "createMs": 146,
+        "source": "idb"
+       },
+       {
+        "totalMs": 190,
+        "createMs": 99,
+        "source": "idb"
+       }
+      ],
+      "idbReadMBps": 378.5959227352398,
+      "hashMBps": 972.2790253046358
+     },
+     "fp32": {
+      "sizeMiB": 54.09918689727783,
+      "createMs": 169.08499999996275,
+      "createColdMs": 409.4000000001397,
+      "coldSamples": [
+       422,
+       397
+      ],
+      "spawnMs": 57.66000000014901,
+      "inferC1": 21.140000000130385,
+      "overhead": 0.2999999998137355,
+      "loads": [
+       {
+        "totalMs": 544,
+        "createMs": 183,
+        "source": "network"
+       },
+       {
+        "totalMs": 407,
+        "createMs": 169,
+        "source": "idb"
+       },
+       {
+        "totalMs": 375,
+        "createMs": 167,
+        "source": "idb"
+       }
+      ],
+      "idbReadMBps": 592.6898525752299,
+      "hashMBps": 1001.236829092041
+     }
+    },
+    "notes": []
+   }
+  }
+ ],
+ "summary": {
+  "low|ee0": {
+   "fixedDistinct": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "freshDistinct": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "freshTop2RelGap": [
+    13.39,
+    13.13,
+    12.85
+   ]
+  },
+  "low|ee1": {
+   "fixedDistinct": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "freshDistinct": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "freshTop2RelGap": [
+    13.39,
+    13.13,
+    12.85
+   ]
+  },
+  "mid|ee0": {
+   "fixedDistinct": [
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=0"
+   ],
+   "freshDistinct": [
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=0"
+   ],
+   "freshTop2RelGap": [
+    2.52,
+    3.81,
+    3.41
+   ]
+  },
+  "mid|ee1": {
+   "fixedDistinct": [
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1"
+   ],
+   "freshDistinct": [
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=1"
+   ],
+   "freshTop2RelGap": [
+    0.27,
+    1.22,
+    0.77
+   ]
+  },
+  "high|ee0": {
+   "fixedDistinct": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   ],
+   "freshDistinct": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   ],
+   "freshTop2RelGap": [
+    10.37,
+    9.26,
+    9.86
+   ]
+  },
+  "high|ee1": {
+   "fixedDistinct": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   ],
+   "freshDistinct": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   ],
+   "freshTop2RelGap": [
+    10.37,
+    9.26,
+    9.86
+   ]
+  }
+ },
+ "wallS": 25.908
+}

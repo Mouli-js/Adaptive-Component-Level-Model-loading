@@ -1,0 +1,121 @@
+{
+ "block": "acc",
+ "smoke": false,
+ "date": "2026-11-01T05:55:48.663Z",
+ "pass": true,
+ "rows": 12,
+ "successfulKeys": 12,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "row count = 12",
+   "pass": true,
+   "detail": "12 successful keys"
+  },
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "12 runs checked"
+  },
+  {
+   "name": "cache OFF runs: IndexedDB empty before and after, every chunk from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "determinism int8 ee0: identical logits hash across 2 browser processes",
+   "pass": true,
+   "detail": "1b4238164e7c / 1b4238164e7c"
+  },
+  {
+   "name": "int8 ee0: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "determinism int8 ee1: identical logits hash across 2 browser processes",
+   "pass": true,
+   "detail": "7f3fc934781b / 7f3fc934781b"
+  },
+  {
+   "name": "int8 ee1: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "determinism mixedC2 ee0: identical logits hash across 2 browser processes",
+   "pass": true,
+   "detail": "d5f82fe66511 / d5f82fe66511"
+  },
+  {
+   "name": "mixedC2 ee0: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "determinism mixedC2 ee1: identical logits hash across 2 browser processes",
+   "pass": true,
+   "detail": "18dd8a176622 / 18dd8a176622"
+  },
+  {
+   "name": "mixedC2 ee1: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "determinism fp32 ee0: identical logits hash across 2 browser processes",
+   "pass": true,
+   "detail": "c4b44bfd4fd8 / c4b44bfd4fd8"
+  },
+  {
+   "name": "fp32 ee0: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "determinism fp32 ee1: identical logits hash across 2 browser processes",
+   "pass": true,
+   "detail": "84b428fa5ec2 / 84b428fa5ec2"
+  },
+  {
+   "name": "fp32 ee1: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  },
+  {
+   "name": "int8 ee0 accuracy",
+   "detail": 0.9002293577981652
+  },
+  {
+   "name": "int8 ee1 accuracy",
+   "detail": 0.8990825688073395
+  },
+  {
+   "name": "mixedC2 ee0 accuracy",
+   "detail": 0.908256880733945
+  },
+  {
+   "name": "mixedC2 ee1 accuracy",
+   "detail": 0.9059633027522935
+  },
+  {
+   "name": "fp32 ee0 accuracy",
+   "detail": 0.9105504587155964
+  },
+  {
+   "name": "fp32 ee1 accuracy",
+   "detail": 0.9071100917431193
+  }
+ ]
+}

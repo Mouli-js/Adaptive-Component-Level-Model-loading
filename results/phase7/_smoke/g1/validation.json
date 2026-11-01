@@ -1,0 +1,32 @@
+{
+ "block": "g1",
+ "smoke": true,
+ "date": "2026-11-01T00:20:57.374Z",
+ "pass": true,
+ "rows": 2,
+ "successfulKeys": 2,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "2 runs checked"
+  },
+  {
+   "name": "warm runs: identical primed cache before the run (same entry count as the master), 0 bytes from the server",
+   "pass": true,
+   "detail": "2 runs"
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  }
+ ]
+}

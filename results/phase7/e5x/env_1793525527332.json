@@ -1,0 +1,10 @@
+{
+ "block": "e5x",
+ "smoke": false,
+ "date": "2026-11-01T09:32:07.332Z",
+ "node": "v22.23.4",
+ "platform": "Linux 6.18.44-fc-v185 x64",
+ "cpus": 2,
+ "cpuModel": "Intel(R) Xeon(R) Processor",
+ "totalMemGiB": 7.8
+}

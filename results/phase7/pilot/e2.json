@@ -1,0 +1,472 @@
+{
+ "step": "e2",
+ "env": {
+  "date": "2026-10-31T17:36:53.526Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "link": "20 Mbit/s, RTT 40 ms",
+ "workload": "pilot20",
+ "rows": [
+  {
+   "G": 1,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=0|ee=0",
+   "ttfiMs": 29056,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2307.4,
+   "workloadMs": 46147,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 84,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 9609,
+     "createMs": 379,
+     "totalMs": 10019
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 5742,
+     "createMs": 383,
+     "totalMs": 6160
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 5739,
+     "createMs": 451,
+     "totalMs": 6254
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 5988,
+     "createMs": 393,
+     "totalMs": 6469
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 75.297,
+   "errors": []
+  },
+  {
+   "G": 1,
+   "prewarm": true,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=1|pw=1|ee=0",
+   "ttfiMs": 28977,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 2275,
+   "workloadMs": 45500,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 77.19,
+    "lifetimeOverlapUpperMiB": 122.5
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 84,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 9581,
+     "createMs": 370,
+     "totalMs": 9978
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 5729,
+     "createMs": 394,
+     "totalMs": 6159
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 5731,
+     "createMs": 394,
+     "totalMs": 6254
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 6002,
+     "createMs": 451,
+     "totalMs": 6532
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 74.575,
+   "errors": []
+  },
+  {
+   "G": 32,
+   "prewarm": false,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 29116,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 165.2,
+   "workloadMs": 3305,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 78.66,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 9601,
+     "createMs": 358,
+     "totalMs": 9991
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 5741,
+     "createMs": 438,
+     "totalMs": 6238
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 5735,
+     "createMs": 396,
+     "totalMs": 6204
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 5986,
+     "createMs": 401,
+     "totalMs": 6467
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 32.457,
+   "errors": []
+  },
+  {
+   "G": 32,
+   "prewarm": true,
+   "cacheState": "cold",
+   "planId": "int8|sequential|pin=-|G=32|pw=1|ee=0",
+   "ttfiMs": 29012,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 112.7,
+   "workloadMs": 2254,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 91.63,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 93.1,
+    "lifetimeOverlapUpperMiB": 122.5
+   },
+   "maxLiveWorkers": 2,
+   "spawns": 8,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [
+    {
+     "chunk": "c0_embed",
+     "source": "network",
+     "bytesMs": 9587,
+     "createMs": 380,
+     "totalMs": 9995
+    },
+    {
+     "chunk": "c1_l0_1",
+     "source": "network",
+     "bytesMs": 5767,
+     "createMs": 368,
+     "totalMs": 6173
+    },
+    {
+     "chunk": "c2_l2_3",
+     "source": "network",
+     "bytesMs": 5742,
+     "createMs": 431,
+     "totalMs": 6280
+    },
+    {
+     "chunk": "c3_l4_5_cls",
+     "source": "network",
+     "bytesMs": 6000,
+     "createMs": 441,
+     "totalMs": 6500
+    }
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 67298184
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 31.292,
+   "errors": []
+  }
+ ],
+ "wallS": 216.081
+}

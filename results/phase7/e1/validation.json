@@ -1,0 +1,63 @@
+{
+ "block": "e1",
+ "smoke": false,
+ "date": "2026-11-01T06:15:39.046Z",
+ "pass": true,
+ "rows": 100,
+ "successfulKeys": 100,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "row count = 100",
+   "pass": true,
+   "detail": "100 successful keys"
+  },
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "100 runs checked"
+  },
+  {
+   "name": "cache OFF runs: IndexedDB empty before and after, every chunk from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "UA spot checks taken (rep 1 of baseline / chain / resident)",
+   "pass": true,
+   "detail": "11 (expected 11: baseline 2 + chain 3 + resident 6)"
+  },
+  {
+   "name": "no probe reading above the browser measurement by > 2 MiB",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  },
+  {
+   "name": "UA vs probe (UA includes JS heaps; probe > UA would be suspicious)",
+   "detail": [
+    "resident|int8|ee0: UA 224.28 vs probe 214.06",
+    "resident|mixedC2|ee0: UA 365.27 vs probe 355.06",
+    "baseline|fp32|ee0: UA 660.62 vs probe 656.38",
+    "resident|int8|ee1: UA 224.29 vs probe 214.06",
+    "resident|fp32|ee1: UA 823.53 vs probe 813.31",
+    "chain|mixedC2|ee0: UA 231.15 vs probe 226.75",
+    "resident|mixedC2|ee1: UA 365.29 vs probe 355.06",
+    "chain|int8|ee0: UA 115.58 vs probe 111.19",
+    "baseline|int8|ee0: UA 184.5 vs probe 180.25",
+    "chain|fp32|ee0: UA 407.83 vs probe 403.44",
+    "resident|fp32|ee0: UA 823.52 vs probe 813.31"
+   ]
+  }
+ ]
+}

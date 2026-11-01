@@ -1,0 +1,52 @@
+{
+ "block": "e5x",
+ "smoke": true,
+ "date": "2026-11-01T00:20:57.215Z",
+ "pass": true,
+ "rows": 8,
+ "successfulKeys": 8,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "8 runs checked"
+  },
+  {
+   "name": "cold runs: IndexedDB empty before the run, bytes came from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "visit 0 is cold: empty IndexedDB, full model bytes from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "revisits: 0 bytes from the server, every chunk from IndexedDB",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "revisits used the SAME origin as their cold visit",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "fp32 at 5 Mbit/s absent (omitted by decision 4)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  }
+ ]
+}

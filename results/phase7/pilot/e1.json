@@ -1,0 +1,628 @@
+{
+ "step": "e1",
+ "env": {
+  "date": "2026-10-31T17:32:46.462Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "workload": "pilot20",
+ "cacheState": "off (localhost network, 1e12 B/s)",
+ "rows": [
+  {
+   "precision": "int8",
+   "policy": "baseline",
+   "planId": "baseline|int8",
+   "ttfiMs": 768,
+   "m4MedianMs": 48.5,
+   "m4AmortisedMs": 46.5,
+   "workloadMs": 930,
+   "memory": {
+    "probe": "page WASM heap",
+    "peakWasmMiB": 180.25,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 180.25,
+    "lifetimeOverlapUpperMiB": null
+   },
+   "maxLiveWorkers": 0,
+   "spawns": 0,
+   "serverBytes": 67354909,
+   "serverRequests": 1,
+   "sources": [
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 1.721,
+   "errors": []
+  },
+  {
+   "precision": "int8",
+   "policy": "chain",
+   "planId": "chain|int8",
+   "ttfiMs": 842,
+   "m4MedianMs": 51,
+   "m4AmortisedMs": 46.9,
+   "workloadMs": 939,
+   "memory": {
+    "probe": "page WASM heap",
+    "peakWasmMiB": 111.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 111.19,
+    "lifetimeOverlapUpperMiB": null
+   },
+   "maxLiveWorkers": 0,
+   "spawns": 0,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 1.808,
+   "errors": []
+  },
+  {
+   "precision": "int8",
+   "policy": "resident",
+   "planId": "int8|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "ttfiMs": 1376,
+   "m4MedianMs": 53.7,
+   "m4AmortisedMs": 53.3,
+   "workloadMs": 1067,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 214.06,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 214.06,
+    "lifetimeOverlapUpperMiB": 214.2
+   },
+   "maxLiveWorkers": 4,
+   "spawns": 4,
+   "serverBytes": 67298184,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 2.474,
+   "errors": []
+  },
+  {
+   "precision": "int8",
+   "policy": "sequential",
+   "planId": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 2225,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 165.9,
+   "workloadMs": 3319,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 77.19,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 78.66,
+    "lifetimeOverlapUpperMiB": 77.2
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 134596368,
+   "serverRequests": 8,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 5.567,
+   "errors": []
+  },
+  {
+   "precision": "int8",
+   "policy": "hybrid",
+   "planId": "int8|hybrid|pin=c0|G=8|pw=0|ee=0",
+   "ttfiMs": 1278,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 148.9,
+   "workloadMs": 2977,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 123.56,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0.64,
+    "peakTotalMiB": 124.2,
+    "lifetimeOverlapUpperMiB": 123.6
+   },
+   "maxLiveWorkers": 2,
+   "spawns": 13,
+   "serverBytes": 197648838,
+   "serverRequests": 13,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "1c71a751acb92111",
+   "wallS": 4.301,
+   "errors": []
+  },
+  {
+   "precision": "mixedC2",
+   "policy": "baseline",
+   "skipped": "no single-file mixed model (by design)"
+  },
+  {
+   "precision": "mixedC2",
+   "policy": "chain",
+   "planId": "chain|mixedC2",
+   "ttfiMs": 941,
+   "m4MedianMs": 59.7,
+   "m4AmortisedMs": 55,
+   "workloadMs": 1099,
+   "memory": {
+    "probe": "page WASM heap",
+    "peakWasmMiB": 226.75,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 226.75,
+    "lifetimeOverlapUpperMiB": null
+   },
+   "maxLiveWorkers": 0,
+   "spawns": 0,
+   "serverBytes": 109742942,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "90917daa61fcaec7",
+   "wallS": 2.066,
+   "errors": []
+  },
+  {
+   "precision": "mixedC2",
+   "policy": "resident",
+   "planId": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "ttfiMs": 1307,
+   "m4MedianMs": 65,
+   "m4AmortisedMs": 59.4,
+   "workloadMs": 1187,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 355.06,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 355.06,
+    "lifetimeOverlapUpperMiB": 355.2
+   },
+   "maxLiveWorkers": 4,
+   "spawns": 4,
+   "serverBytes": 109742942,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "90917daa61fcaec7",
+   "wallS": 2.524,
+   "errors": []
+  },
+  {
+   "precision": "mixedC2",
+   "policy": "sequential",
+   "planId": "mixedC2|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 2278,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 167.3,
+   "workloadMs": 3345,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 186.25,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 187.72,
+    "lifetimeOverlapUpperMiB": 186.3
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 219485884,
+   "serverRequests": 8,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "90917daa61fcaec7",
+   "wallS": 5.642,
+   "errors": []
+  },
+  {
+   "precision": "mixedC2",
+   "policy": "hybrid",
+   "planId": "mixedC2|hybrid|pin=c0|G=8|pw=0|ee=0",
+   "ttfiMs": 1365,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 171.6,
+   "workloadMs": 3432,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 263.44,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0.64,
+    "peakTotalMiB": 264.08,
+    "lifetimeOverlapUpperMiB": 263.4
+   },
+   "maxLiveWorkers": 2,
+   "spawns": 13,
+   "serverBytes": 367427870,
+   "serverRequests": 13,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "90917daa61fcaec7",
+   "wallS": 4.829,
+   "errors": []
+  },
+  {
+   "precision": "fp32",
+   "policy": "baseline",
+   "planId": "baseline|fp32",
+   "ttfiMs": 11136,
+   "m4MedianMs": 73.3,
+   "m4AmortisedMs": 68.2,
+   "workloadMs": 1364,
+   "memory": {
+    "probe": "page WASM heap",
+    "peakWasmMiB": 656.38,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 656.38,
+    "lifetimeOverlapUpperMiB": null
+   },
+   "maxLiveWorkers": 0,
+   "spawns": 0,
+   "serverBytes": 267936691,
+   "serverRequests": 1,
+   "sources": [
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "0ef6cc4a1b0dcb1c",
+   "wallS": 12.52,
+   "errors": []
+  },
+  {
+   "precision": "fp32",
+   "policy": "chain",
+   "planId": "chain|fp32",
+   "ttfiMs": 1328,
+   "m4MedianMs": 79.9,
+   "m4AmortisedMs": 74,
+   "workloadMs": 1480,
+   "memory": {
+    "probe": "page WASM heap",
+    "peakWasmMiB": 403.44,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 403.44,
+    "lifetimeOverlapUpperMiB": null
+   },
+   "maxLiveWorkers": 0,
+   "spawns": 0,
+   "serverBytes": 267902971,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "0ef6cc4a1b0dcb1c",
+   "wallS": 2.846,
+   "errors": []
+  },
+  {
+   "precision": "fp32",
+   "policy": "resident",
+   "planId": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "ttfiMs": 1786,
+   "m4MedianMs": 81.1,
+   "m4AmortisedMs": 73.2,
+   "workloadMs": 1464,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 813.31,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0,
+    "peakTotalMiB": 813.31,
+    "lifetimeOverlapUpperMiB": 813.3
+   },
+   "maxLiveWorkers": 4,
+   "spawns": 4,
+   "serverBytes": 267902971,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "0ef6cc4a1b0dcb1c",
+   "wallS": 3.286,
+   "errors": []
+  },
+  {
+   "precision": "fp32",
+   "policy": "sequential",
+   "planId": "fp32|sequential|pin=-|G=32|pw=0|ee=0",
+   "ttfiMs": 2585,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 203.9,
+   "workloadMs": 4078,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 280.13,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 281.6,
+    "lifetimeOverlapUpperMiB": 280.1
+   },
+   "maxLiveWorkers": 1,
+   "spawns": 8,
+   "serverBytes": 535805942,
+   "serverRequests": 8,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "0ef6cc4a1b0dcb1c",
+   "wallS": 6.685,
+   "errors": []
+  },
+  {
+   "precision": "fp32",
+   "policy": "hybrid",
+   "planId": "fp32|hybrid|pin=c0|G=8|pw=0|ee=0",
+   "ttfiMs": 1741,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 225.6,
+   "workloadMs": 4513,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 466.38,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 0.64,
+    "peakTotalMiB": 467.01,
+    "lifetimeOverlapUpperMiB": 466.4
+   },
+   "maxLiveWorkers": 2,
+   "spawns": 13,
+   "serverBytes": 785565631,
+   "serverRequests": 13,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "0ef6cc4a1b0dcb1c",
+   "wallS": 6.29,
+   "errors": []
+  }
+ ],
+ "wallS": 70.943
+}

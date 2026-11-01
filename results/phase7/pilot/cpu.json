@@ -1,0 +1,255 @@
+{
+ "step": "cpu",
+ "env": {
+  "date": "2026-10-31T17:06:32.069Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "micro": {
+  "none": {
+   "mainMs": 220.00500000000466,
+   "workerMs": 221.02500000002328,
+   "mainAll": [
+    234.9199999999255,
+    220.00500000000466,
+    220.125,
+    219.43500000005588,
+    219.93999999994412
+   ],
+   "workerAll": [
+    221.02500000002328,
+    220.90000000002328,
+    220.35499999998137,
+    225.15499999991152,
+    232.16500000003725
+   ],
+   "cdpLog": []
+  },
+  "page": {
+   "mainMs": 922.4049999999115,
+   "workerMs": 221.8850000000093,
+   "mainAll": [
+    960.5549999999348,
+    911.9150000000373,
+    921.5250000000233,
+    922.4049999999115,
+    922.7449999999953
+   ],
+   "workerAll": [
+    221.8850000000093,
+    244.28499999991618,
+    221.32499999995343,
+    220.4649999999674,
+    241.35999999998603
+   ],
+   "cdpLog": [
+    {
+     "target": "page",
+     "ok": true
+    }
+   ]
+  },
+  "workers": {
+   "mainMs": 220.5449999999255,
+   "workerMs": 220.92499999993015,
+   "mainAll": [
+    264.10999999998603,
+    220.27500000002328,
+    220.44000000006054,
+    220.5449999999255,
+    220.625
+   ],
+   "workerAll": [
+    221.17499999993015,
+    220.80999999993946,
+    225.54999999993015,
+    220.92499999993015,
+    220.2950000000419
+   ],
+   "cdpLog": [
+    {
+     "target": "autoAttach",
+     "ok": true
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    }
+   ]
+  },
+  "both": {
+   "mainMs": 922.2299999999814,
+   "workerMs": 223.18500000005588,
+   "mainAll": [
+    949.4449999999488,
+    922.2299999999814,
+    920.0999999999767,
+    916.1650000000373,
+    925.5749999999534
+   ],
+   "workerAll": [
+    238.0449999999255,
+    223.18500000005588,
+    222.73499999998603,
+    231.125,
+    222.65500000002794
+   ],
+   "cdpLog": [
+    {
+     "target": "page",
+     "ok": true
+    },
+    {
+     "target": "autoAttach",
+     "ok": true
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/bench/phase7/busyWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    }
+   ]
+  }
+ },
+ "inference": {
+  "none": {
+   "workerComputeMedianMs": 51.22999999998137,
+   "requestMedianMs": 52.714999999967404,
+   "ttfiMs": 1371.954999999958,
+   "cdpWorkerTargets": 0,
+   "cdpLog": []
+  },
+  "page": {
+   "workerComputeMedianMs": 51.375,
+   "requestMedianMs": 57.13000000000466,
+   "ttfiMs": 1729.515000000014,
+   "cdpWorkerTargets": 0,
+   "cdpLog": [
+    {
+     "target": "page",
+     "ok": true
+    }
+   ]
+  },
+  "both": {
+   "workerComputeMedianMs": 52.640000000130385,
+   "requestMedianMs": 55.64000000001397,
+   "ttfiMs": 1789.7350000001024,
+   "cdpWorkerTargets": 4,
+   "cdpLog": [
+    {
+     "target": "page",
+     "ok": true
+    },
+    {
+     "target": "autoAttach",
+     "ok": true
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/packages/adaptive-onnx-loader/src/workers/chunkWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/packages/adaptive-onnx-loader/src/workers/chunkWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/packages/adaptive-onnx-loader/src/workers/chunkWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    },
+    {
+     "target": "worker",
+     "url": "http://localhost:43631/packages/adaptive-onnx-loader/src/workers/chunkWorker.js",
+     "ok": false,
+     "error": "Operation is only supported for pages, not workers"
+    }
+   ]
+  }
+ },
+ "summary": {
+  "rate": 4,
+  "micro": {
+   "mainSlowdown": {
+    "page": 4.19,
+    "workers": 1,
+    "both": 4.19
+   },
+   "workerSlowdown": {
+    "page": 1,
+    "workers": 1,
+    "both": 1.01
+   }
+  },
+  "inference": {
+   "workerComputeSlowdown": {
+    "page": 1,
+    "both": 1.03
+   },
+   "requestSlowdown": {
+    "page": 1.08,
+    "both": 1.06
+   }
+  }
+ },
+ "wallS": 28.154
+}

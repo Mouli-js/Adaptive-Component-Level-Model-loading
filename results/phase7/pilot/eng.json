@@ -1,0 +1,577 @@
+{
+ "step": "eng",
+ "env": {
+  "date": "2026-10-31T17:41:46.417Z",
+  "node": "v22.23.4",
+  "platform": "Linux 6.18.44-fc-v185 x64",
+  "cpus": 2,
+  "cpuModel": "Intel(R) Xeon(R) Processor",
+  "totalMemGiB": 7.8
+ },
+ "masterCache": {
+  "entries": 10,
+  "bytes": 339939717,
+  "items": [
+   {
+    "name": "c2_l2_3",
+    "size": 14282351,
+    "key": "0068dcc8b0148f2ffd70f5bccf27d1782e41020c9d11d7a405bc8bd640a07d65"
+   },
+   {
+    "name": "e2_after_c2",
+    "size": 2369281,
+    "key": "05c6a75fc46bae3238e5f91e73f60d1258f481732c10d36b853149e8baec6d8d"
+   },
+   {
+    "name": "c3_l4_5_cls",
+    "size": 59100002,
+    "key": "0d218e1297cffa75030e3583fced004849047a540d08b99ae6c1f999511ccb0e"
+   },
+   {
+    "name": "c0_embed",
+    "size": 95348751,
+    "key": "3f4cf3d8e4b872a4e3304497279c89a4e08d660e4da79ee636aa15695f2d21ee"
+   },
+   {
+    "name": "c0_embed",
+    "size": 23847966,
+    "key": "4c4a6f57a156382994afd197ceb86cc40b60a06f1e2ff2d63f0c0d00ab339a25"
+   },
+   {
+    "name": "c1_l0_1",
+    "size": 56727109,
+    "key": "51428f2c70f42c15bcd4b51fbf8c2c59cc81ab807dad58e4c601a4f86a60fb08"
+   },
+   {
+    "name": "c3_l4_5_cls",
+    "size": 14885516,
+    "key": "76fc9bb2cbf14f70cea94f15f294b06ccf9669fb13841f27042f05ee79d28a91"
+   },
+   {
+    "name": "c2_l2_3",
+    "size": 56727109,
+    "key": "9362004377eb5727ec9f05b85729b91d7f52a42caa51b7a15b424234be18fa1b"
+   },
+   {
+    "name": "e1_after_c1",
+    "size": 2369281,
+    "key": "b34b3ac8f80beaa912610cfc2b6e3b67a752ffb48a5de3e9a801816c2e30eb96"
+   },
+   {
+    "name": "c1_l0_1",
+    "size": 14282351,
+    "key": "bbdc0e3a6337f8172a12380d3ddb543bf6ea5fd8ace171c97cd4817e6e1f52bd"
+   }
+  ]
+ },
+ "calibrationS": 6.668,
+ "decisions": [
+  {
+   "cache": "cold",
+   "profile": "low",
+   "earlyExit": false,
+   "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 237,
+   "nFeasible": 3,
+   "bestHybrid": null,
+   "families": [
+    "int8|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "int8|sequential|pin=-|G=8|pw=0|ee=0",
+    "int8|sequential|pin=-|G=1|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "int8",
+    "pinned": [],
+    "groupSize": 32,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "cold",
+   "profile": "low",
+   "earlyExit": true,
+   "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 474,
+   "nFeasible": 3,
+   "bestHybrid": null,
+   "families": [
+    "int8|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "int8|sequential|pin=-|G=8|pw=0|ee=0",
+    "int8|sequential|pin=-|G=1|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "int8",
+    "pinned": [],
+    "groupSize": 32,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "cold",
+   "profile": "mid",
+   "earlyExit": false,
+   "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+   "feasible": true,
+   "nCandidates": 237,
+   "nFeasible": 82,
+   "bestHybrid": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+   "families": [
+    "mixedC2|sequential|ee=0",
+    "mixedC2|resident|ee=0",
+    "mixedC2|hybrid|ee=0",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "mixedC2|hybrid|pin=c3|G=32|pw=1|ee=0",
+    "mixedC2|hybrid|pin=c1|G=32|pw=0|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "mixedC2",
+    "pinned": [],
+    "groupSize": 32,
+    "prewarm": true,
+    "earlyExit": false,
+    "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "cold",
+   "profile": "mid",
+   "earlyExit": true,
+   "chosen": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+   "feasible": true,
+   "nCandidates": 474,
+   "nFeasible": 154,
+   "bestHybrid": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=1",
+   "families": [
+    "mixedC2|resident|ee=1",
+    "mixedC2|sequential|ee=1",
+    "mixedC2|resident|ee=0",
+    "mixedC2|sequential|ee=0",
+    "mixedC2|hybrid|ee=1",
+    "mixedC2|hybrid|ee=0",
+    "fp32|sequential|ee=1",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=1",
+    "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=0|ee=1",
+    "fp32|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "mixedC2",
+    "pinned": [
+     "c0_embed",
+     "c1_l0_1",
+     "c2_l2_3",
+     "c3_l4_5_cls"
+    ],
+    "groupSize": 1,
+    "prewarm": false,
+    "earlyExit": true,
+    "id": "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "cold",
+   "profile": "high",
+   "earlyExit": false,
+   "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 237,
+   "nFeasible": 79,
+   "bestHybrid": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+   "families": [
+    "fp32|resident|ee=0",
+    "fp32|hybrid|ee=0",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c2|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c3|G=32|pw=1|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=1|ee=0"
+   ],
+   "plan": {
+    "precision": "fp32",
+    "pinned": [
+     "c0_embed",
+     "c1_l0_1",
+     "c2_l2_3",
+     "c3_l4_5_cls"
+    ],
+    "groupSize": 1,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "cold",
+   "profile": "high",
+   "earlyExit": true,
+   "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 474,
+   "nFeasible": 79,
+   "bestHybrid": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+   "families": [
+    "fp32|resident|ee=0",
+    "fp32|hybrid|ee=0",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c2|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c3|G=32|pw=1|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=1|ee=0"
+   ],
+   "plan": {
+    "precision": "fp32",
+    "pinned": [
+     "c0_embed",
+     "c1_l0_1",
+     "c2_l2_3",
+     "c3_l4_5_cls"
+    ],
+    "groupSize": 1,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "warm",
+   "profile": "low",
+   "earlyExit": false,
+   "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 237,
+   "nFeasible": 3,
+   "bestHybrid": null,
+   "families": [
+    "int8|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "int8|sequential|pin=-|G=8|pw=0|ee=0",
+    "int8|sequential|pin=-|G=1|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "int8",
+    "pinned": [],
+    "groupSize": 32,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "warm",
+   "profile": "low",
+   "earlyExit": true,
+   "chosen": "int8|sequential|pin=-|G=32|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 474,
+   "nFeasible": 3,
+   "bestHybrid": null,
+   "families": [
+    "int8|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "int8|sequential|pin=-|G=32|pw=0|ee=0",
+    "int8|sequential|pin=-|G=8|pw=0|ee=0",
+    "int8|sequential|pin=-|G=1|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "int8",
+    "pinned": [],
+    "groupSize": 32,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "int8|sequential|pin=-|G=32|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "warm",
+   "profile": "mid",
+   "earlyExit": false,
+   "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+   "feasible": true,
+   "nCandidates": 237,
+   "nFeasible": 82,
+   "bestHybrid": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+   "families": [
+    "mixedC2|sequential|ee=0",
+    "mixedC2|resident|ee=0",
+    "mixedC2|hybrid|ee=0",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "mixedC2|hybrid|pin=c3|G=32|pw=1|ee=0",
+    "mixedC2|hybrid|pin=c0+c2|G=32|pw=0|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "mixedC2",
+    "pinned": [],
+    "groupSize": 32,
+    "prewarm": true,
+    "earlyExit": false,
+    "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "warm",
+   "profile": "mid",
+   "earlyExit": true,
+   "chosen": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+   "feasible": true,
+   "nCandidates": 474,
+   "nFeasible": 154,
+   "bestHybrid": "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=1",
+   "families": [
+    "mixedC2|sequential|ee=1",
+    "mixedC2|resident|ee=1",
+    "mixedC2|resident|ee=0",
+    "mixedC2|sequential|ee=0",
+    "mixedC2|hybrid|ee=1",
+    "mixedC2|hybrid|ee=0",
+    "fp32|sequential|ee=1",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=1",
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=1",
+    "mixedC2|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+    "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=1",
+    "mixedC2|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=0|ee=1",
+    "fp32|sequential|pin=-|G=32|pw=0|ee=0"
+   ],
+   "plan": {
+    "precision": "mixedC2",
+    "pinned": [],
+    "groupSize": 32,
+    "prewarm": true,
+    "earlyExit": true,
+    "id": "mixedC2|sequential|pin=-|G=32|pw=1|ee=1"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "warm",
+   "profile": "high",
+   "earlyExit": false,
+   "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 237,
+   "nFeasible": 79,
+   "bestHybrid": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+   "families": [
+    "fp32|resident|ee=0",
+    "fp32|hybrid|ee=0",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c2|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c3|G=32|pw=1|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=1|ee=0"
+   ],
+   "plan": {
+    "precision": "fp32",
+    "pinned": [
+     "c0_embed",
+     "c1_l0_1",
+     "c2_l2_3",
+     "c3_l4_5_cls"
+    ],
+    "groupSize": 1,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  },
+  {
+   "cache": "warm",
+   "profile": "high",
+   "earlyExit": true,
+   "chosen": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+   "feasible": true,
+   "nCandidates": 474,
+   "nFeasible": 79,
+   "bestHybrid": "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+   "families": [
+    "fp32|resident|ee=0",
+    "fp32|hybrid|ee=0",
+    "fp32|sequential|ee=0"
+   ],
+   "toMeasure": [
+    "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0",
+    "fp32|hybrid|pin=c0|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c1|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c2|G=32|pw=1|ee=0",
+    "fp32|hybrid|pin=c0+c3|G=32|pw=1|ee=0",
+    "fp32|sequential|pin=-|G=32|pw=1|ee=0"
+   ],
+   "plan": {
+    "precision": "fp32",
+    "pinned": [
+     "c0_embed",
+     "c1_l0_1",
+     "c2_l2_3",
+     "c3_l4_5_cls"
+    ],
+    "groupSize": 1,
+    "prewarm": false,
+    "earlyExit": false,
+    "id": "fp32|resident|pin=c0+c1+c2+c3|G=1|pw=0|ee=0"
+   },
+   "cachedChunks": null
+  }
+ ],
+ "uniquePlansToMeasure": 20,
+ "runs": [
+  {
+   "decisionCache": "cold",
+   "runCache": "cold",
+   "planId": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+   "ttfiMs": null,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 163.5,
+   "workloadMs": 3271,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 232.63,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 234.1,
+    "lifetimeOverlapUpperMiB": 232.7
+   },
+   "maxLiveWorkers": 2,
+   "spawns": 4,
+   "serverBytes": 109742942,
+   "serverRequests": 4,
+   "sources": [
+    "network",
+    "network",
+    "network",
+    "network"
+   ],
+   "firstLoads": [],
+   "cacheBefore": {
+    "entries": 0,
+    "bytes": 0
+   },
+   "cacheAfter": {
+    "entries": 4,
+    "bytes": 109742942
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "2f83f4cd317f8140",
+   "wallS": 3.288,
+   "errors": [],
+   "predicted": {
+    "wasmMiBWithMargin": 255.86,
+    "totalMs": 1659
+   },
+   "measuredTotalMs": 3271,
+   "timeErrorPct": -49.3,
+   "memoryUnderestimated": false
+  },
+  {
+   "decisionCache": "warm",
+   "runCache": "warm",
+   "planId": "mixedC2|sequential|pin=-|G=32|pw=1|ee=0",
+   "ttfiMs": null,
+   "m4MedianMs": null,
+   "m4AmortisedMs": 119.3,
+   "workloadMs": 2385,
+   "memory": {
+    "probe": "sum of live Worker heaps (Worker replies)",
+    "peakWasmMiB": 232.63,
+    "pageHeapStartMiB": 0,
+    "waitingHiddenMiB": 1.47,
+    "peakTotalMiB": 234.1,
+    "lifetimeOverlapUpperMiB": 232.6
+   },
+   "maxLiveWorkers": 2,
+   "spawns": 4,
+   "serverBytes": 0,
+   "serverRequests": 0,
+   "sources": [
+    "idb",
+    "idb",
+    "idb",
+    "idb"
+   ],
+   "firstLoads": [],
+   "cacheBefore": {
+    "entries": 10,
+    "bytes": 339939717
+   },
+   "cacheAfter": {
+    "entries": 10,
+    "bytes": 339939717
+   },
+   "exits": {
+    "full": 20
+   },
+   "hash": "2f83f4cd317f8140",
+   "wallS": 2.406,
+   "errors": [],
+   "predicted": {
+    "wasmMiBWithMargin": 255.86,
+    "totalMs": 1659
+   },
+   "measuredTotalMs": 2385,
+   "timeErrorPct": -30.4,
+   "memoryUnderestimated": false
+  }
+ ],
+ "wallS": 30.901
+}

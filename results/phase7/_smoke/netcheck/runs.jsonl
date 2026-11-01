@@ -1,0 +1,4 @@
+{"key":"netcheck|50","block":"netcheck","mbps":50,"bytes":14282351,"ttfbMs":22.255000000004657,"bodyMs":2216.055000000051,"measuredMbps":51.55955425293928,"errorPct":3.1191085058785575,"within5pct":true,"date":"2026-10-31T23:53:38.327Z"}
+{"key":"netcheck|20","block":"netcheck","mbps":20,"bytes":14282351,"ttfbMs":23.18999999994412,"bodyMs":5642.665000000037,"measuredMbps":20.24908584861927,"errorPct":1.2454292430963498,"within5pct":true,"date":"2026-10-31T23:53:44.534Z"}
+{"key":"netcheck|10","block":"netcheck","mbps":10,"bytes":14282351,"ttfbMs":22.975000000093132,"bodyMs":11350.005000000005,"measuredMbps":10.066850895660394,"errorPct":0.6685089566039437,"within5pct":true,"date":"2026-10-31T23:53:56.534Z"}
+{"key":"netcheck|5","block":"netcheck","mbps":5,"bytes":14282351,"ttfbMs":21.489999999990687,"bodyMs":22813.679999999935,"measuredMbps":5.008346220337987,"errorPct":0.1669244067597475,"within5pct":true,"date":"2026-10-31T23:54:19.943Z"}

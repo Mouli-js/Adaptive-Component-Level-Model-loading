@@ -1,0 +1,46 @@
+{
+ "block": "e3bytes",
+ "smoke": false,
+ "date": "2026-11-01T07:04:37.209Z",
+ "pass": true,
+ "rows": 270,
+ "successfulKeys": 270,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "row count = 270",
+   "pass": true,
+   "detail": "270 successful keys"
+  },
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "270 runs checked"
+  },
+  {
+   "name": "cold runs: IndexedDB empty before the run, bytes came from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "every run took the expected exit path for its sentence",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  },
+  {
+   "name": "OUTCOME: served bytes vs the runtime model (a mismatch is a finding about the runtime, not a harness failure)",
+   "detail": "all equal"
+  }
+ ]
+}

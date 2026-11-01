@@ -1,0 +1,86 @@
+{
+ "block": "acc",
+ "smoke": true,
+ "date": "2026-11-01T00:20:55.967Z",
+ "pass": true,
+ "rows": 6,
+ "successfulKeys": 6,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "6 runs checked"
+  },
+  {
+   "name": "cache OFF runs: IndexedDB empty before and after, every chunk from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "int8 ee0: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "int8 ee1: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "mixedC2 ee0: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "mixedC2 ee1: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "fp32 ee0: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "fp32 ee1: 872 outputs = reference (Δ = 0, exit points identical)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  },
+  {
+   "name": "int8 ee0 accuracy",
+   "detail": 0.9002293577981652
+  },
+  {
+   "name": "int8 ee1 accuracy",
+   "detail": 0.8990825688073395
+  },
+  {
+   "name": "mixedC2 ee0 accuracy",
+   "detail": 0.908256880733945
+  },
+  {
+   "name": "mixedC2 ee1 accuracy",
+   "detail": 0.9059633027522935
+  },
+  {
+   "name": "fp32 ee0 accuracy",
+   "detail": 0.9105504587155964
+  },
+  {
+   "name": "fp32 ee1 accuracy",
+   "detail": 0.9071100917431193
+  }
+ ]
+}

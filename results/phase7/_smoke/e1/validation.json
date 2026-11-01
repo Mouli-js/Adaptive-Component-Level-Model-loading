@@ -1,0 +1,49 @@
+{
+ "block": "e1",
+ "smoke": true,
+ "date": "2026-11-01T00:20:56.277Z",
+ "pass": true,
+ "rows": 2,
+ "successfulKeys": 2,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "2 runs checked"
+  },
+  {
+   "name": "cache OFF runs: IndexedDB empty before and after, every chunk from the server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "UA spot checks taken (rep 1 of baseline / chain / resident)",
+   "pass": true,
+   "detail": "2 (expected 11: baseline 2 + chain 3 + resident 6)"
+  },
+  {
+   "name": "no probe reading above the browser measurement by > 2 MiB",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  },
+  {
+   "name": "UA vs probe (UA includes JS heaps; probe > UA would be suspicious)",
+   "detail": [
+    "baseline|int8|ee0: UA 184.5 vs probe 180.25",
+    "chain|int8|ee0: UA 115.58 vs probe 111.19"
+   ]
+  }
+ ]
+}

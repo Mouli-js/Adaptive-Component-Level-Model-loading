@@ -1,0 +1,31 @@
+{
+ "block": "ebrowser",
+ "smoke": true,
+ "date": "2026-11-01T00:20:56.121Z",
+ "pass": true,
+ "rows": 1,
+ "successfulKeys": 1,
+ "failedAttempts": 0,
+ "checks": [
+  {
+   "name": "no page errors in any successful run",
+   "pass": true,
+   "detail": "none"
+  },
+  {
+   "name": "every run: outputs = reference (int8 Δ = 0, fp32/mixed Δ < 1e-4, identical exit points)",
+   "pass": true,
+   "detail": "0 runs checked"
+  }
+ ],
+ "notes": [
+  {
+   "name": "failed attempts (kept in the file; each was retried as a new row with retryOf)",
+   "detail": "none"
+  },
+  {
+   "name": "Node WASM file for batch 32 not produced yet",
+   "detail": "compare after the offline block"
+  }
+ ]
+}
