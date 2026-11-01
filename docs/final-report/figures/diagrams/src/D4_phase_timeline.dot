@@ -1,0 +1,15 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=LR; nodesep=0.25; ranksep=0.3; node [fontsize=11];
+p0 [label="Phase 0\nPlanning\nand setup"]; p1 [label="Phase 1\nModel\npreparation"]; p2 [label="Phase 2\nBrowser\nbaseline"]; p3 [label="Phase 3\nChunks and\nWorkers"];
+p4 [label="Phase 4\nStorage and\ncache"]; p5 [label="Phase 5\nMonitor and\nengine"]; p6 [label="Phase 6\nnpm package\nand demo"]; p7 [label="Phase 7\nExperiments\n(pilot, suite, Mac)"]; p8 [label="Phase 8\nReport and\nVIVA", style="rounded,dashed", fillcolor="white"];
+node [shape=diamond, label="gate", fontsize=8, width=0.5, height=0.4, fillcolor="white", style="filled"];
+g0; g1; g2; g3; g4; g5; g6; g7;
+p0 -> g0 -> p1 -> g1 -> p2 -> g2 -> p3 -> g3 -> p4;
+p4 -> g4 [constraint=false];
+g4 -> p5 -> g5 -> p6 -> g6 -> p7 -> g7 -> p8;
+{rank=same; p0; g4;}
+p0 -> g4 [style=invis];
+}

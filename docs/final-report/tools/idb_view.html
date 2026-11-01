@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>IndexedDB store view (documentation)</title>
+<script type="importmap">{ "imports": { "onnxruntime-web": "/node_modules/onnxruntime-web/dist/ort.wasm.min.mjs",
+  "adaptive-onnx-loader": "/packages/adaptive-onnx-loader/src/index.js" } }</script>
+<style>body{font:14px/1.45 system-ui,sans-serif;margin:24px;color:#1c1917;background:#fff}h1{font-size:19px;margin:0 0 4px}
+.note{background:#fef3c7;border:1px solid #d97706;padding:8px 10px;border-radius:6px;margin:10px 0 14px}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #d6d3d1;padding:5px 7px;text-align:left}th{background:#f5f5f4}
+td.num{text-align:right;font-variant-numeric:tabular-nums}code{font-size:12px}</style></head>
+<body>
+<h1>IndexedDB store <code>adaptive-onnx-loader</code>: object store <code>meta</code></h1>
+<div class="note"><b>Application-generated view, not a browser DevTools screenshot.</b> This documentation page reads the
+store with the package's own read-only calls <code>ChunkStore.open()</code>, <code>store.list()</code> and
+<code>ChunkStore.storageInfo()</code> (<code>src/cache/chunkStore.js</code>). The <code>blobs</code> store holds the chunk bytes
+(ArrayBuffer) under the same SHA-256 key; only its key count is shown.</div>
+<p id="info">reading…</p>
+<table><thead><tr><th>#</th><th>sha256 (key, first 16 hex)</th><th>name</th><th>precision</th><th class="num">size (bytes)</th><th class="num">size (MiB)</th><th class="num">hits</th></tr></thead><tbody id="rows"></tbody></table>
+<script type="module">
+import { ChunkStore } from 'adaptive-onnx-loader';
+const s = await ChunkStore.open();
+const rows = (await s.list()).sort((a, b) => (a.name + a.precision).localeCompare(b.name + b.precision));
+const blobKeys = await new Promise((res, rej) => { const r = s.db.transaction('blobs').objectStore('blobs').getAllKeys(); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); });
+const info = await ChunkStore.storageInfo();
+document.getElementById('rows').innerHTML = rows.map((m, i) => `<tr><td>${i + 1}</td><td><code>${m.sha256.slice(0, 16)}…</code></td><td>${m.name}</td><td>${m.precision}</td><td class="num">${m.size.toLocaleString('en')}</td><td class="num">${(m.size / 1048576).toFixed(1)}</td><td class="num">${m.hits}</td></tr>`).join('');
+const total = rows.reduce((a, m) => a + m.size, 0);
+document.getElementById('info').innerHTML = `Origin <code>${location.origin}</code> · meta entries: <b>${rows.length}</b> · blobs keys: <b>${blobKeys.length}</b> · stored ${(total / 1048576).toFixed(1)} MiB · ` +
+  (info.supported ? `browser quota ${(info.quota / 1073741824).toFixed(1)} GiB, persisted: ${info.persisted}` : 'storage estimate unsupported');
+document.body.dataset.ready = '1'; s.close();
+</script></body></html>

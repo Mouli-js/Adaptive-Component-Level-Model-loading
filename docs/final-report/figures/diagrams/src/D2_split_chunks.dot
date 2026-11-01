@@ -1,0 +1,15 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=TB; nodesep=0.25; ranksep=0.35;
+ids [label="input_ids\nint64 [1,S]", shape=note, fillcolor="white"];
+c0 [label="C0  c0_embed\nembeddings\n23,835,648 params", fillcolor="#dbeafe"];
+c1 [label="C1  c1_l0_1\nlayers 0–1\n14,175,744 params", fillcolor="#dbeafe"];
+c2 [label="C2  c2_l2_3\nlayers 2–3\n14,175,744 params", fillcolor="#fde2d3"];
+c3 [label="C3  c3_l4_5_cls\nlayers 4–5 + classifier\n14,767,874 params", fillcolor="#dbeafe"];
+lg [label="logits\nfloat32 [1,2]", shape=note, fillcolor="white"];
+ids -> c0; c0 -> c1 [label="hidden\nfloat32 [1,S,768]"]; c1 -> c2 [label="hidden + mask"]; c2 -> c3 [label="hidden + mask"]; c3 -> lg;
+note [shape=plaintext, style="", label="Each chunk is a standalone ONNX graph (opset 17) holding only its own weights.\nSum of chunk parameters = 66,955,010 = full model. attention_mask int64 [1,S] is passed to C1–C3.\nShaded C2 = the chunk kept fp32 in the mixedC2 setting."];
+c3 -> note [style=invis];
+}

@@ -1,0 +1,16 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=TB; node [width=4.6];
+f [label="scripts/fetch_resources.sh: checkpoint + SST-2 parquet", fillcolor="white"];
+s1 [label="1. split_model.py: PyTorch split equivalence + baseline accuracy"];
+s2 [label="2. export_onnx.py: fp32 ONNX, full model + 4 chunks"];
+s3 [label="3. quantize.py: dynamic int8 quantization"];
+s4 [label="4. train_exit_heads.py extract / train: E1, E2 heads (frozen backbone)"];
+s5 [label="5. export_heads.py: heads → ONNX fp32 + int8"];
+s6 [label="6. validate.py acc / exit: accuracy, equivalence, per-chunk int8 sensitivity, exit curve"];
+s7 [label="7. build_manifest.py: manifest.json (sizes, SHA-256, I/O signatures)"];
+t  [label="tests/ortweb_chain_smoke.mjs: chain in onnxruntime-web", fillcolor="white"];
+f -> s1 -> s2 -> s3 -> s4 -> s5 -> s6 -> s7 -> t;
+}

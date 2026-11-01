@@ -1,0 +1,21 @@
+sequenceDiagram
+    autonumber
+    participant P as Page (PlanRunner)
+    participant W as chunkWorker.js (one chunk)
+    participant S as ChunkLoader / IndexedDB
+    P->>W: new Worker(chunkWorker.js)
+    P->>W: {type:'init', ortUrl, wasmPaths, numThreads}
+    W-->>P: {ok, heapBytes}
+    P->>W: {type:'load', entry, cache, exitEntry?}
+    W->>S: getBytes(entry): IndexedDB → verify SHA-256 → else network
+    S-->>W: bytes (source: idb | network)
+    W-->>P: {ok, stats, heapBytes}
+    loop each sentence in the group
+        P->>W: {type:'run', feeds, withExit} — feeds' buffers TRANSFERRED
+        W-->>P: {ok, outputs, runMs, heapBytes} — output buffers TRANSFERRED back
+    end
+    alt chunk not pinned
+        P->>W: worker.terminate() — Worker and its WASM heap destroyed (D-3, measured in the cloud)
+    else pinned (resident / hybrid)
+        Note over P,W: Worker stays alive for the next request
+    end

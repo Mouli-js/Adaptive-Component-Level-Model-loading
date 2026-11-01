@@ -1,0 +1,14 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=TB; nodesep=0.5; ranksep=0.3;
+{rank=same; e1; r1;} {rank=same; e2; r2;}
+c0 [label="C0"]; c1 [label="C1\n(layers 0–1)"]; c2 [label="C2\n(layers 2–3)"]; c3 [label="C3\n(layers 4–5 + cls)"];
+e1 [label="Exit head E1\n(in C1's Worker)", fillcolor="#fef3c7"]; e2 [label="Exit head E2\n(in C2's Worker)", fillcolor="#fef3c7"];
+d1 [shape=diamond, label="max softmax\n≥ τ ?", fillcolor="white"]; d2 [shape=diamond, label="max softmax\n≥ τ ?", fillcolor="white"];
+r1 [label="result, exitAt = e1", shape=note, fillcolor="white"]; r2 [label="result, exitAt = e2", shape=note, fillcolor="white"]; r3 [label="result, exitAt = full", shape=note, fillcolor="white"];
+c0 -> c1 -> e1 -> d1; d1 -> r1 [label="yes"];  d1 -> c2 [label="no"]; c2 -> e2 -> d2; d2 -> r2 [label="yes"]; d2 -> c3 [label="no"]; c3 -> r3;
+cap [shape=plaintext, style="", label="τ = 0.95, chosen on the dev split (smallest τ with ≥ 99% agreement with the full model).\nEarly exit is OFF unless the caller opts in; a plan with early exit must still meet the profile's accuracy floor."];
+r3 -> cap [style=invis];
+}

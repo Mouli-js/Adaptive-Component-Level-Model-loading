@@ -1,0 +1,13 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=TB;
+in  [label="Input sentence → WordPiece token IDs [CLS] … [SEP]\n(input_ids [B,S], attention_mask [B,S])", fillcolor="white"];
+emb [label="Embeddings: word + position embeddings, LayerNorm\n→ hidden [B,S,768]"];
+subgraph cluster_l { label="6 Transformer encoder layers (each: multi-head self-attention → add & norm → feed-forward → add & norm)"; fontsize=10; style="dashed"; color="#6b7280";
+ L0 [label="Layer 0"]; L1 [label="Layer 1"]; L2 [label="Layer 2"]; L3 [label="Layer 3"]; L4 [label="Layer 4"]; L5 [label="Layer 5"]; }
+cls [label="[CLS] vector → pre_classifier (768→768) → ReLU → classifier (768→2)"];
+out [label="logits [B,2] → softmax → NEGATIVE / POSITIVE", fillcolor="white"];
+in -> emb -> L0 -> L1 -> L2 -> L3 -> L4 -> L5 -> cls -> out;
+}

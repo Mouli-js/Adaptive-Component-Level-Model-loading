@@ -1,0 +1,16 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=12, bgcolor="white", pad=0.25, nodesep=0.4, ranksep=0.35];
+node  [fontname="DejaVu Serif", fontsize=12, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.14,0.07"];
+edge  [fontname="DejaVu Serif", fontsize=11, color="#374151", arrowsize=0.7];
+s1 [label="1. Read browser signals: deviceMemory, hardwareConcurrency,\nconnection, storage estimate, cached SHA-256s;\napply profile / overrides (each value records its source)"];
+s2 [label="2. Usable memory = allowance × (1 − 0.15 reserve)\n(disk budget is a separate resource)"];
+s3 [label="3. Generate candidates: 3 precisions × 16 pin sets\n× group sizes {1, 8, 32} × pre-start on/off\n= 237 plans (474 with early exit opted in)"];
+s4 [shape=diamond, label="4. HARD constraints\naccuracy measured?\naccuracy ≥ floor?\npeak ≤ usable?", fillcolor="white"];
+rj [label="rejected\n(counted per reason\nfor the explanation)", fillcolor="#fde2d3"];
+s5 [label="5. Predict T (per sentence) and L (initial load);\nCost = wm·M/Mmin + wt·T/Tmin + wl·L/Lmin\n+ wn·(N+1)/(Nmin+1)   (wn = 0 in all profiles)"];
+s6 [label="6. Sort by cost, then fewer Worker starts,\nthen less network, then plan id (deterministic)"];
+s7 [label="7. Return plan + predicted metrics\n+ 6-line explanation + runners-up", fillcolor="#dbeafe"];
+nf [label="no plan left →\nAdaptiveLoaderError\nNO_FEASIBLE_PLAN", fillcolor="#fde2d3"];
+s1 -> s2 -> s3 -> s4; s4 -> rj [label="fails"]; s4 -> s5 [label="passes"]; s5 -> s6 -> s7; rj -> nf [style=dashed, label="if all fail"];
+{rank=same; s4; rj;}
+}

@@ -1,0 +1,10 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=LR; node [shape=plaintext, style="", fillcolor="white"];
+db [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="4"><tr><td bgcolor="#e5e7eb"><b>IndexedDB database</b></td></tr><tr><td>name 'adaptive-onnx-loader', version 1</td></tr><tr><td>scope: one per origin (scheme + host + port)</td></tr></table>>];
+blobs [label=<<table border="1" cellborder="1" cellspacing="0" cellpadding="4"><tr><td colspan="2" bgcolor="#dbeafe"><b>object store 'blobs'</b></td></tr><tr><td><i>key</i></td><td>sha256 (out-of-line key, hex string)</td></tr><tr><td><i>value</i></td><td>ArrayBuffer (chunk bytes)</td></tr></table>>];
+meta [label=<<table border="1" cellborder="1" cellspacing="0" cellpadding="4"><tr><td colspan="2" bgcolor="#fde2d3"><b>object store 'meta'</b> (keyPath 'sha256')</td></tr><tr><td>sha256</td><td>string (PK)</td></tr><tr><td>name</td><td>e.g. c2_l2_3</td></tr><tr><td>precision</td><td>fp32 | int8</td></tr><tr><td>size</td><td>bytes</td></tr><tr><td>storedAt</td><td>ms timestamp</td></tr><tr><td>lastUsed</td><td>ms timestamp (index 'lastUsed')</td></tr><tr><td>hits</td><td>count</td></tr></table>>];
+db -> blobs; db -> meta; blobs -> meta [dir=both, arrowhead=none, arrowtail=none, style=dashed, label="1 : 1 on sha256"];
+}

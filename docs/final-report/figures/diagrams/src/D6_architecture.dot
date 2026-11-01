@@ -1,0 +1,19 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=TB; compound=true; nodesep=0.3; ranksep=0.45;
+subgraph cluster_off { label="Offline (Python, Phase 1)"; style="rounded"; color="#6b7280";
+  hf [label="Hugging Face checkpoint\ndistilbert-base-uncased-\nfinetuned-sst-2-english"]; py [label="python/: split → export →\nquantize → exit heads →\nvalidate → manifest"]; hf -> py; }
+subgraph cluster_art { label="Artefacts (models/onnx/)"; style="rounded"; color="#6b7280";
+  onnx [label="4 chunks × {fp32, int8}\n+ exit heads E1/E2\n(.onnx)"]; man [label="manifest.json\n(sizes, SHA-256, I/O)\nearly_exit.json, vocab.txt"]; }
+py -> onnx; py -> man;
+subgraph cluster_pg { label="Browser page (main thread): adaptive-onnx-loader"; style="rounded"; color="#1f2937";
+  api [label="api.js\nloadModel / AdaptiveModel"]; tok [label="tokenizer/\nwordpiece.js"]; eng [label="engine/\nmonitor · profiles · costModel\nplanner · calibrate"]; pr [label="workers/planRunner.js"];
+  api -> tok; api -> eng; api -> pr; }
+subgraph cluster_w { label="Dedicated Workers (one per live chunk)"; style="rounded"; color="#1f2937";
+  w0 [label="chunkWorker.js\nORT-web WASM\n+ ChunkSession"]; cl [label="cache/\nChunkLoader + ChunkStore\n(SHA-256 verify)"]; w0 -> cl; }
+idb [label="IndexedDB\n'adaptive-onnx-loader'\n(blobs, meta)", shape=cylinder, fillcolor="white"];
+net [label="HTTP server\n(COOP/COEP)", shape=cylinder, fillcolor="white"];
+pr -> w0 [label="postMessage\n(transfer)"]; cl -> idb; cl -> net; man -> api [style=dashed]; onnx -> net [style=dashed];
+}

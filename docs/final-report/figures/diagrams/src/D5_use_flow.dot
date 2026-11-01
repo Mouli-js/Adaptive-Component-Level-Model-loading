@@ -1,0 +1,15 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=TB;
+u [label="Web page calls loadModel({ manifestUrl, profile?, earlyExit?, … })", fillcolor="white"];
+v [label="Validate options and environment\n(cross-origin isolation, Web Workers)"];
+m [label="Load manifest, vocabulary\n(and early_exit.json if early exit is requested)"];
+s [label="Open IndexedDB ChunkStore"];
+d [label="Decision engine: decide() → plan + explanation"];
+r [label="PlanRunner with that plan\n(pinned Workers persist across calls)"];
+i [label="model.infer(text | text[]) → { label, score, logits, exitAt }", fillcolor="white"];
+x [label="explainPlan() · previewPlan() · getCacheStats() · replan() · clearCache() · dispose()", fillcolor="white"];
+u -> v -> m -> s -> d -> r -> i; r -> x [style=dashed, arrowhead=none];
+}

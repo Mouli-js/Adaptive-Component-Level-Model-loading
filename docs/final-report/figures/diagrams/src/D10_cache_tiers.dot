@@ -1,0 +1,19 @@
+digraph G {
+graph [fontname="DejaVu Serif", fontsize=11, bgcolor="white", pad=0.25, nodesep=0.35, ranksep=0.4];
+node  [fontname="DejaVu Serif", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f3f4f6", color="#374151", penwidth=1.1, margin="0.12,0.06"];
+edge  [fontname="DejaVu Serif", fontsize=9, color="#374151", arrowsize=0.7];
+rankdir=TB;
+req [label="Request for chunk X (manifest entry: name, precision, bytes, sha256, url)", fillcolor="white"];
+t0 [shape=diamond, label="T0 hot: live Worker\nwith session? (WorkerPool)", fillcolor="white"];
+t1 [shape=diamond, label="T1 warm: bytes in\nMemoryLRU?", fillcolor="white"];
+t2 [shape=diamond, label="T2 cold: bytes in\nIndexedDB?", fillcolor="white"];
+v2 [shape=diamond, label="size + SHA-256\nmatch manifest?", fillcolor="white"];
+del [label="delete entry\n(corruptEvicted)"];
+t3 [label="T3 network: download"];
+v3 [shape=diamond, label="size + SHA-256\nmatch manifest?", fillcolor="white"];
+put [label="store in IndexedDB"]; err [label="IntegrityError\n(never stored)", fillcolor="#fde2d3"];
+cs [label="createSession in the Worker", fillcolor="#dbeafe"]; use [label="use immediately (0 ms load)", fillcolor="#dbeafe"];
+req -> t0; t0 -> use [label="hit"]; t0 -> t1 [label="miss"]; t1 -> cs [label="hit"]; t1 -> t2 [label="miss"];
+t2 -> v2 [label="hit"]; v2 -> cs [label="yes"]; v2 -> del [label="no"]; del -> t3; t2 -> t3 [label="miss"];
+t3 -> v3; v3 -> put [label="yes"]; v3 -> err [label="no"]; put -> cs;
+}
